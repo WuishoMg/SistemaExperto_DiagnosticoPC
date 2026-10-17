@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "hechos": [
+    {"id": "s_no_enciende", "nombre": "El equipo no enciende", "descripcion": "Al pulsar el botón de encendido no se observa el inicio normal del equipo.", "tipo": "sintoma"},
+    {"id": "s_led_encendido", "nombre": "Indicador de encendido iluminado", "descripcion": "El indicador físico de alimentación del equipo se ilumina al intentar encenderlo.", "tipo": "sintoma"},
+    {"id": "s_ventiladores_giran", "nombre": "Ventiladores en movimiento", "descripcion": "Los ventiladores del equipo giran al intentar encenderlo.", "tipo": "sintoma"},
+    {"id": "s_pitidos_ram_post", "nombre": "Código POST de memoria", "descripcion": "El código acústico o luminoso del POST corresponde a memoria según el manual del fabricante.", "tipo": "sintoma"},
+    {"id": "s_error_prueba_ram", "nombre": "Error en prueba de RAM", "descripcion": "Una herramienta de diagnóstico de memoria reporta errores reproducibles.", "tipo": "sintoma"},
+    {"id": "s_reinicios_post", "nombre": "Reinicios durante POST", "descripcion": "El equipo se reinicia repetidamente antes de cargar el sistema operativo.", "tipo": "sintoma"},
+    {"id": "s_sin_imagen", "nombre": "Sin imagen en pantalla principal", "descripcion": "La pantalla principal no muestra imagen al iniciar el equipo.", "tipo": "sintoma"},
+    {"id": "s_monitor_externo_funciona", "nombre": "Monitor externo funciona", "descripcion": "Un monitor externo probado con el equipo sí muestra imagen.", "tipo": "sintoma"},
+    {"id": "s_artefactos_video", "nombre": "Artefactos de video", "descripcion": "Se observan líneas, bloques o distorsiones gráficas persistentes en la imagen.", "tipo": "sintoma"},
+    {"id": "s_unidad_no_detectada", "nombre": "Unidad no detectada por firmware", "descripcion": "La unidad de arranque no aparece en BIOS o UEFI al comprobar su detección.", "tipo": "sintoma"},
+    {"id": "s_errores_entrada_salida", "nombre": "Errores de entrada/salida", "descripcion": "El sistema o una herramienta de diagnóstico registra errores de lectura o escritura de la unidad.", "tipo": "sintoma"},
+    {"id": "s_sin_dispositivo_arranque", "nombre": "Mensaje de dispositivo de arranque ausente", "descripcion": "El firmware informa que no encuentra un dispositivo de arranque válido.", "tipo": "sintoma"},
+    {"id": "s_temperatura_alta", "nombre": "Temperatura anormalmente alta", "descripcion": "Una medición fiable supera el rango recomendado por el fabricante para el componente o muestra limitación térmica.", "tipo": "sintoma"},
+    {"id": "s_apagado_bajo_carga", "nombre": "Apagado bajo carga", "descripcion": "El equipo se apaga de forma inesperada al ejecutar una tarea exigente.", "tipo": "sintoma"},
+    {"id": "s_ventilador_ruidoso", "nombre": "Ventilador anormalmente ruidoso", "descripcion": "Un ventilador gira con ruido o velocidad anormal durante el uso.", "tipo": "sintoma"},
+    {"id": "s_so_no_inicia", "nombre": "Sistema operativo no inicia", "descripcion": "El POST termina, pero el sistema operativo instalado no completa el arranque.", "tipo": "sintoma"},
+    {"id": "s_pantalla_azul", "nombre": "Error crítico del sistema", "descripcion": "El sistema muestra una pantalla azul u otro error crítico identificable durante su ejecución.", "tipo": "sintoma"},
+    {"id": "s_sin_red", "nombre": "Equipo sin conexión de red", "descripcion": "Este equipo no logra conectarse a la red o a Internet durante la prueba.", "tipo": "sintoma"},
+    {"id": "s_otros_equipos_conectan", "nombre": "Otros equipos sí se conectan", "descripcion": "Otros dispositivos de la misma red funcionan durante el mismo periodo de prueba.", "tipo": "sintoma"},
+    {"id": "s_wifi_deshabilitado", "nombre": "Adaptador Wi-Fi deshabilitado", "descripcion": "El sistema muestra el adaptador Wi-Fi deshabilitado o el modo avión activo.", "tipo": "sintoma"}
+  ]
+}
