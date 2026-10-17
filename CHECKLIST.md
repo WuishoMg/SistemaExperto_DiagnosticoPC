@@ -37,11 +37,23 @@
 ### Evidencia de ejecución de la Fase 3
 
 - `python validar_conocimiento.py`: **correcto**; 20 hechos, 11 diagnósticos y 23 reglas; los archivos JSON no se modificaron.
-- `python -m unittest discover -s tests -v`: **correcto**; 14 pruebas, 0 fallos.
+- `python -m unittest discover -s tests -v`: **correcto** en el cierre técnico de Fase 3; 14 pruebas, 0 fallos.
 - `python diagnosticar.py --respuestas ejemplos/ram.json`: **correcto**; hipótesis principal de RAM, reglas `r_ram_reinicio_post` y `r_ram_codigo_post`, hechos y recomendaciones impresos.
 - Pruebas funcionales en subproceso: consulta interactiva de 20 preguntas, ejemplo RAM y ejemplo sin conclusión; todos terminaron con código 0.
 - Incidencia corregida: el subproceso de pruebas emitía texto con la codificación local de Windows; se fijó UTF-8 en la captura de pruebas y se repitió la suite completa.
 - [ ] Validación del usuario y autorización expresa para cerrar el Avance 1 y crear `avance-1`.
+
+### Mejora de preguntas previa al cierre del Avance 1
+
+- [x] Redactadas 20 preguntas visibles con ayuda para personas sin conocimientos técnicos.
+- [x] Separado el cuestionario en `data/interfaz/preguntas.json` del catálogo lógico de hechos y reglas.
+- [x] Mapeo explícito Sí/No por pregunta; seis preguntas invierten la polaridad y No estoy seguro se registra como `desconocido`.
+- [x] Consola actualizada para mostrar texto, ayuda y las tres opciones completas.
+- [x] Validador de cobertura, duplicados y polaridad del cuestionario.
+- [x] Pruebas de preguntas positivas e invertidas y regresión de los ejemplos JSON.
+- [x] Documentadas las preguntas definitivas en `docs/PREGUNTAS.md` y actualizado `docs/AVANCE_1.md`.
+
+**Evidencia:** `python validar_conocimiento.py` confirmó 20 hechos, 11 diagnósticos, 23 reglas y 20 preguntas. `python -m unittest discover -s tests -v` terminó con **19 pruebas, 0 fallos**. Una demostración por consola con No en las preguntas 1 y 2 y No estoy seguro en las demás terminó con código 0, activó `r_alimentacion_led` y mostró la posible falla de alimentación. Los ejemplos `ram.json` y `sin_conclusion.json` siguen produciendo los resultados esperados. Los tres JSON de `data/conocimiento/` no se modificaron. El tag `avance-1` sigue pendiente de autorización de cierre.
 
 ## Fases siguientes — Pendientes de autorización
 

@@ -15,22 +15,24 @@ python -m unittest discover -s tests -v
 python diagnosticar.py
 ```
 
-La consulta interactiva pregunta los 20 síntomas. Responda `s`, `n` o `?`; Enter también indica desconocido. Para repetir dos demostraciones desde archivos JSON:
+La consulta interactiva muestra [20 preguntas en lenguaje cotidiano](docs/PREGUNTAS.md), cada una con una ayuda breve. Responde `1`/`Sí`, `2`/`No` o `3`/`No estoy seguro`; Enter también significa No estoy seguro. La respuesta se traduce al estado interno según la polaridad de cada pregunta: **Sí no siempre significa `verdadero`**. Para repetir dos demostraciones desde archivos JSON:
 
 ```powershell
 python diagnosticar.py --respuestas ejemplos/ram.json
 python diagnosticar.py --respuestas ejemplos/sin_conclusion.json
 ```
 
-Un archivo de respuestas es un objeto JSON con IDs de síntomas y valores `verdadero`, `falso` o `desconocido`; los síntomas omitidos quedan desconocidos. El programa muestra hipótesis, reglas activadas, hechos verificados y recomendaciones. El diagnóstico principal se ordena por la mayor cantidad de condiciones de una regla activada; en empates, por ID de diagnóstico. Ese orden no representa probabilidad ni certeza.
+Un archivo de respuestas es un objeto JSON con IDs de síntomas y valores **internos** `verdadero`, `falso` o `desconocido`; los síntomas omitidos quedan desconocidos. Este formato técnico sigue igual para las pruebas y futuras comparaciones. El programa muestra hipótesis, reglas activadas, hechos verificados y recomendaciones. El diagnóstico principal se ordena por la mayor cantidad de condiciones de una regla activada; en empates, por ID de diagnóstico. Ese orden no representa probabilidad ni certeza.
 
 La documentación del catálogo está en [docs/BASE_CONOCIMIENTOS.md](docs/BASE_CONOCIMIENTOS.md), el informe académico en [docs/AVANCE_1.md](docs/AVANCE_1.md) y las evidencias de fase en [CHECKLIST.md](CHECKLIST.md).
 
 ## Organización
 
 - `data/conocimiento/`: definiciones JSON de hechos, diagnósticos y reglas.
+- `data/interfaz/preguntas.json`: texto, ayuda y polaridad de las 20 preguntas visibles.
 - `src/diagnostico_pc/hechos.py`: estados trivalentes y normalización de observaciones.
 - `src/diagnostico_pc/validacion.py`: validador estático del conocimiento.
+- `src/diagnostico_pc/preguntas.py`: validación y mapeo de respuestas visibles, reutilizables en otras interfaces.
 - `src/diagnostico_pc/modelo_a.py`: memoria de trabajo, recorrido de reglas directas y resultados explicables.
 - `src/diagnostico_pc/consola.py` y `diagnosticar.py`: consulta de texto interactiva o mediante archivo.
 - `ejemplos/`: dos respuestas pequeñas para demostrar una hipótesis y una consulta sin conclusión.

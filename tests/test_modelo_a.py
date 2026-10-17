@@ -13,12 +13,16 @@ sys.path.insert(0, str(RAIZ / "src"))
 from diagnostico_pc.consola import mostrar_resultado, preguntar_sintomas  # noqa: E402
 from diagnostico_pc.hechos import EstadoHecho  # noqa: E402
 from diagnostico_pc.modelo_a import ModeloA  # noqa: E402
+from diagnostico_pc.preguntas import RespuestaVisible, cargar_preguntas  # noqa: E402
 
 
 class PruebasModeloA(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.modelo = ModeloA.desde_directorio(RAIZ / "data" / "conocimiento")
+        cls.preguntas = cargar_preguntas(
+            RAIZ / "data" / "interfaz" / "preguntas.json", cls.modelo.sintomas
+        )
 
     def test_encadenamiento_directo_registra_dos_reglas_de_una_hipotesis(self):
         resultado = self.modelo.evaluar(
@@ -74,19 +78,70 @@ class PruebasModeloA(unittest.TestCase):
         self.assertEqual([d.id for d in resultado.alternativos], ["d_subsistema_video"])
 
     def test_interaccion_pregunta_todos_los_sintomas_y_acepta_desconocido(self):
-        sintomas = [h for h in self.modelo.hechos.values() if h["tipo"] == "sintoma"]
-        entradas = ["s" if h["id"] == "s_pitidos_ram_post" else "" for h in sintomas]
+        entradas = ["s" if p.hecho == "s_pitidos_ram_post" else "" for p in self.preguntas]
+        salida = io.StringIO()
         respuestas = preguntar_sintomas(
-            self.modelo, io.StringIO("\n".join(entradas) + "\n"), io.StringIO()
+            self.preguntas, io.StringIO("\n".join(entradas) + "\n"), salida
         )
-        self.assertEqual(len(respuestas), len(sintomas))
+        self.assertEqual(len(respuestas), len(self.preguntas))
         self.assertEqual(respuestas["s_pitidos_ram_post"], "verdadero")
+        self.assertEqual(respuestas["s_error_prueba_ram"], "desconocido")
+        self.assertIn("Ayuda:", salida.getvalue())
+        self.assertIn("No estoy seguro", salida.getvalue())
+        self.assertNotIn("s_pitidos_ram_post", salida.getvalue())
         self.assertEqual(self.modelo.evaluar(respuestas).principal.id, "d_memoria_ram")
 
+    def test_todas_las_preguntas_tienen_mapeo_explicito_y_ayuda(self):
+        invertidas = {
+            "s_no_enciende", "s_sin_imagen", "s_unidad_no_detectada",
+            "s_so_no_inicia", "s_sin_red", "s_wifi_deshabilitado",
+        }
+        self.assertEqual(len(self.preguntas), 20)
+        self.assertEqual({p.hecho for p in self.preguntas}, self.modelo.sintomas)
+        for pregunta in self.preguntas:
+            with self.subTest(hecho=pregunta.hecho):
+                self.assertTrue(pregunta.texto.startswith("¿"))
+                self.assertTrue(pregunta.ayuda.strip())
+                self.assertNotIn(pregunta.hecho, pregunta.texto)
+                self.assertEqual(
+                    pregunta.estado_para(RespuestaVisible.SI),
+                    EstadoHecho.FALSO if pregunta.hecho in invertidas else EstadoHecho.VERDADERO,
+                )
+                self.assertEqual(
+                    pregunta.estado_para(RespuestaVisible.NO),
+                    EstadoHecho.VERDADERO if pregunta.hecho in invertidas else EstadoHecho.FALSO,
+                )
+                self.assertEqual(
+                    pregunta.estado_para(RespuestaVisible.NO_ESTOY_SEGURO),
+                    EstadoHecho.DESCONOCIDO,
+                )
+
+    def test_respuestas_invertidas_activan_las_reglas_existentes(self):
+        seleccion = {"s_unidad_no_detectada": "Sí", "s_so_no_inicia": "No"}
+        entradas = [seleccion.get(p.hecho, "No estoy seguro") for p in self.preguntas]
+        respuestas = preguntar_sintomas(
+            self.preguntas, io.StringIO("\n".join(entradas) + "\n"), io.StringIO()
+        )
+        self.assertEqual(respuestas["s_unidad_no_detectada"], "falso")
+        self.assertEqual(respuestas["s_so_no_inicia"], "verdadero")
+        resultado = self.modelo.evaluar(respuestas)
+        self.assertEqual(resultado.principal.id, "d_arranque_so")
+        self.assertIn("r_so_no_inicia_unidad_presente", resultado.memoria.reglas_activadas)
+
+    def test_no_en_preguntas_de_encendido_conserva_polaridad(self):
+        seleccion = {"s_no_enciende": "No", "s_led_encendido": "No"}
+        entradas = [seleccion.get(p.hecho, "3") for p in self.preguntas]
+        respuestas = preguntar_sintomas(
+            self.preguntas, io.StringIO("\n".join(entradas) + "\n"), io.StringIO()
+        )
+        self.assertEqual(respuestas["s_no_enciende"], "verdadero")
+        self.assertEqual(respuestas["s_led_encendido"], "falso")
+        self.assertEqual(self.modelo.evaluar(respuestas).principal.id, "d_ruta_alimentacion")
+
     def test_consola_en_subproceso_con_ejemplos(self):
-        for archivo, frase in (
-            ("ram.json", "Posible problema de memoria RAM"),
-            ("sin_conclusion.json", "Sin diagnóstico concluyente"),
+        for archivo, frases in (
+            ("ram.json", ("Posible problema de memoria RAM", "r_ram_codigo_post", "r_ram_reinicio_post")),
+            ("sin_conclusion.json", ("Sin diagnóstico concluyente", "Ninguna regla directa coincide")),
         ):
             with self.subTest(archivo=archivo):
                 proceso = subprocess.run(
@@ -95,12 +150,12 @@ class PruebasModeloA(unittest.TestCase):
                     env={**os.environ, "PYTHONIOENCODING": "utf-8"},
                 )
                 self.assertEqual(proceso.returncode, 0, proceso.stderr)
-                self.assertIn(frase, proceso.stdout)
+                for frase in frases:
+                    self.assertIn(frase, proceso.stdout)
 
     def test_consola_interactiva_completa(self):
-        sintomas = [h for h in self.modelo.hechos.values() if h["tipo"] == "sintoma"]
         respuestas = "\n".join(
-            "s" if hecho["id"] == "s_pitidos_ram_post" else "?" for hecho in sintomas
+            "1" if pregunta.hecho == "s_pitidos_ram_post" else "3" for pregunta in self.preguntas
         ) + "\n"
         proceso = subprocess.run(
             [sys.executable, str(RAIZ / "diagnosticar.py")],
@@ -110,6 +165,8 @@ class PruebasModeloA(unittest.TestCase):
         )
         self.assertEqual(proceso.returncode, 0, proceso.stderr)
         self.assertIn("20/20", proceso.stdout)
+        self.assertIn("Ayuda:", proceso.stdout)
+        self.assertNotIn("s_pitidos_ram_post", proceso.stdout)
         self.assertIn("Posible problema de memoria RAM", proceso.stdout)
 
 

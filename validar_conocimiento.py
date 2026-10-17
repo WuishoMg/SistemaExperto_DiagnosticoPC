@@ -6,14 +6,19 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent
 sys.path.insert(0, str(RAIZ / "src"))
 
-from diagnostico_pc.validacion import ErrorConocimiento, validar_directorio  # noqa: E402
+from diagnostico_pc.preguntas import ErrorPreguntas, cargar_preguntas  # noqa: E402
+from diagnostico_pc.validacion import ErrorConocimiento, leer_documentos, validar_documentos  # noqa: E402
 
 
 def main() -> int:
     try:
-        resumen = validar_directorio(RAIZ / "data" / "conocimiento")
-    except ErrorConocimiento as error:
-        print("Base de conocimientos inválida:", file=sys.stderr)
+        documentos = leer_documentos(RAIZ / "data" / "conocimiento")
+        resumen = validar_documentos(*documentos)
+        hechos_doc = documentos[0]
+        sintomas = {hecho["id"] for hecho in hechos_doc["hechos"] if hecho["tipo"] == "sintoma"}
+        preguntas = cargar_preguntas(RAIZ / "data" / "interfaz" / "preguntas.json", sintomas)
+    except (ErrorConocimiento, ErrorPreguntas) as error:
+        print("Catálogo inválido:", file=sys.stderr)
         print(error, file=sys.stderr)
         return 1
     print(
@@ -21,6 +26,7 @@ def main() -> int:
         f"{resumen.hechos} hechos, {resumen.diagnosticos} diagnósticos, "
         f"{resumen.reglas} reglas."
     )
+    print(f"Cuestionario válido: {len(preguntas)} preguntas con mapeo Sí/No/No estoy seguro.")
     return 0
 
 

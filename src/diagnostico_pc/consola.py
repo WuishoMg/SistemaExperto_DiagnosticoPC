@@ -6,41 +6,45 @@ import sys
 from pathlib import Path
 from typing import TextIO
 
-from .hechos import EstadoHecho
 from .modelo_a import DiagnosticoInferido, ModeloA, ResultadoModeloA
+from .preguntas import ErrorPreguntas, Pregunta, RespuestaVisible, cargar_preguntas
 from .validacion import ErrorConocimiento
 
 
 RESPUESTAS = {
-    "s": EstadoHecho.VERDADERO.value,
-    "si": EstadoHecho.VERDADERO.value,
-    "sí": EstadoHecho.VERDADERO.value,
-    "verdadero": EstadoHecho.VERDADERO.value,
-    "n": EstadoHecho.FALSO.value,
-    "no": EstadoHecho.FALSO.value,
-    "falso": EstadoHecho.FALSO.value,
-    "": EstadoHecho.DESCONOCIDO.value,
-    "?": EstadoHecho.DESCONOCIDO.value,
-    "desconocido": EstadoHecho.DESCONOCIDO.value,
+    "1": RespuestaVisible.SI,
+    "s": RespuestaVisible.SI,
+    "si": RespuestaVisible.SI,
+    "sí": RespuestaVisible.SI,
+    "2": RespuestaVisible.NO,
+    "n": RespuestaVisible.NO,
+    "no": RespuestaVisible.NO,
+    "3": RespuestaVisible.NO_ESTOY_SEGURO,
+    "": RespuestaVisible.NO_ESTOY_SEGURO,
+    "?": RespuestaVisible.NO_ESTOY_SEGURO,
+    "no estoy seguro": RespuestaVisible.NO_ESTOY_SEGURO,
 }
 
 
-def preguntar_sintomas(modelo: ModeloA, entrada: TextIO, salida: TextIO) -> dict[str, str]:
-    """Pregunta por todos los síntomas; Enter conserva el estado desconocido."""
+def preguntar_sintomas(
+    preguntas: tuple[Pregunta, ...], entrada: TextIO, salida: TextIO
+) -> dict[str, str]:
+    """Recoge respuestas visibles usando el mapeo propio de cada pregunta."""
     respuestas: dict[str, str] = {}
-    sintomas = [hecho for hecho in modelo.hechos.values() if hecho["tipo"] == "sintoma"]
-    print("Responda s (sí), n (no) o Enter/? (desconocido).", file=salida)
-    for numero, hecho in enumerate(sintomas, start=1):
+    print("Responde Sí, No o No estoy seguro. También puedes usar 1, 2 o 3.", file=salida)
+    for numero, pregunta in enumerate(preguntas, start=1):
         while True:
-            print(f"{numero:02d}/{len(sintomas)} {hecho['nombre']} [s/n/?]: ", end="", file=salida, flush=True)
+            print(f"\n{numero:02d}/{len(preguntas)} {pregunta.texto}", file=salida)
+            print(f"Ayuda: {pregunta.ayuda}", file=salida)
+            print("[1 Sí / 2 No / 3 No estoy seguro]: ", end="", file=salida, flush=True)
             respuesta = entrada.readline()
             if respuesta == "":
                 raise EOFError("La consulta terminó antes de responder todos los síntomas")
             normalizada = RESPUESTAS.get(respuesta.strip().lower())
             if normalizada is not None:
-                respuestas[hecho["id"]] = normalizada
+                respuestas[pregunta.hecho] = pregunta.estado_para(normalizada).value
                 break
-            print("Respuesta inválida; escriba s, n o ?.", file=salida)
+            print("Respuesta inválida; elige Sí, No o No estoy seguro.", file=salida)
     return respuestas
 
 
@@ -79,18 +83,19 @@ def main(argumentos: list[str] | None = None) -> int:
         help="Archivo JSON opcional con estados por ID de síntoma; omisiones = desconocido",
     )
     opciones = parser.parse_args(argumentos)
-    directorio = Path(__file__).resolve().parents[2] / "data" / "conocimiento"
+    raiz = Path(__file__).resolve().parents[2]
     try:
-        modelo = ModeloA.desde_directorio(directorio)
+        modelo = ModeloA.desde_directorio(raiz / "data" / "conocimiento")
         if opciones.respuestas is None:
-            respuestas = preguntar_sintomas(modelo, sys.stdin, sys.stdout)
+            preguntas = cargar_preguntas(raiz / "data" / "interfaz" / "preguntas.json", modelo.sintomas)
+            respuestas = preguntar_sintomas(preguntas, sys.stdin, sys.stdout)
         else:
             with opciones.respuestas.open(encoding="utf-8") as archivo:
                 respuestas = json.load(archivo)
             if not isinstance(respuestas, dict):
                 raise ValueError("El archivo de respuestas debe contener un objeto JSON")
         mostrar_resultado(modelo.evaluar(respuestas), sys.stdout)
-    except (ErrorConocimiento, ValueError, OSError, UnicodeError, json.JSONDecodeError, EOFError) as error:
+    except (ErrorConocimiento, ErrorPreguntas, ValueError, OSError, UnicodeError, json.JSONDecodeError, EOFError) as error:
         print(f"No se pudo completar la consulta: {error}", file=sys.stderr)
         return 2
     return 0
