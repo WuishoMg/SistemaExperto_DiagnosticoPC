@@ -209,8 +209,8 @@ def validar_documentos(hechos_doc: Any, diagnosticos_doc: Any, reglas_doc: Any) 
     return ResumenConocimiento(len(hechos), len(diagnosticos), len(reglas))
 
 
-def validar_directorio(directorio: Path) -> ResumenConocimiento:
-    """Carga los tres JSON y devuelve sus cantidades si son válidos."""
+def leer_documentos(directorio: Path) -> tuple[dict, dict, dict]:
+    """Lee los tres archivos JSON; el llamador debe validar su contenido."""
     documentos = []
     for nombre in ("hechos.json", "diagnosticos.json", "reglas.json"):
         ruta = directorio / nombre
@@ -219,4 +219,9 @@ def validar_directorio(directorio: Path) -> ResumenConocimiento:
                 documentos.append(json.load(archivo))
         except (OSError, UnicodeError, json.JSONDecodeError) as error:
             raise ErrorConocimiento([f"{ruta}: no se pudo cargar JSON: {error}"]) from error
-    return validar_documentos(*documentos)
+    return tuple(documentos)
+
+
+def validar_directorio(directorio: Path) -> ResumenConocimiento:
+    """Carga los tres JSON y devuelve sus cantidades si son válidos."""
+    return validar_documentos(*leer_documentos(directorio))
