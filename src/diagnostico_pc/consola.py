@@ -31,12 +31,15 @@ def preguntar_sintomas(
 ) -> dict[str, str]:
     """Recoge respuestas visibles usando el mapeo propio de cada pregunta."""
     respuestas: dict[str, str] = {}
-    print("Responde Sí, No o No estoy seguro. También puedes usar 1, 2 o 3.", file=salida)
+    print("Responde con 1/2/3 o con s/n/?.", file=salida)
     for numero, pregunta in enumerate(preguntas, start=1):
         while True:
             print(f"\n{numero:02d}/{len(preguntas)} {pregunta.texto}", file=salida)
             print(f"Ayuda: {pregunta.ayuda}", file=salida)
-            print("[1 Sí / 2 No / 3 No estoy seguro]: ", end="", file=salida, flush=True)
+            print("1. Sí", file=salida)
+            print("2. No", file=salida)
+            print("3. No estoy seguro", file=salida)
+            print("Respuesta: ", end="", file=salida, flush=True)
             respuesta = entrada.readline()
             if respuesta == "":
                 raise EOFError("La consulta terminó antes de responder todos los síntomas")

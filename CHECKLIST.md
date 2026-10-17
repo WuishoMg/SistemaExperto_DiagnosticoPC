@@ -49,11 +49,12 @@
 - [x] Separado el cuestionario en `data/interfaz/preguntas.json` del catálogo lógico de hechos y reglas.
 - [x] Mapeo explícito Sí/No por pregunta; seis preguntas invierten la polaridad y No estoy seguro se registra como `desconocido`.
 - [x] Consola actualizada para mostrar texto, ayuda y las tres opciones completas.
+- [x] Menú `1. Sí`, `2. No`, `3. No estoy seguro` y equivalencia probada entre `1/2/3` y `s/n/?` para preguntas directas e invertidas.
 - [x] Validador de cobertura, duplicados y polaridad del cuestionario.
 - [x] Pruebas de preguntas positivas e invertidas y regresión de los ejemplos JSON.
 - [x] Documentadas las preguntas definitivas en `docs/PREGUNTAS.md` y actualizado `docs/AVANCE_1.md`.
 
-**Evidencia:** `python validar_conocimiento.py` confirmó 20 hechos, 11 diagnósticos, 23 reglas y 20 preguntas. `python -m unittest discover -s tests -v` terminó con **19 pruebas, 0 fallos**. Una demostración por consola con No en las preguntas 1 y 2 y No estoy seguro en las demás terminó con código 0, activó `r_alimentacion_led` y mostró la posible falla de alimentación. Los ejemplos `ram.json` y `sin_conclusion.json` siguen produciendo los resultados esperados. Los tres JSON de `data/conocimiento/` no se modificaron. El tag `avance-1` sigue pendiente de autorización de cierre.
+**Evidencia:** `python validar_conocimiento.py` confirmó 20 hechos, 11 diagnósticos, 23 reglas y 20 preguntas. `python -m unittest discover -s tests -v` terminó con **20 pruebas, 0 fallos**; la nueva prueba comprueba los seis valores `1`, `2`, `3`, `s`, `n` y `?` en una pregunta directa y otra invertida. Una demostración por consola con `n` en la pregunta 1, `2` en la 2 y `?` en las demás terminó con código 0, activó `r_alimentacion_led` y mostró la posible falla de alimentación. Los ejemplos `ram.json` y `sin_conclusion.json` siguen produciendo los resultados esperados. Los tres JSON de `data/conocimiento/` no se modificaron. El tag `avance-1` sigue pendiente de autorización de cierre.
 
 ## Fases siguientes — Pendientes de autorización
 

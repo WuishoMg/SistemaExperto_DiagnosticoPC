@@ -138,6 +138,32 @@ class PruebasModeloA(unittest.TestCase):
         self.assertEqual(respuestas["s_led_encendido"], "falso")
         self.assertEqual(self.modelo.evaluar(respuestas).principal.id, "d_ruta_alimentacion")
 
+    def test_menu_numeros_y_letras_conservan_polaridad(self):
+        ejemplos = {
+            "s_led_encendido": {
+                "1": "verdadero", "s": "verdadero",
+                "2": "falso", "n": "falso",
+                "3": "desconocido", "?": "desconocido",
+            },
+            "s_no_enciende": {
+                "1": "falso", "s": "falso",
+                "2": "verdadero", "n": "verdadero",
+                "3": "desconocido", "?": "desconocido",
+            },
+        }
+        for pregunta in self.preguntas:
+            if pregunta.hecho not in ejemplos:
+                continue
+            for entrada, esperado in ejemplos[pregunta.hecho].items():
+                with self.subTest(hecho=pregunta.hecho, entrada=entrada):
+                    salida = io.StringIO()
+                    respuestas = preguntar_sintomas(
+                        (pregunta,), io.StringIO(entrada + "\n"), salida
+                    )
+                    self.assertEqual(respuestas[pregunta.hecho], esperado)
+                    for opcion in ("1. Sí", "2. No", "3. No estoy seguro"):
+                        self.assertIn(opcion, salida.getvalue())
+
     def test_consola_en_subproceso_con_ejemplos(self):
         for archivo, frases in (
             ("ram.json", ("Posible problema de memoria RAM", "r_ram_codigo_post", "r_ram_reinicio_post")),

@@ -15,7 +15,7 @@ python -m unittest discover -s tests -v
 python diagnosticar.py
 ```
 
-La consulta interactiva muestra [20 preguntas en lenguaje cotidiano](docs/PREGUNTAS.md), cada una con una ayuda breve. Responde `1`/`Sí`, `2`/`No` o `3`/`No estoy seguro`; Enter también significa No estoy seguro. La respuesta se traduce al estado interno según la polaridad de cada pregunta: **Sí no siempre significa `verdadero`**. Para repetir dos demostraciones desde archivos JSON:
+La consulta interactiva muestra [20 preguntas en lenguaje cotidiano](docs/PREGUNTAS.md), cada una con una ayuda breve y el menú `1. Sí`, `2. No`, `3. No estoy seguro`. Puedes responder con `1/2/3` o `s/n/?` respectivamente; Enter también significa No estoy seguro. La respuesta se traduce al estado interno según la polaridad de cada pregunta: **Sí no siempre significa `verdadero`**. Para repetir dos demostraciones desde archivos JSON:
 
 ```powershell
 python diagnosticar.py --respuestas ejemplos/ram.json

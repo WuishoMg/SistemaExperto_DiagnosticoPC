@@ -1,6 +1,6 @@
 # Cuestionario visible del Avance 1
 
-Las preguntas y ayudas se cargan de `data/interfaz/preguntas.json`; esta tabla permite revisar su redacción y polaridad. El ID de hecho se muestra **solo en esta documentación técnica**, nunca como pregunta en la consola. `V` significa `verdadero` y `F` significa `falso`. Para las 20 preguntas, **No estoy seguro → `desconocido`**. La respuesta ausente en el archivo JSON técnico también queda desconocida.
+Las preguntas y ayudas se cargan de `data/interfaz/preguntas.json`; esta tabla permite revisar su redacción y polaridad. La consola muestra `1. Sí`, `2. No` y `3. No estoy seguro` y acepta `1/2/3` o `s/n/?` respectivamente. El ID de hecho se muestra **solo en esta documentación técnica**, nunca como pregunta en la consola. `V` significa `verdadero` y `F` significa `falso`. Para las 20 preguntas, **No estoy seguro → `desconocido`**. La respuesta ausente en el archivo JSON técnico también queda desconocida.
 
 | Nº | Hecho interno | Pregunta visible | Ayuda mostrada | Sí → | No → |
 | ---: | --- | --- | --- | :---: | :---: |
