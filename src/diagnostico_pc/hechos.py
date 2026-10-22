@@ -16,6 +16,17 @@ def normalizar_observaciones(
     """Completa respuestas ausentes como desconocidas, sin inferir negaciones."""
     desconocidos = set(respuestas) - identificadores
     if desconocidos:
+        retirados = {
+            "s_no_enciende": "s_led_encendido y s_ventiladores_giran",
+            "s_lentitud_o_congelamientos": "s_lentitud_programas y s_congelamientos",
+            "s_proceso_consumo_alto": "s_proceso_cpu_alto y s_proceso_disco_alto",
+        }
+        ambiguos = [hecho for hecho in sorted(desconocidos) if hecho in retirados]
+        if ambiguos:
+            detalle = "; ".join(f"{hecho} → {retirados[hecho]}" for hecho in ambiguos)
+            raise ValueError(
+                "Hechos compuestos retirados. Registra cada observación por separado: " + detalle
+            )
         raise ValueError(f"Hechos no definidos: {', '.join(sorted(desconocidos))}")
 
     normalizadas = {identificador: EstadoHecho.DESCONOCIDO for identificador in identificadores}

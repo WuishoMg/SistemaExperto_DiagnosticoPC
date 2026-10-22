@@ -7,6 +7,7 @@ RAIZ = Path(__file__).resolve().parent
 sys.path.insert(0, str(RAIZ / "src"))
 
 from diagnostico_pc.preguntas import ErrorPreguntas, cargar_preguntas  # noqa: E402
+from diagnostico_pc.rutas import ErrorRutas, cargar_rutas  # noqa: E402
 from diagnostico_pc.validacion import ErrorConocimiento, leer_documentos, validar_documentos  # noqa: E402
 
 
@@ -17,7 +18,8 @@ def main() -> int:
         hechos_doc = documentos[0]
         sintomas = {hecho["id"] for hecho in hechos_doc["hechos"] if hecho["tipo"] == "sintoma"}
         preguntas = cargar_preguntas(RAIZ / "data" / "interfaz" / "preguntas.json", sintomas)
-    except (ErrorConocimiento, ErrorPreguntas) as error:
+        rutas = cargar_rutas(RAIZ / "data" / "interfaz" / "rutas.json", preguntas)
+    except (ErrorConocimiento, ErrorPreguntas, ErrorRutas) as error:
         print("Catálogo inválido:", file=sys.stderr)
         print(error, file=sys.stderr)
         return 1
@@ -27,6 +29,7 @@ def main() -> int:
         f"{resumen.reglas} reglas."
     )
     print(f"Cuestionario válido: {len(preguntas)} preguntas con mapeo Sí/No/No estoy seguro.")
+    print(f"Rutas válidas: {len(rutas.categorias)} categorías con aplicabilidad comprobada.")
     return 0
 
 

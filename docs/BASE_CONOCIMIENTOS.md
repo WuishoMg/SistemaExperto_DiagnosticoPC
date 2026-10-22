@@ -1,45 +1,28 @@
-# Base de conocimientos — Fase 2
+# Base de conocimientos — Avance 1
 
-## Objetivo y alcance
+## Contrato
 
-Esta base recoge observaciones verificables y reglas SI–ENTONCES para orientar un diagnóstico de fallas en PC. El conocimiento es explícito, revisable y no utiliza aprendizaje automático. En esta fase se **valida** el catálogo; todavía no existe un motor que active reglas ni emita diagnósticos a usuarios.
+Los archivos JSON de conocimiento conservan `version: 1`: **36 hechos observables, 18 diagnósticos y 42 reglas**. Cada hecho tiene `verdadero`, `falso` o `desconocido`. Una omisión y «No estoy seguro» quedan desconocidas; ninguna regla diagnóstica exige ese estado. Las condiciones de una regla SI–ENTONCES son conjuntivas y su conclusión es una hipótesis. Modelo A recorre las reglas directas y agrupa las que llegan a un mismo diagnóstico. Su orden por especificidad no es probabilidad; la consola coloca una temperatura alta medida antes que indicios subjetivos cuando ambos se infieren.
 
-Los tres archivos de `data/conocimiento/` tienen `"version": 1` y listas denominadas `hechos`, `diagnosticos` y `reglas`. El validador usa únicamente la biblioteca estándar. No se necesitan `scikit-learn` ni Matplotlib hasta la comparación experimental.
+El grafo de preguntas y su validador están en la capa de interfaz. Adquieren hechos, pero nunca generan conclusiones diagnósticas. Los 36 hechos tienen una pregunta visible; una pregunta puede aparecer en más de una ruta si es relevante. Los estados y reglas pueden evaluarse también con un JSON técnico, sin usar el cuestionario.
 
-## Catálogo
+## Revisión del catálogo
 
-Hay **20 síntomas**, todos de tipo `sintoma`. Por grupos:
-
-| Grupo | Identificadores |
+| Grupo | Observaciones y decisiones |
 | --- | --- |
-| Alimentación y POST | `s_no_enciende`, `s_led_encendido`, `s_ventiladores_giran`, `s_pitidos_ram_post`, `s_error_prueba_ram`, `s_reinicios_post` |
-| Video | `s_sin_imagen`, `s_monitor_externo_funciona`, `s_artefactos_video` |
-| Almacenamiento | `s_unidad_no_detectada`, `s_errores_entrada_salida`, `s_sin_dispositivo_arranque` |
-| Temperatura | `s_temperatura_alta`, `s_apagado_bajo_carga`, `s_ventilador_ruidoso` |
-| Sistema operativo | `s_so_no_inicia`, `s_pantalla_azul` |
-| Conectividad | `s_sin_red`, `s_otros_equipos_conectan`, `s_wifi_deshabilitado` |
+| Alimentación e inicio | Luz y ventilador son hechos separados. Ausencia comprobada de ambos orienta a alimentación. Su presencia **no** implica funcionamiento correcto: sin imagen o sin sistema utilizable se registra una hipótesis amplia de inicio con energía. |
+| Video y memoria | Se distingue imagen breve de imagen que permanece. La segunda pantalla debe mantener imagen después del logotipo para sustentar la hipótesis de pantalla principal. Un código de memoria solo cuenta si se identificó mediante el manual, o si una prueba de memoria informó errores. Sin señal en dos pantallas admite varias causas. |
+| Sistema y almacenamiento | Reinicio previo al sistema y etapa de arranque alcanzada son hechos distintos. `p10=Sí` significa **unidad detectada** y registra `s_unidad_no_detectada=falso`; `p10=No` registra `verdadero`. La regla de archivos de arranque requiere etapa alcanzada y unidad presente. |
+| Temperatura | `d_sobrecalentamiento` ahora se presenta como «Temperatura anormal medida» y exige una medición alta. `d_indicios_termicos` exige calor percibido más ruido de ventilador o apagado bajo carga; no afirma una medición. |
+| Conectividad | Fallo web, tipo de enlace, otros dispositivos, Wi-Fi activo y aviso de cable son observaciones distintas. Si una página abre, se pueden registrar cortes intermitentes o una página concreta que falla. Solo una comparación simultánea o de la misma página en otro dispositivo activa las nuevas reglas de red compartida/local. Un No a «¿intentas usar Wi-Fi?» no confirma Ethernet. |
+| Rendimiento | Lentitud al abrir programas y congelamientos se separaron. También se separó consumo del procesador y del disco. Las reglas directas enlazan cada síntoma con espacio, memoria ocupada o consumo observado; memoria ocupada no significa RAM rota. |
 
-Hay **11 diagnósticos**: ruta de alimentación (`d_ruta_alimentacion`), RAM (`d_memoria_ram`), pantalla principal (`d_pantalla_principal`), subsistema de video (`d_subsistema_video`), detección y salud de almacenamiento (`d_deteccion_almacenamiento`, `d_salud_almacenamiento`), sobrecalentamiento (`d_sobrecalentamiento`), arranque y error crítico del sistema (`d_arranque_so`, `d_error_critico_so`), Wi-Fi inhabilitado y conectividad local (`d_wifi_inhabilitado`, `d_conectividad_local`). Cada uno incluye descripción, categoría y recomendaciones. Los nombres expresan el nivel de certeza disponible: algunos señalan un área de revisión, no una pieza confirmada.
+Se retiraron los hechos compuestos `s_no_enciende`, `s_lentitud_o_congelamientos` y `s_proceso_consumo_alto`. Un JSON técnico que los use se rechaza con una explicación de los nuevos IDs, pues convertirlos automáticamente inventaría observaciones. Los ejemplos incluidos no dependen de esos hechos.
 
-Las **23 reglas** están agrupadas por esas mismas áreas. Algunas condiciones más específicas refuerzan una regla general y pueden llegar a la misma conclusión; esta coincidencia no debe sumarse como probabilidad. La resolución de coincidencias y conflictos se definirá al implementar el motor. Ninguna regla infiere daño de RAM únicamente por reinicios, fallo de almacenamiento únicamente por falta de arranque, ni sobrecalentamiento únicamente por apagados: se exige una señal específica adicional.
+Los diagnósticos añadidos son `d_revision_inicio_energia`, `d_indicios_termicos`, `d_red_compartida` y `d_enlace_cable`. Sus nombres y explicaciones mantienen abierta la causa física. Los demás diagnósticos siguen representando áreas de revisión; por ejemplo, `d_presion_memoria` no confirma una avería de RAM.
 
-## Contrato de datos
+La corrección de coherencia I-01 a I-03 añadió seis hechos atómicos y cuatro reglas directas sin crear diagnósticos nuevos. `s_error_durante_uso` queda deliberadamente fuera de reglas causales: el cuestionario registra ese error y explica que no se identificó causa. La consola integra las reglas generales de energía como evidencia complementaria cuando la prueba sostenida de una segunda pantalla respalda una hipótesis más específica; el Modelo A conserva ambos resultados en su memoria.
 
-Un hecho tiene `id`, `nombre`, `descripcion` y `tipo` (`sintoma` o, para fases futuras, `derivado`). Una observación de un hecho toma exactamente uno de los estados `verdadero`, `falso`, `desconocido`. Los hechos omitidos se normalizan a `desconocido`. `falso` significa que el síntoma se comprobó y no se observó; no significa que no se preguntó.
+## Límites
 
-Cada regla tiene `id`, una lista no vacía de `condiciones`, una `conclusion` y una `explicacion`. Las condiciones son una conjunción: todas deben satisfacerse. Cada condición identifica un hecho y exige `verdadero` o `falso`. Una observación `desconocido` no satisface ninguno de esos requisitos. Las reglas actuales concluyen diagnósticos. El formato admite que reglas futuras concluyan un hecho `derivado` con estado verdadero o falso, lo que permitirá encadenamiento hacia adelante sin alterar el formato de observaciones.
-
-El validador rechaza JSON ilegible, versión no compatible, campos faltantes o extras, tipos incorrectos, textos vacíos, IDs duplicados, referencias no definidas, condiciones repetidas o contradictorias, estados inválidos y conclusiones a síntomas o a la propia condición. Devuelve mensajes con la ubicación del error. La validación es estática: no demuestra que una hipótesis sea correcta en un caso real.
-
-## Decisiones técnicas y límites
-
-- El código POST debe verificarse con el manual del fabricante; un pitido genérico no se etiqueta como fallo de RAM.
-- La ausencia de unidad se refiere a BIOS/UEFI, no solo al explorador de archivos. Los errores de E/S motivan preservar datos antes de cambiar hardware.
-- La temperatura alta requiere una medición y comparación con el rango del fabricante o evidencia de limitación térmica. Ventilador ruidoso o apagado por sí solos no justifican esa conclusión.
-- Que otros equipos conecten a la red localiza las primeras pruebas en este equipo, pero no identifica aún DNS, adaptador, cable o router como causa.
-- Los diagnósticos pueden coexistir y las reglas más específicas pueden coincidir con otras generales. El orden, conflicto, trazabilidad de activación y grado de conclusión pertenecen a la Fase 3 y posteriores.
-- La base aún no se ha contrastado con los 80 casos ni con técnicos externos. La precisión y cobertura son desconocidas; se medirán solo con casos de referencia independientes en las fases autorizadas.
-
-## Comprobación reproducible
-
-Desde la raíz ejecutar `python validar_conocimiento.py` y `python -m unittest discover -s tests -v`. En la ejecución de la Fase 2 ambos comandos terminaron correctamente: 20 hechos, 11 diagnósticos, 23 reglas y 6 pruebas superadas. Estas pruebas comprueban integridad de datos y manejo de estados; no prueban eficacia diagnóstica.
+Las pruebas demuestran integridad, activación de reglas y alcanzabilidad dentro del cuestionario. No miden precisión en equipos reales. El Avance 1 conserva inferencia directa y no emplea aprendizaje automático, modelos B/C ni heurísticas de selección. Los 20 casos finales reservados y los 80 casos previstos no se usaron para ajustar reglas.

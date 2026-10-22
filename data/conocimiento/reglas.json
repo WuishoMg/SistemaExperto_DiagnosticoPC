@@ -2,142 +2,740 @@
   "version": 1,
   "reglas": [
     {
-      "id": "r_alimentacion_led",
-      "condiciones": [{"hecho": "s_no_enciende", "estado": "verdadero"}, {"hecho": "s_led_encendido", "estado": "falso"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_ruta_alimentacion"},
-      "explicacion": "El equipo no inicia y el indicador de alimentación permanece apagado; procede revisar la ruta de alimentación."
-    },
-    {
-      "id": "r_alimentacion_ventiladores",
-      "condiciones": [{"hecho": "s_no_enciende", "estado": "verdadero"}, {"hecho": "s_ventiladores_giran", "estado": "falso"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_ruta_alimentacion"},
-      "explicacion": "La ausencia de inicio y de movimiento de ventiladores orienta a comprobar alimentación, sin descartar placa o botón."
-    },
-    {
       "id": "r_ram_codigo_post",
-      "condiciones": [{"hecho": "s_pitidos_ram_post", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_memoria_ram"},
+      "condiciones": [
+        {
+          "hecho": "s_pitidos_ram_post",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_memoria_ram"
+      },
       "explicacion": "Un código POST confirmado como error de memoria es evidencia directa para revisar la RAM."
     },
     {
       "id": "r_ram_prueba",
-      "condiciones": [{"hecho": "s_error_prueba_ram", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_memoria_ram"},
+      "condiciones": [
+        {
+          "hecho": "s_error_prueba_ram",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_memoria_ram"
+      },
       "explicacion": "Los errores reproducibles de una prueba de memoria justifican revisar módulo, conexión y controlador de memoria."
     },
     {
       "id": "r_ram_reinicio_post",
-      "condiciones": [{"hecho": "s_reinicios_post", "estado": "verdadero"}, {"hecho": "s_pitidos_ram_post", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_memoria_ram"},
+      "condiciones": [
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_pitidos_ram_post",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_memoria_ram"
+      },
       "explicacion": "Los reinicios durante POST junto con un código de memoria orientan la revisión de RAM y conexiones."
     },
     {
       "id": "r_pantalla_externa",
-      "condiciones": [{"hecho": "s_sin_imagen", "estado": "verdadero"}, {"hecho": "s_monitor_externo_funciona", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_pantalla_principal"},
+      "condiciones": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_monitor_externo_funciona",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_pantalla_principal"
+      },
       "explicacion": "Hay salida de video en otro monitor, por lo que se debe revisar la pantalla principal y su trayecto de señal."
     },
     {
       "id": "r_video_artefactos",
-      "condiciones": [{"hecho": "s_artefactos_video", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_subsistema_video"},
+      "condiciones": [
+        {
+          "hecho": "s_artefactos_video",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_subsistema_video"
+      },
       "explicacion": "Los artefactos persistentes requieren aislar monitor, cable, controlador y hardware gráfico."
     },
     {
       "id": "r_video_artefactos_error",
-      "condiciones": [{"hecho": "s_artefactos_video", "estado": "verdadero"}, {"hecho": "s_pantalla_azul", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_subsistema_video"},
+      "condiciones": [
+        {
+          "hecho": "s_artefactos_video",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_subsistema_video"
+      },
       "explicacion": "Artefactos y errores críticos simultáneos refuerzan la necesidad de revisar el subsistema de video, sin confirmar la GPU."
     },
     {
       "id": "r_video_sin_salida",
-      "condiciones": [{"hecho": "s_sin_imagen", "estado": "verdadero"}, {"hecho": "s_monitor_externo_funciona", "estado": "falso"}, {"hecho": "s_led_encendido", "estado": "verdadero"}, {"hecho": "s_ventiladores_giran", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_subsistema_video"},
+      "condiciones": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_monitor_externo_funciona",
+          "estado": "falso"
+        },
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_subsistema_video"
+      },
       "explicacion": "Con señales de energía pero sin imagen en dos pantallas, el trayecto de video es una posibilidad que requiere más pruebas."
     },
     {
       "id": "r_almacenamiento_firmware",
-      "condiciones": [{"hecho": "s_unidad_no_detectada", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_deteccion_almacenamiento"},
+      "condiciones": [
+        {
+          "hecho": "s_unidad_no_detectada",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_deteccion_almacenamiento"
+      },
       "explicacion": "La unidad ausente en BIOS/UEFI exige revisar detección, conexión y estado de la unidad."
     },
     {
       "id": "r_almacenamiento_sin_arranque",
-      "condiciones": [{"hecho": "s_unidad_no_detectada", "estado": "verdadero"}, {"hecho": "s_sin_dispositivo_arranque", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_deteccion_almacenamiento"},
+      "condiciones": [
+        {
+          "hecho": "s_unidad_no_detectada",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_sin_dispositivo_arranque",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_deteccion_almacenamiento"
+      },
       "explicacion": "La ausencia de la unidad en firmware y del dispositivo de arranque respalda una falla de detección."
     },
     {
       "id": "r_almacenamiento_errores_io",
-      "condiciones": [{"hecho": "s_errores_entrada_salida", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_salud_almacenamiento"},
+      "condiciones": [
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_salud_almacenamiento"
+      },
       "explicacion": "Errores registrados de lectura o escritura justifican proteger datos y examinar unidad y conexión."
     },
     {
       "id": "r_almacenamiento_errores_arranque",
-      "condiciones": [{"hecho": "s_errores_entrada_salida", "estado": "verdadero"}, {"hecho": "s_so_no_inicia", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_salud_almacenamiento"},
+      "condiciones": [
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_salud_almacenamiento"
+      },
       "explicacion": "Los errores de entrada/salida junto con un arranque fallido hacen prioritaria la revisión de datos y almacenamiento."
     },
     {
       "id": "r_temperatura_medida",
-      "condiciones": [{"hecho": "s_temperatura_alta", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_sobrecalentamiento"},
+      "condiciones": [
+        {
+          "hecho": "s_temperatura_alta",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_sobrecalentamiento"
+      },
       "explicacion": "Una medición térmica anormal es evidencia del sobrecalentamiento observado."
     },
     {
       "id": "r_temperatura_apagado",
-      "condiciones": [{"hecho": "s_temperatura_alta", "estado": "verdadero"}, {"hecho": "s_apagado_bajo_carga", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_sobrecalentamiento"},
+      "condiciones": [
+        {
+          "hecho": "s_temperatura_alta",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_sobrecalentamiento"
+      },
       "explicacion": "La temperatura anormal junto con apagados bajo carga hace razonable investigar la protección térmica."
     },
     {
       "id": "r_temperatura_ventilador",
-      "condiciones": [{"hecho": "s_temperatura_alta", "estado": "verdadero"}, {"hecho": "s_ventilador_ruidoso", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_sobrecalentamiento"},
+      "condiciones": [
+        {
+          "hecho": "s_temperatura_alta",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_ventilador_ruidoso",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_sobrecalentamiento"
+      },
       "explicacion": "La temperatura anormal acompañada de ventilación ruidosa orienta a revisar la refrigeración."
     },
     {
       "id": "r_so_no_inicia_unidad_presente",
-      "condiciones": [{"hecho": "s_so_no_inicia", "estado": "verdadero"}, {"hecho": "s_unidad_no_detectada", "estado": "falso"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_arranque_so"},
+      "condiciones": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_post_completado",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_unidad_no_detectada",
+          "estado": "falso"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_arranque_so"
+      },
       "explicacion": "Si el sistema no inicia pero la unidad sí aparece en firmware, se debe revisar configuración y archivos de arranque."
     },
     {
       "id": "r_so_mensaje_unidad_presente",
-      "condiciones": [{"hecho": "s_sin_dispositivo_arranque", "estado": "verdadero"}, {"hecho": "s_unidad_no_detectada", "estado": "falso"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_arranque_so"},
+      "condiciones": [
+        {
+          "hecho": "s_sin_dispositivo_arranque",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_unidad_no_detectada",
+          "estado": "falso"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_arranque_so"
+      },
       "explicacion": "El firmware detecta la unidad pero no un arranque válido; conviene revisar orden, modo y archivos de inicio."
     },
     {
       "id": "r_so_error_critico",
-      "condiciones": [{"hecho": "s_pantalla_azul", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_error_critico_so"},
+      "condiciones": [
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_error_critico_so"
+      },
       "explicacion": "Un error crítico observado exige registrar su código y buscar la causa sin atribuirla todavía al sistema operativo."
     },
     {
       "id": "r_wifi_sin_red",
-      "condiciones": [{"hecho": "s_sin_red", "estado": "verdadero"}, {"hecho": "s_wifi_deshabilitado", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_wifi_inhabilitado"},
+      "condiciones": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_conexion_wifi_intentada",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_wifi_deshabilitado",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_wifi_inhabilitado"
+      },
       "explicacion": "La falta de red coincide con un adaptador Wi-Fi deshabilitado; habilitarlo es una primera prueba verificable."
     },
     {
       "id": "r_wifi_otros_conectan",
-      "condiciones": [{"hecho": "s_sin_red", "estado": "verdadero"}, {"hecho": "s_wifi_deshabilitado", "estado": "verdadero"}, {"hecho": "s_otros_equipos_conectan", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_wifi_inhabilitado"},
+      "condiciones": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_conexion_wifi_intentada",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_wifi_deshabilitado",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_otros_equipos_conectan",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_wifi_inhabilitado"
+      },
       "explicacion": "Otros dispositivos funcionan y este equipo tiene Wi-Fi deshabilitado; la configuración local merece revisión."
     },
     {
       "id": "r_red_otros_conectan",
-      "condiciones": [{"hecho": "s_sin_red", "estado": "verdadero"}, {"hecho": "s_otros_equipos_conectan", "estado": "verdadero"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_conectividad_local"},
+      "condiciones": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_otros_equipos_conectan",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_conectividad_local"
+      },
       "explicacion": "Otros equipos usan la red mientras este no; el problema parece localizado en este equipo o su enlace."
     },
     {
       "id": "r_red_wifi_habilitado",
-      "condiciones": [{"hecho": "s_sin_red", "estado": "verdadero"}, {"hecho": "s_otros_equipos_conectan", "estado": "verdadero"}, {"hecho": "s_wifi_deshabilitado", "estado": "falso"}],
-      "conclusion": {"tipo": "diagnostico", "id": "d_conectividad_local"},
+      "condiciones": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_conexion_wifi_intentada",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_otros_equipos_conectan",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_wifi_deshabilitado",
+          "estado": "falso"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_conectividad_local"
+      },
       "explicacion": "La red funciona en otros equipos y Wi-Fi no está deshabilitado aquí; procede revisar enlace y configuración local."
+    },
+    {
+      "id": "r_alimentacion_sin_senales",
+      "condiciones": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "falso"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "falso"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_ruta_alimentacion"
+      },
+      "explicacion": "No se observan luz ni ventilador al intentar encender; conviene comprobar la ruta de alimentación sin atribuir una pieza concreta."
+    },
+    {
+      "id": "r_inicio_energia_luz",
+      "condiciones": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_revision_inicio_energia"
+      },
+      "explicacion": "Hay una señal de energía, pero falta imagen; el equipo no ha demostrado un inicio correcto y requiere revisar la etapa de arranque o video."
+    },
+    {
+      "id": "r_inicio_energia_ventilador",
+      "condiciones": [
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_revision_inicio_energia"
+      },
+      "explicacion": "Hay una señal de energía, pero falta imagen; el equipo no ha demostrado un inicio correcto y requiere revisar la etapa de arranque o video."
+    },
+    {
+      "id": "r_indicios_termicos_ventilador",
+      "condiciones": [
+        {
+          "hecho": "s_calor_percibido",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_ventilador_ruidoso",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_indicios_termicos"
+      },
+      "explicacion": "Calor percibido y ventilación ruidosa justifican revisar refrigeración; no son una medición de temperatura alta."
+    },
+    {
+      "id": "r_indicios_termicos_apagado",
+      "condiciones": [
+        {
+          "hecho": "s_calor_percibido",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_indicios_termicos"
+      },
+      "explicacion": "Calor percibido y apagado bajo carga sugieren revisar refrigeración; la causa térmica no está confirmada."
+    },
+    {
+      "id": "r_red_compartida",
+      "condiciones": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_otros_equipos_conectan",
+          "estado": "falso"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_red_compartida"
+      },
+      "explicacion": "Tampoco funciona otro dispositivo de la misma red; conviene revisar el enlace o servicio compartido."
+    },
+    {
+      "id": "r_red_cable_desconectado",
+      "condiciones": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_conexion_cable_intentada",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_aviso_cable_desconectado",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_enlace_cable"
+      },
+      "explicacion": "Se intenta usar cable y el equipo informa que no lo detecta; revisar cable, puerto y enlace."
+    },
+    {
+      "id": "r_lentitud_espacio",
+      "condiciones": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_espacio_insuficiente"
+      },
+      "explicacion": "El problema coincide con un aviso de poco espacio; comprobar si liberar espacio mejora el funcionamiento."
+    },
+    {
+      "id": "r_lentitud_memoria",
+      "condiciones": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_presion_memoria"
+      },
+      "explicacion": "La memoria casi agotada durante el problema orienta a revisar programas, no confirma avería de RAM."
+    },
+    {
+      "id": "r_lentitud_cpu",
+      "condiciones": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_proceso_exigente"
+      },
+      "explicacion": "Un programa usa intensamente el procesador durante el problema; identificar la tarea."
+    },
+    {
+      "id": "r_lentitud_disco",
+      "condiciones": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_proceso_disco_alto",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_proceso_exigente"
+      },
+      "explicacion": "Un programa usa intensamente el disco durante el problema; identificar la tarea."
+    },
+    {
+      "id": "r_congelamiento_espacio",
+      "condiciones": [
+        {
+          "hecho": "s_congelamientos",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_espacio_insuficiente"
+      },
+      "explicacion": "El problema coincide con un aviso de poco espacio; comprobar si liberar espacio mejora el funcionamiento."
+    },
+    {
+      "id": "r_congelamiento_memoria",
+      "condiciones": [
+        {
+          "hecho": "s_congelamientos",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_presion_memoria"
+      },
+      "explicacion": "La memoria casi agotada durante el problema orienta a revisar programas, no confirma avería de RAM."
+    },
+    {
+      "id": "r_congelamiento_cpu",
+      "condiciones": [
+        {
+          "hecho": "s_congelamientos",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_proceso_exigente"
+      },
+      "explicacion": "Un programa usa intensamente el procesador durante el problema; identificar la tarea."
+    },
+    {
+      "id": "r_congelamiento_disco",
+      "condiciones": [
+        {
+          "hecho": "s_congelamientos",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_proceso_disco_alto",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_proceso_exigente"
+      },
+      "explicacion": "Un programa usa intensamente el disco durante el problema; identificar la tarea."
+    },
+    {
+      "id": "r_inicio_so_luz",
+      "condiciones": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso"
+        },
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_revision_inicio_energia"
+      },
+      "explicacion": "El equipo muestra energía e imagen, pero el sistema no queda utilizable; hay que investigar la etapa de arranque sin atribuir una pieza."
+    },
+    {
+      "id": "r_inicio_so_ventilador",
+      "condiciones": [
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso"
+        },
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero"
+        }
+      ],
+      "conclusion": {
+        "tipo": "diagnostico",
+        "id": "d_revision_inicio_energia"
+      },
+      "explicacion": "El equipo muestra energía e imagen, pero el sistema no queda utilizable; hay que investigar la etapa de arranque sin atribuir una pieza."
+    },
+    {
+      "id": "r_pantalla_externa_tras_imagen_transitoria",
+      "condiciones": [
+        {"hecho": "s_imagen_desaparece_tras_inicio", "estado": "verdadero"},
+        {"hecho": "s_monitor_externo_funciona", "estado": "verdadero"}
+      ],
+      "conclusion": {"tipo": "diagnostico", "id": "d_pantalla_principal"},
+      "explicacion": "La imagen desaparece en la pantalla principal, pero continúa en otra pantalla probada; conviene revisar la pantalla principal y su conexión."
+    },
+    {
+      "id": "r_red_intermitente_compartida",
+      "condiciones": [
+        {"hecho": "s_red_intermitente", "estado": "verdadero"},
+        {"hecho": "s_otros_equipos_fallan_al_mismo_tiempo", "estado": "verdadero"}
+      ],
+      "conclusion": {"tipo": "diagnostico", "id": "d_red_compartida"},
+      "explicacion": "Dos equipos pierden conexión al mismo tiempo; corresponde revisar la red que comparten sin afirmar qué componente falla."
+    },
+    {
+      "id": "r_red_intermitente_local",
+      "condiciones": [
+        {"hecho": "s_red_intermitente", "estado": "verdadero"},
+        {"hecho": "s_otros_equipos_fallan_al_mismo_tiempo", "estado": "falso"}
+      ],
+      "conclusion": {"tipo": "diagnostico", "id": "d_conectividad_local"},
+      "explicacion": "Durante el corte de este equipo, otro dispositivo de la misma red sigue conectado; la causa concreta sigue pendiente."
+    },
+    {
+      "id": "r_red_pagina_fallida_local",
+      "condiciones": [
+        {"hecho": "s_pagina_especifica_falla", "estado": "verdadero"},
+        {"hecho": "s_pagina_fallida_abre_en_otro", "estado": "verdadero"}
+      ],
+      "conclusion": {"tipo": "diagnostico", "id": "d_conectividad_local"},
+      "explicacion": "La misma página abre en otro equipo de la red, pero falla en esta computadora; se requiere aislar la causa local."
     }
   ]
 }

@@ -2,124 +2,292 @@
   "version": 1,
   "preguntas": [
     {
-      "id": "p01", "hecho": "s_no_enciende",
-      "pregunta": "¿Notas alguna señal de encendido al presionar el botón de la computadora?",
-      "ayuda": "Por ejemplo, una luz que se prende o el sonido de un ventilador. Si no ocurre nada, responde No.",
-      "estado_si": "falso", "estado_no": "verdadero"
+      "id": "p02",
+      "hecho": "s_led_encendido",
+      "pregunta": "¿Se enciende alguna luz de la computadora al pulsar el botón de encendido?",
+      "ayuda": "Mira el equipo, no la luz del monitor.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p02", "hecho": "s_led_encendido",
-      "pregunta": "¿Se enciende alguna luz de la computadora cuando presionas el botón de encendido?",
-      "ayuda": "Observa las luces de la computadora, no la luz del monitor o del cargador.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p03",
+      "hecho": "s_ventiladores_giran",
+      "pregunta": "¿Gira algún ventilador de la computadora al intentar encenderla?",
+      "ayuda": "Puedes escuchar el giro o sentir aire; no abras el equipo.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p03", "hecho": "s_ventiladores_giran",
-      "pregunta": "¿Escuchas o ves que gira algún ventilador de la computadora al encenderla?",
-      "ayuda": "Puede sentirse aire saliendo por una rejilla. No abras el equipo para comprobarlo; si no puedes saberlo, elige No estoy seguro.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p04",
+      "hecho": "s_pitidos_ram_post",
+      "pregunta": "¿El manual del equipo identifica los pitidos de inicio como un problema de memoria?",
+      "ayuda": "Si no consultaste el significado de los pitidos, responde No estoy seguro.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p04", "hecho": "s_pitidos_ram_post",
-      "pregunta": "¿Al encenderla escuchas pitidos que el manual del equipo identifica como un problema de memoria?",
-      "ayuda": "La memoria guarda datos mientras la computadora trabaja. No cualquier pitido indica esta falla; si no consultaste el manual, elige No estoy seguro.",
-      "estado_si": "verdadero", "estado_no": "falso"
-    },
-    {
-      "id": "p05", "hecho": "s_error_prueba_ram",
+      "id": "p05",
+      "hecho": "s_error_prueba_ram",
       "pregunta": "¿Una prueba de memoria de la computadora mostró errores?",
       "ayuda": "Una prueba de memoria es un programa que revisa esa pieza. Si no ejecutaste una prueba, elige No estoy seguro.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p06", "hecho": "s_reinicios_post",
-      "pregunta": "¿La computadora se reinicia varias veces antes de que aparezca Windows u otro sistema?",
-      "ayuda": "Observa si vuelve una y otra vez al logo inicial sin llegar a la pantalla de inicio de sesión.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p06",
+      "hecho": "s_reinicios_post",
+      "pregunta": "¿La computadora se reinicia repetidamente antes de mostrar el inicio del sistema?",
+      "ayuda": "Observa si vuelve a empezar antes del logotipo de Windows u otro sistema.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p07", "hecho": "s_sin_imagen",
-      "pregunta": "¿Aparece alguna imagen en la pantalla principal al encender la computadora?",
-      "ayuda": "Cuenta también un logo o un mensaje de inicio. Si la pantalla queda completamente negra, responde No.",
-      "estado_si": "falso", "estado_no": "verdadero"
+      "id": "p07",
+      "hecho": "s_sin_imagen",
+      "pregunta": "¿La pantalla principal muestra alguna imagen al encender la computadora?",
+      "ayuda": "También cuenta un logotipo o mensaje de inicio.",
+      "estado_si": "falso",
+      "estado_no": "verdadero"
     },
     {
-      "id": "p08", "hecho": "s_monitor_externo_funciona",
-      "pregunta": "¿Aparece imagen al conectar la computadora a otra pantalla que sabes que funciona?",
-      "ayuda": "Puede ser otro monitor o un televisor conectado con un cable adecuado. Si no hiciste esta prueba, elige No estoy seguro.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p08",
+      "hecho": "s_monitor_externo_funciona",
+      "pregunta": "¿La imagen permanece visible al probar con otra pantalla que sabes que funciona?",
+      "ayuda": "Obsérvala también después del logotipo inicial. Si no hiciste la prueba, responde No estoy seguro.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p09", "hecho": "s_artefactos_video",
-      "pregunta": "¿Ves líneas, cuadros o colores extraños que permanecen en la imagen?",
-      "ayuda": "Busca distorsiones que no sean reflejos ni suciedad sobre la pantalla.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p09",
+      "hecho": "s_artefactos_video",
+      "pregunta": "¿Ves distorsiones que permanecen en la imagen?",
+      "ayuda": "Por ejemplo, líneas o cuadros que no sean suciedad de la pantalla.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p10", "hecho": "s_unidad_no_detectada",
-      "pregunta": "¿Aparece la unidad donde está instalado el sistema en la configuración inicial de la computadora?",
-      "ayuda": "La unidad es el disco o memoria interna. Esa configuración suele llamarse BIOS o UEFI y se abre antes de Windows; si no la revisaste, elige No estoy seguro.",
-      "estado_si": "falso", "estado_no": "verdadero"
+      "id": "p10",
+      "hecho": "s_unidad_no_detectada",
+      "pregunta": "¿Aparece la unidad del sistema en la configuración inicial de la computadora?",
+      "ayuda": "Es el disco interno; si no revisaste esa pantalla, responde No estoy seguro.",
+      "estado_si": "falso",
+      "estado_no": "verdadero"
     },
     {
-      "id": "p11", "hecho": "s_errores_entrada_salida",
-      "pregunta": "¿La computadora muestra errores al leer o guardar archivos en la unidad?",
-      "ayuda": "Busca mensajes de error de lectura o escritura del disco. Que funcione lento, por sí solo, no cuenta como este error.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p11",
+      "hecho": "s_errores_entrada_salida",
+      "pregunta": "¿Aparece algún error de acceso a los archivos de la unidad?",
+      "ayuda": "Por ejemplo, un aviso de que no se pudo leer un archivo.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p12", "hecho": "s_sin_dispositivo_arranque",
-      "pregunta": "¿Al encenderla aparece un mensaje que dice que no se encontró un dispositivo para iniciar?",
-      "ayuda": "Por ejemplo, un mensaje como 'No bootable device' antes de que aparezca Windows.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p12",
+      "hecho": "s_sin_dispositivo_arranque",
+      "pregunta": "¿Aparece un mensaje que dice que no se encontró un dispositivo para iniciar?",
+      "ayuda": "Puede decir No bootable device.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p13", "hecho": "s_temperatura_alta",
-      "pregunta": "¿Una medición muestra que alguna pieza supera su temperatura recomendada?",
-      "ayuda": "Compara una lectura de temperatura con el límite indicado por el fabricante. Sentir caliente la carcasa no basta; si no mediste, elige No estoy seguro.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p13",
+      "hecho": "s_temperatura_alta",
+      "pregunta": "¿Una medición supera el límite de temperatura indicado para alguna pieza?",
+      "ayuda": "Si no mediste ni conoces el límite, responde No estoy seguro.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p14", "hecho": "s_apagado_bajo_carga",
-      "pregunta": "¿La computadora se apaga sola al jugar o usar un programa exigente?",
-      "ayuda": "Debe apagarse de golpe mientras trabaja, no entrar en reposo después de estar inactiva.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p14",
+      "hecho": "s_apagado_bajo_carga",
+      "pregunta": "¿La computadora se apaga de golpe mientras ejecutas una tarea exigente?",
+      "ayuda": "Por ejemplo, durante un juego; el reposo normal no cuenta.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p15", "hecho": "s_ventilador_ruidoso",
-      "pregunta": "¿Escuchas un ventilador mucho más fuerte de lo habitual mientras usas la computadora?",
-      "ayuda": "Busca un ruido de aire o del ventilador, no sonido de los altavoces.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p15",
+      "hecho": "s_ventilador_ruidoso",
+      "pregunta": "¿Un ventilador suena mucho más fuerte de lo habitual durante el uso?",
+      "ayuda": "Piensa en ruido de aire, no de los altavoces.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p16", "hecho": "s_so_no_inicia",
-      "pregunta": "¿Windows u otro sistema termina de iniciar y te deja usar la computadora?",
-      "ayuda": "Si se queda en el logo o en una pantalla de reparación, responde No. Si ni siquiera enciende, elige No estoy seguro.",
-      "estado_si": "falso", "estado_no": "verdadero"
+      "id": "p16",
+      "hecho": "s_so_no_inicia",
+      "pregunta": "¿El sistema termina de iniciar y te deja usar la computadora?",
+      "ayuda": "Si queda en el inicio o reparación, responde No.",
+      "estado_si": "falso",
+      "estado_no": "verdadero"
     },
     {
-      "id": "p17", "hecho": "s_pantalla_azul",
-      "pregunta": "¿Aparece una pantalla azul con error o un aviso de fallo grave mientras usas la computadora?",
-      "ayuda": "Debe ser un aviso de fallo del sistema; un fondo azul normal no cuenta.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p17",
+      "hecho": "s_pantalla_azul",
+      "pregunta": "¿Aparece una pantalla azul con un código de error?",
+      "ayuda": "Puede aparecer al iniciar o mientras usas el equipo.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p18", "hecho": "s_sin_red",
-      "pregunta": "¿Funciona en esta computadora la conexión a la red que intentas usar?",
-      "ayuda": "Prueba abrir una página si usas Internet, o un recurso de tu red local. Si no hiciste la prueba, elige No estoy seguro.",
-      "estado_si": "falso", "estado_no": "verdadero"
+      "id": "p18",
+      "hecho": "s_sin_red",
+      "pregunta": "¿Puedes abrir una página web desde esta computadora ahora?",
+      "ayuda": "Prueba una página que normalmente funciona.",
+      "estado_si": "falso",
+      "estado_no": "verdadero"
     },
     {
-      "id": "p19", "hecho": "s_otros_equipos_conectan",
-      "pregunta": "¿Otros dispositivos pueden usar la misma red al mismo tiempo?",
-      "ayuda": "Por ejemplo, un teléfono conectado a la misma red de casa mientras compruebas la computadora.",
-      "estado_si": "verdadero", "estado_no": "falso"
+      "id": "p19",
+      "hecho": "s_otros_equipos_conectan",
+      "pregunta": "¿Otro dispositivo de la misma red puede abrir esa página ahora?",
+      "ayuda": "Prueba, por ejemplo, un teléfono conectado a tu red de casa.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     },
     {
-      "id": "p20", "hecho": "s_wifi_deshabilitado",
-      "pregunta": "¿El Wi-Fi de esta computadora está activado y el modo avión apagado?",
-      "ayuda": "Wi-Fi es la conexión inalámbrica. Revisa el icono o la configuración de red; si no puedes comprobarlo, elige No estoy seguro.",
-      "estado_si": "falso", "estado_no": "verdadero"
+      "id": "p20",
+      "hecho": "s_wifi_deshabilitado",
+      "pregunta": "¿Está encendido el Wi-Fi de esta computadora?",
+      "ayuda": "Mira el control de Wi-Fi; si no lo encuentras, responde No estoy seguro.",
+      "estado_si": "falso",
+      "estado_no": "verdadero"
+    },
+    {
+      "id": "p21",
+      "hecho": "s_lentitud_programas",
+      "pregunta": "¿Tu computadora tarda demasiado en abrir programas?",
+      "ayuda": "Compáralo con su funcionamiento habitual.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p22",
+      "hecho": "s_espacio_sistema_bajo",
+      "pregunta": "¿El sistema te avisa que queda muy poco espacio en la unidad principal?",
+      "ayuda": "Es la unidad donde está instalado el sistema. Si no viste un aviso ni revisaste el espacio, elige No estoy seguro.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p23",
+      "hecho": "s_uso_memoria_alto",
+      "pregunta": "¿El uso de memoria se mantiene casi lleno mientras ocurre el problema?",
+      "ayuda": "Puedes verlo en el administrador de tareas; si no lo revisaste, responde No estoy seguro.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p24",
+      "hecho": "s_proceso_cpu_alto",
+      "pregunta": "¿Un programa mantiene casi al máximo el uso del procesador mientras ocurre el problema?",
+      "ayuda": "El administrador de tareas muestra el uso de cada programa.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p25",
+      "hecho": "s_conexion_wifi_intentada",
+      "pregunta": "¿Estás intentando conectar esta computadora mediante Wi-Fi?",
+      "ayuda": "Wi-Fi es la conexión inalámbrica.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p26",
+      "hecho": "s_post_completado",
+      "pregunta": "¿La computadora pasa de la pantalla inicial de la marca a otra pantalla de inicio?",
+      "ayuda": "Puede aparecer el inicio del sistema o un mensaje de arranque.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p27",
+      "hecho": "s_congelamientos",
+      "pregunta": "¿La computadora deja de responder mientras la utilizas?",
+      "ayuda": "Por ejemplo, no responde al ratón durante un rato.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p28",
+      "hecho": "s_proceso_disco_alto",
+      "pregunta": "¿Un programa mantiene casi al máximo el uso del disco mientras ocurre el problema?",
+      "ayuda": "Si no revisaste el uso del disco, responde No estoy seguro.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p29",
+      "hecho": "s_conexion_cable_intentada",
+      "pregunta": "¿Hay un cable de red conectado a esta computadora para usar Internet?",
+      "ayuda": "Es el cable que va al router o a una toma de red.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p30",
+      "hecho": "s_calor_percibido",
+      "pregunta": "¿La carcasa se siente mucho más caliente de lo habitual durante el uso?",
+      "ayuda": "Describe lo que notas al tocarla; no equivale a una temperatura medida.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p31",
+      "hecho": "s_aviso_cable_desconectado",
+      "pregunta": "¿La computadora muestra un aviso de que el cable de red está desconectado?",
+      "ayuda": "Si no puedes ver el estado de la conexión, responde No estoy seguro.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p32",
+      "hecho": "s_imagen_desaparece_tras_inicio",
+      "pregunta": "¿La imagen de la pantalla principal desaparece después del logotipo o mensaje inicial?",
+      "ayuda": "Responde Sí si viste una imagen breve y después la pantalla quedó sin imagen. Si permanece visible, responde No.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p33",
+      "hecho": "s_red_intermitente",
+      "pregunta": "¿La conexión de esta computadora deja de funcionar por momentos?",
+      "ayuda": "Piensa en cortes mientras usas Internet, aunque la página de prueba haya abierto ahora.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p34",
+      "hecho": "s_pagina_especifica_falla",
+      "pregunta": "¿Una página web concreta que necesitas usar falla ahora en esta computadora?",
+      "ayuda": "Prueba la página que motivó tu consulta. Si no la probaste ahora, responde No estoy seguro.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p35",
+      "hecho": "s_error_durante_uso",
+      "pregunta": "¿Aparece otro mensaje de error mientras usas el sistema después de iniciar?",
+      "ayuda": "Piensa en un mensaje diferente de la pantalla azul o del aviso de acceso a archivos ya preguntados.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p36",
+      "hecho": "s_otros_equipos_fallan_al_mismo_tiempo",
+      "pregunta": "¿Otro dispositivo de la misma red pierde la conexión al mismo tiempo?",
+      "ayuda": "Compáralos durante un corte real; si no lo observaste, responde No estoy seguro.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
+    },
+    {
+      "id": "p37",
+      "hecho": "s_pagina_fallida_abre_en_otro",
+      "pregunta": "¿La página que falla aquí sí abre en otro dispositivo de la misma red?",
+      "ayuda": "Prueba la misma página en ambos equipos; si no hiciste la prueba, responde No estoy seguro.",
+      "estado_si": "verdadero",
+      "estado_no": "falso"
     }
   ]
 }

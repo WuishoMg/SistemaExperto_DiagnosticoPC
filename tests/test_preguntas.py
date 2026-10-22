@@ -23,15 +23,15 @@ class PruebasPreguntas(unittest.TestCase):
 
     def test_catalogo_visible_valido(self):
         preguntas = validar_preguntas(self.documento, self.sintomas)
-        self.assertEqual(len(preguntas), 20)
-        self.assertEqual(len({pregunta.id for pregunta in preguntas}), 20)
+        self.assertEqual(len(preguntas), 36)
+        self.assertEqual(len({pregunta.id for pregunta in preguntas}), 36)
 
     def test_rechaza_duplicados_faltantes_y_polaridad_invalida(self):
         cambios = (
-            (lambda doc: doc["preguntas"][1].update(id="p01"), "ID de pregunta duplicado"),
-            (lambda doc: doc["preguntas"][1].update(hecho="s_no_enciende"), "pregunta duplicada"),
+            (lambda doc: doc["preguntas"][1].update(id="p02"), "ID de pregunta duplicado"),
+            (lambda doc: doc["preguntas"][1].update(hecho="s_led_encendido"), "pregunta duplicada"),
             (lambda doc: doc["preguntas"].pop(), "Faltan preguntas"),
-            (lambda doc: doc["preguntas"][0].update(estado_no="falso"), "orden opuesto"),
+            (lambda doc: doc["preguntas"][0].update(estado_no="verdadero"), "orden opuesto"),
             (lambda doc: doc["preguntas"][0].update(ayuda=""), "texto no vacío"),
         )
         for cambiar, mensaje in cambios:

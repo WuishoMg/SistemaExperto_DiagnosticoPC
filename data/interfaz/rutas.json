@@ -1,0 +1,1556 @@
+{
+  "version": 2,
+  "categorias": [
+    {
+      "id": "alimentacion",
+      "nombre": "Mi computadora no enciende",
+      "inicio": "p02",
+      "nodos": {
+        "p02": {
+          "si": "p03",
+          "no": "p03",
+          "desconocido": "p03"
+        },
+        "p03": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "falso"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "falso"
+                }
+              ],
+              "ir": "@resultado"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p07"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p07"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "falso"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "falso"
+                }
+              ],
+              "ir": "@resultado"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p07"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p07"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "falso"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "falso"
+                }
+              ],
+              "ir": "@resultado"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p07"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p07"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ]
+        },
+        "p07": {
+          "si": "p16",
+          "no": "@resultado",
+          "desconocido": "@insuficiente"
+        },
+        "p16": {
+          "si": "@insuficiente",
+          "no": "@bloqueo_sistema",
+          "desconocido": "@insuficiente"
+        }
+      }
+    },
+    {
+      "id": "lentitud",
+      "nombre": "Mi computadora está lenta o se congela",
+      "inicio": "p21",
+      "nodos": {
+        "p21": {
+          "si": "p27",
+          "no": "p27",
+          "desconocido": "p27"
+        },
+        "p27": {
+          "si": "p22",
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_lentitud_programas",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p22"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_lentitud_programas",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p22"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ]
+        },
+        "p22": {
+          "si": "p23",
+          "no": "p23",
+          "desconocido": "p23"
+        },
+        "p23": {
+          "si": "p24",
+          "no": "p24",
+          "desconocido": "p24"
+        },
+        "p24": {
+          "si": "p28",
+          "no": "p28",
+          "desconocido": "p28"
+        },
+        "p28": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_congelamientos",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_proceso_disco_alto",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_congelamientos",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_proceso_disco_alto",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_congelamientos",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_proceso_disco_alto",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ]
+        },
+        "p11": {
+          "si": "@resultado",
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_congelamientos",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p05"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_congelamientos",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p05"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ]
+        },
+        "p05": {
+          "si": "@resultado",
+          "no": "@resultado",
+          "desconocido": "@resultado"
+        }
+      }
+    },
+    {
+      "id": "video",
+      "nombre": "Mi computadora enciende, pero no muestra imagen",
+      "inicio": "p07",
+      "nodos": {
+        "p07": {
+          "si": "p32",
+          "no": "p02",
+          "desconocido": "p02"
+        },
+        "p32": {
+          "si": "p08",
+          "no": "p09",
+          "desconocido": "p09"
+        },
+        "p09": {
+          "si": "@resultado",
+          "no": [
+            {"cuando": [{"hecho": "s_imagen_desaparece_tras_inicio", "estado": "falso"}], "ir": "@bloqueo_imagen"},
+            {"ir": "@insuficiente"}
+          ],
+          "desconocido": [
+            {"cuando": [{"hecho": "s_imagen_desaparece_tras_inicio", "estado": "falso"}], "ir": "@bloqueo_imagen"},
+            {"ir": "@insuficiente"}
+          ]
+        },
+        "p02": {
+          "si": "p03",
+          "no": "p03",
+          "desconocido": "p03"
+        },
+        "p03": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "falso"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "falso"
+                }
+              ],
+              "ir": "@bloqueo_energia"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_imagen",
+                  "estado": "verdadero"
+                },
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p08"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_imagen",
+                  "estado": "verdadero"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p08"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "falso"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "falso"
+                }
+              ],
+              "ir": "@bloqueo_energia"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_imagen",
+                  "estado": "verdadero"
+                },
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p08"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_imagen",
+                  "estado": "verdadero"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p08"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "falso"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "falso"
+                }
+              ],
+              "ir": "@bloqueo_energia"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_imagen",
+                  "estado": "verdadero"
+                },
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p08"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_imagen",
+                  "estado": "verdadero"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p08"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ]
+        },
+        "p08": {
+          "si": "@resultado",
+          "no": "p04",
+          "desconocido": "p04"
+        },
+        "p04": {
+          "si": "p06",
+          "no": "p06",
+          "desconocido": "p06"
+        },
+        "p06": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_pitidos_ram_post",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "@resultado"
+            },
+            {
+              "ir": "p05"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_pitidos_ram_post",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "@resultado"
+            },
+            {
+              "ir": "p05"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_pitidos_ram_post",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "@resultado"
+            },
+            {
+              "ir": "p05"
+            }
+          ]
+        },
+        "p05": {
+          "si": "@resultado",
+          "no": "@resultado",
+          "desconocido": "@resultado"
+        }
+      }
+    },
+    {
+      "id": "sistema",
+      "nombre": "El sistema operativo no inicia o presenta errores",
+      "inicio": "p16",
+      "nodos": {
+        "p16": {
+          "si": "p17",
+          "no": "p06",
+          "desconocido": "p17"
+        },
+        "p06": {
+          "si": "p04",
+          "no": "p26",
+          "desconocido": "p26"
+        },
+        "p26": {
+          "si": "p12",
+          "no": "p04",
+          "desconocido": "p12"
+        },
+        "p12": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_post_completado",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_dispositivo_arranque",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "ir": "p04"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_post_completado",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_dispositivo_arranque",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "ir": "p04"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_post_completado",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_dispositivo_arranque",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "ir": "p04"
+            }
+          ]
+        },
+        "p10": {
+          "si": "p17",
+          "no": "p17",
+          "desconocido": "p17"
+        },
+        "p17": {
+          "si": "p09",
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_so_no_inicia",
+                  "estado": "desconocido"
+                }
+              ],
+              "ir": "@insuficiente"
+            },
+            {
+              "ir": "p11"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_so_no_inicia",
+                  "estado": "desconocido"
+                }
+              ],
+              "ir": "@insuficiente"
+            },
+            {
+              "ir": "p11"
+            }
+          ]
+        },
+        "p09": {
+          "si": "p11",
+          "no": "p11",
+          "desconocido": "p11"
+        },
+        "p11": {
+          "si": "@resultado",
+          "no": [
+            {"cuando": [
+              {"hecho": "s_so_no_inicia", "estado": "falso"},
+              {"hecho": "s_pantalla_azul", "estado": "falso"}
+            ], "ir": "p35"},
+            {"cuando": [
+              {"hecho": "s_so_no_inicia", "estado": "falso"},
+              {"hecho": "s_pantalla_azul", "estado": "desconocido"}
+            ], "ir": "p35"},
+            {"ir": "@resultado"}
+          ],
+          "desconocido": [
+            {"cuando": [
+              {"hecho": "s_so_no_inicia", "estado": "falso"},
+              {"hecho": "s_pantalla_azul", "estado": "falso"}
+            ], "ir": "p35"},
+            {"cuando": [
+              {"hecho": "s_so_no_inicia", "estado": "falso"},
+              {"hecho": "s_pantalla_azul", "estado": "desconocido"}
+            ], "ir": "p35"},
+            {"ir": "@resultado"}
+          ]
+        },
+        "p35": {
+          "si": "@error_uso_sin_causa",
+          "no": "@insuficiente",
+          "desconocido": "@insuficiente"
+        },
+        "p04": {
+          "si": "@resultado",
+          "no": "p05",
+          "desconocido": "p05"
+        },
+        "p05": {
+          "si": "@resultado",
+          "no": "@resultado",
+          "desconocido": "@resultado"
+        }
+      }
+    },
+    {
+      "id": "temperatura",
+      "nombre": "Mi computadora se calienta o se apaga inesperadamente",
+      "inicio": "p30",
+      "nodos": {
+        "p30": {
+          "si": "p14",
+          "no": "p14",
+          "desconocido": "p14"
+        },
+        "p14": {
+          "si": "p15",
+          "no": "p15",
+          "desconocido": "p15"
+        },
+        "p15": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_calor_percibido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_apagado_bajo_carga",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_ventilador_ruidoso",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_calor_percibido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_apagado_bajo_carga",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_ventilador_ruidoso",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_calor_percibido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_apagado_bajo_carga",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_ventilador_ruidoso",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ]
+        },
+        "p13": {
+          "si": "@resultado",
+          "no": "@resultado",
+          "desconocido": "@resultado"
+        }
+      }
+    },
+    {
+      "id": "conectividad",
+      "nombre": "Tengo problemas con Internet o Wi-Fi",
+      "inicio": "p18",
+      "nodos": {
+        "p18": {
+          "si": "p33",
+          "no": "p25",
+          "desconocido": "p33"
+        },
+        "p33": {
+          "si": "p36",
+          "no": "p34",
+          "desconocido": "p34"
+        },
+        "p36": {
+          "si": "@resultado",
+          "no": "@resultado",
+          "desconocido": "@patron_red_sin_causa"
+        },
+        "p34": {
+          "si": "p37",
+          "no": "@insuficiente",
+          "desconocido": "@insuficiente"
+        },
+        "p37": {
+          "si": "@resultado",
+          "no": "@patron_red_sin_causa",
+          "desconocido": "@patron_red_sin_causa"
+        },
+        "p25": {
+          "si": "p20",
+          "no": "p29",
+          "desconocido": "p29"
+        },
+        "p20": {
+          "si": "p19",
+          "no": "p19",
+          "desconocido": "p19"
+        },
+        "p29": {
+          "si": "p31",
+          "no": "p19",
+          "desconocido": "p19"
+        },
+        "p31": {
+          "si": "p19",
+          "no": "p19",
+          "desconocido": "p19"
+        },
+        "p19": {
+          "si": "@resultado",
+          "no": "@resultado",
+          "desconocido": "@resultado"
+        }
+      }
+    },
+    {
+      "id": "general",
+      "nombre": "No estoy seguro de cuál es el problema",
+      "inicio": "p02",
+      "nodos": {
+        "p02": {
+          "si": "p03",
+          "no": "p03",
+          "desconocido": "p03"
+        },
+        "p03": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "falso"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "falso"
+                }
+              ],
+              "ir": "@resultado"
+            },
+            {
+              "ir": "p07"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "falso"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "falso"
+                }
+              ],
+              "ir": "@resultado"
+            },
+            {
+              "ir": "p07"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "falso"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "falso"
+                }
+              ],
+              "ir": "@resultado"
+            },
+            {
+              "ir": "p07"
+            }
+          ]
+        },
+        "p07": {
+          "si": "p16",
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p08"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p08"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_led_encendido",
+                  "estado": "falso"
+                },
+                {
+                  "hecho": "s_ventiladores_giran",
+                  "estado": "falso"
+                }
+              ],
+              "ir": "@bloqueo_energia"
+            },
+            {
+              "ir": "@insuficiente"
+            }
+          ],
+          "desconocido": "@insuficiente"
+        },
+        "p08": {
+          "si": "@resultado",
+          "no": "p06",
+          "desconocido": "p06"
+        },
+        "p16": {
+          "si": "p21",
+          "no": "p06",
+          "desconocido": "p17"
+        },
+        "p06": {
+          "si": "p04",
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_imagen",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p04"
+            },
+            {
+              "ir": "p26"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_imagen",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p04"
+            },
+            {
+              "ir": "p26"
+            }
+          ]
+        },
+        "p26": {
+          "si": "p12",
+          "no": "p04",
+          "desconocido": "p12"
+        },
+        "p12": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_post_completado",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_dispositivo_arranque",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "ir": "p04"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_post_completado",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_dispositivo_arranque",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "ir": "p04"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_post_completado",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_sin_dispositivo_arranque",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p10"
+            },
+            {
+              "ir": "p04"
+            }
+          ]
+        },
+        "p10": {
+          "si": "p17",
+          "no": "p17",
+          "desconocido": "p17"
+        },
+        "p04": {
+          "si": "@resultado",
+          "no": "p05",
+          "desconocido": "p05"
+        },
+        "p05": {
+          "si": "@resultado",
+          "no": "@resultado",
+          "desconocido": "@resultado"
+        },
+        "p17": {
+          "si": "p09",
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_so_no_inicia",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "p09"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_so_no_inicia",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "p09"
+            }
+          ]
+        },
+        "p09": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_pantalla_azul",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_pantalla_azul",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_pantalla_azul",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ]
+        },
+        "p21": {
+          "si": "p27",
+          "no": "p27",
+          "desconocido": "p27"
+        },
+        "p27": {
+          "si": "p22",
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_lentitud_programas",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p22"
+            },
+            {
+              "ir": "p18"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_lentitud_programas",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p22"
+            },
+            {
+              "ir": "p18"
+            }
+          ]
+        },
+        "p22": {
+          "si": "p23",
+          "no": "p23",
+          "desconocido": "p23"
+        },
+        "p23": {
+          "si": "p24",
+          "no": "p24",
+          "desconocido": "p24"
+        },
+        "p24": {
+          "si": "p28",
+          "no": "p28",
+          "desconocido": "p28"
+        },
+        "p28": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_congelamientos",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_proceso_disco_alto",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_congelamientos",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_proceso_disco_alto",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_congelamientos",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_proceso_disco_alto",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p11"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ]
+        },
+        "p11": {
+          "si": "@resultado",
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_congelamientos",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p05"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_congelamientos",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p05"
+            },
+            {
+              "ir": "@resultado"
+            }
+          ]
+        },
+        "p18": {
+          "si": "p30",
+          "no": "p25",
+          "desconocido": "p30"
+        },
+        "p25": {
+          "si": "p20",
+          "no": "p29",
+          "desconocido": "p29"
+        },
+        "p20": {
+          "si": "p19",
+          "no": "p19",
+          "desconocido": "p19"
+        },
+        "p29": {
+          "si": "p31",
+          "no": "p19",
+          "desconocido": "p19"
+        },
+        "p31": {
+          "si": "p19",
+          "no": "p19",
+          "desconocido": "p19"
+        },
+        "p19": {
+          "si": "@resultado",
+          "no": "@resultado",
+          "desconocido": "@resultado"
+        },
+        "p30": {
+          "si": "p14",
+          "no": "p14",
+          "desconocido": "p14"
+        },
+        "p14": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_calor_percibido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p15"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_apagado_bajo_carga",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p15"
+            },
+            {
+              "ir": "p17"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_calor_percibido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p15"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_apagado_bajo_carga",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p15"
+            },
+            {
+              "ir": "p17"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_calor_percibido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p15"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_apagado_bajo_carga",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p15"
+            },
+            {
+              "ir": "p17"
+            }
+          ]
+        },
+        "p15": {
+          "si": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_calor_percibido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_apagado_bajo_carga",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_ventilador_ruidoso",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "ir": "p17"
+            }
+          ],
+          "no": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_calor_percibido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_apagado_bajo_carga",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_ventilador_ruidoso",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "ir": "p17"
+            }
+          ],
+          "desconocido": [
+            {
+              "cuando": [
+                {
+                  "hecho": "s_calor_percibido",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_apagado_bajo_carga",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "cuando": [
+                {
+                  "hecho": "s_ventilador_ruidoso",
+                  "estado": "verdadero"
+                }
+              ],
+              "ir": "p13"
+            },
+            {
+              "ir": "p17"
+            }
+          ]
+        },
+        "p13": {
+          "si": "@resultado",
+          "no": "@resultado",
+          "desconocido": "@resultado"
+        }
+      }
+    }
+  ]
+}

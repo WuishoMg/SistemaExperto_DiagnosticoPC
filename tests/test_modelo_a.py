@@ -44,6 +44,11 @@ class PruebasModeloA(unittest.TestCase):
         confirmado = self.modelo.evaluar(
             {"s_so_no_inicia": "verdadero", "s_unidad_no_detectada": "falso"}
         )
+        self.assertIsNone(confirmado.principal)
+        self.assertEqual(confirmado.memoria.hechos["s_post_completado"], EstadoHecho.DESCONOCIDO)
+        confirmado = self.modelo.evaluar(
+            {"s_so_no_inicia": "verdadero", "s_post_completado": "verdadero", "s_unidad_no_detectada": "falso"}
+        )
         self.assertEqual(confirmado.principal.id, "d_arranque_so")
         self.assertIn("r_so_no_inicia_unidad_presente", confirmado.memoria.reglas_activadas)
 
@@ -93,10 +98,10 @@ class PruebasModeloA(unittest.TestCase):
 
     def test_todas_las_preguntas_tienen_mapeo_explicito_y_ayuda(self):
         invertidas = {
-            "s_no_enciende", "s_sin_imagen", "s_unidad_no_detectada",
+            "s_sin_imagen", "s_unidad_no_detectada",
             "s_so_no_inicia", "s_sin_red", "s_wifi_deshabilitado",
         }
-        self.assertEqual(len(self.preguntas), 20)
+        self.assertEqual(len(self.preguntas), 36)
         self.assertEqual({p.hecho for p in self.preguntas}, self.modelo.sintomas)
         for pregunta in self.preguntas:
             with self.subTest(hecho=pregunta.hecho):
@@ -117,7 +122,7 @@ class PruebasModeloA(unittest.TestCase):
                 )
 
     def test_respuestas_invertidas_activan_las_reglas_existentes(self):
-        seleccion = {"s_unidad_no_detectada": "Sí", "s_so_no_inicia": "No"}
+        seleccion = {"s_unidad_no_detectada": "Sí", "s_so_no_inicia": "No", "s_post_completado": "Sí"}
         entradas = [seleccion.get(p.hecho, "No estoy seguro") for p in self.preguntas]
         respuestas = preguntar_sintomas(
             self.preguntas, io.StringIO("\n".join(entradas) + "\n"), io.StringIO()
@@ -129,12 +134,12 @@ class PruebasModeloA(unittest.TestCase):
         self.assertIn("r_so_no_inicia_unidad_presente", resultado.memoria.reglas_activadas)
 
     def test_no_en_preguntas_de_encendido_conserva_polaridad(self):
-        seleccion = {"s_no_enciende": "No", "s_led_encendido": "No"}
+        seleccion = {"s_led_encendido": "No", "s_ventiladores_giran": "No"}
         entradas = [seleccion.get(p.hecho, "3") for p in self.preguntas]
         respuestas = preguntar_sintomas(
             self.preguntas, io.StringIO("\n".join(entradas) + "\n"), io.StringIO()
         )
-        self.assertEqual(respuestas["s_no_enciende"], "verdadero")
+        self.assertEqual(respuestas["s_ventiladores_giran"], "falso")
         self.assertEqual(respuestas["s_led_encendido"], "falso")
         self.assertEqual(self.modelo.evaluar(respuestas).principal.id, "d_ruta_alimentacion")
 
@@ -145,7 +150,7 @@ class PruebasModeloA(unittest.TestCase):
                 "2": "falso", "n": "falso",
                 "3": "desconocido", "?": "desconocido",
             },
-            "s_no_enciende": {
+            "s_sin_imagen": {
                 "1": "falso", "s": "falso",
                 "2": "verdadero", "n": "verdadero",
                 "3": "desconocido", "?": "desconocido",
@@ -179,10 +184,8 @@ class PruebasModeloA(unittest.TestCase):
                 for frase in frases:
                     self.assertIn(frase, proceso.stdout)
 
-    def test_consola_interactiva_completa(self):
-        respuestas = "\n".join(
-            "1" if pregunta.hecho == "s_pitidos_ram_post" else "3" for pregunta in self.preguntas
-        ) + "\n"
+    def test_consola_interactiva_condicional_sin_encendido(self):
+        respuestas = "1\n2\n2\n3\n\n"
         proceso = subprocess.run(
             [sys.executable, str(RAIZ / "diagnosticar.py")],
             cwd=RAIZ, input=respuestas, capture_output=True, text=True,
@@ -190,10 +193,10 @@ class PruebasModeloA(unittest.TestCase):
             env={**os.environ, "PYTHONIOENCODING": "utf-8"},
         )
         self.assertEqual(proceso.returncode, 0, proceso.stderr)
-        self.assertIn("20/20", proceso.stdout)
+        self.assertIn("¿Qué problema presenta tu computadora?", proceso.stdout)
         self.assertIn("Ayuda:", proceso.stdout)
-        self.assertNotIn("s_pitidos_ram_post", proceso.stdout)
-        self.assertIn("Posible problema de memoria RAM", proceso.stdout)
+        self.assertNotIn("¿La computadora se apaga sola al jugar", proceso.stdout)
+        self.assertIn("Posible problema en la ruta de alimentación", proceso.stdout)
 
 
 if __name__ == "__main__":

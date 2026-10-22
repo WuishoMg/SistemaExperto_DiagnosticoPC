@@ -1,16 +1,185 @@
 {
   "version": 1,
   "diagnosticos": [
-    {"id": "d_ruta_alimentacion", "nombre": "Posible problema en la ruta de alimentación", "categoria": "alimentacion_electrica", "descripcion": "La falta de señales de encendido apunta a revisar alimentación externa, conexiones y circuito de entrada; no identifica todavía la pieza averiada.", "recomendaciones": ["Comprobar toma, cable, cargador o fuente compatible y conexiones sin abrir componentes energizados.", "Si persiste, solicitar revisión técnica de la fuente y la placa antes de sustituir piezas."]},
-    {"id": "d_memoria_ram", "nombre": "Posible problema de memoria RAM", "categoria": "memoria_ram", "descripcion": "Un código POST específico o errores de prueba respaldan una hipótesis de RAM o de su conexión.", "recomendaciones": ["Confirmar el significado del código POST en el manual del fabricante.", "Con el equipo apagado y desconectado, revisar asiento de módulos y repetir una prueba de memoria."]},
-    {"id": "d_pantalla_principal", "nombre": "Posible problema de pantalla principal o su conexión", "categoria": "video", "descripcion": "Si un segundo monitor funciona mientras la pantalla principal no muestra imagen, conviene revisar la pantalla principal y su trayecto de señal.", "recomendaciones": ["Verificar brillo, fuente de entrada, cable y selección de pantalla con componentes conocidos.", "Solicitar revisión del panel o de la conexión interna si el equipo tiene pantalla integrada."]},
-    {"id": "d_subsistema_video", "nombre": "Posible problema del subsistema de video", "categoria": "video", "descripcion": "Los artefactos o la falta de señal de video pueden relacionarse con controlador, GPU, cable o monitor; requiere aislar la causa.", "recomendaciones": ["Probar otro cable y monitor conocidos, y observar si el problema aparece también antes de iniciar el sistema operativo.", "Revisar controladores y temperatura antes de atribuir la falla a la GPU."]},
-    {"id": "d_deteccion_almacenamiento", "nombre": "Posible problema de detección de almacenamiento", "categoria": "almacenamiento", "descripcion": "La unidad ausente en BIOS/UEFI indica un problema de detección, conexión o de la propia unidad.", "recomendaciones": ["Comprobar la detección en BIOS/UEFI y la configuración de arranque.", "Con el equipo apagado, revisar conexiones accesibles; preservar datos antes de reemplazar la unidad."]},
-    {"id": "d_salud_almacenamiento", "nombre": "Posible deterioro de unidad o enlace de almacenamiento", "categoria": "almacenamiento", "descripcion": "Errores de entrada/salida justifican revisar la integridad de la unidad y su conexión, sin asumir cuál de ambos falla.", "recomendaciones": ["Realizar una copia de seguridad si la unidad sigue accesible.", "Consultar registros y diagnóstico de la unidad y revisar cable o puerto antes de reemplazar componentes."]},
-    {"id": "d_sobrecalentamiento", "nombre": "Sobrecalentamiento observado", "categoria": "temperatura", "descripcion": "Una medición térmica anormal indica un problema de temperatura; los apagados o ventiladores ruidosos pueden reforzar la hipótesis.", "recomendaciones": ["Reducir la carga y verificar ventilación, polvo y funcionamiento de ventiladores con el equipo apagado.", "Contrastar la medición con límites del fabricante; pedir servicio técnico si persiste."]},
-    {"id": "d_arranque_so", "nombre": "Posible problema de configuración o archivos de arranque", "categoria": "sistema_operativo", "descripcion": "El fallo de arranque con la unidad detectada apunta a revisar orden de arranque y estructura de inicio; aún puede haber otras causas.", "recomendaciones": ["Verificar orden y modo de arranque en BIOS/UEFI sin formatear la unidad.", "Respaldar datos cuando sea posible y usar herramientas oficiales de reparación del sistema."]},
-    {"id": "d_error_critico_so", "nombre": "Error crítico del sistema de causa pendiente", "categoria": "sistema_operativo", "descripcion": "Una pantalla azul señala inestabilidad, pero por sí sola no distingue controlador, software o hardware.", "recomendaciones": ["Registrar el código y momento del error y revisar eventos del sistema.", "Comprobar cambios recientes de controladores y realizar pruebas de hardware antes de atribuir una causa."]},
-    {"id": "d_wifi_inhabilitado", "nombre": "Conectividad Wi-Fi inhabilitada", "categoria": "conectividad", "descripcion": "El adaptador deshabilitado puede explicar la falta de conexión Wi-Fi de este equipo.", "recomendaciones": ["Desactivar modo avión y habilitar el adaptador Wi-Fi.", "Verificar la conexión de nuevo antes de cambiar el router o reinstalar controladores."]},
-    {"id": "d_conectividad_local", "nombre": "Posible problema de conectividad de este equipo", "categoria": "conectividad", "descripcion": "Si otros equipos funcionan en la misma red, conviene concentrar las pruebas en este equipo; todavía no se conoce la causa.", "recomendaciones": ["Revisar enlace, dirección IP, DNS y configuración del adaptador de este equipo.", "Comparar con otro dispositivo de la misma red y registrar los resultados antes de modificar la configuración."]}
+    {
+      "id": "d_ruta_alimentacion",
+      "nombre": "Posible problema en la ruta de alimentación",
+      "categoria": "alimentacion_electrica",
+      "descripcion": "La falta de señales de encendido apunta a revisar alimentación externa, conexiones y circuito de entrada; no identifica todavía la pieza averiada.",
+      "recomendaciones": [
+        "Comprobar toma, cable, cargador o fuente compatible y conexiones sin abrir componentes energizados.",
+        "Si persiste, solicitar revisión técnica de la fuente y la placa antes de sustituir piezas."
+      ]
+    },
+    {
+      "id": "d_memoria_ram",
+      "nombre": "Posible problema de memoria RAM",
+      "categoria": "memoria_ram",
+      "descripcion": "Un código POST específico o errores de prueba respaldan una hipótesis de RAM o de su conexión.",
+      "recomendaciones": [
+        "Confirmar el significado del código POST en el manual del fabricante.",
+        "Con el equipo apagado y desconectado, revisar asiento de módulos y repetir una prueba de memoria."
+      ]
+    },
+    {
+      "id": "d_pantalla_principal",
+      "nombre": "Posible problema de pantalla principal o su conexión",
+      "categoria": "video",
+      "descripcion": "Si un segundo monitor funciona mientras la pantalla principal no muestra imagen, conviene revisar la pantalla principal y su trayecto de señal.",
+      "recomendaciones": [
+        "Verificar brillo, fuente de entrada, cable y selección de pantalla con componentes conocidos.",
+        "Solicitar revisión del panel o de la conexión interna si el equipo tiene pantalla integrada."
+      ]
+    },
+    {
+      "id": "d_subsistema_video",
+      "nombre": "Posible problema del subsistema de video",
+      "categoria": "video",
+      "descripcion": "Los artefactos o la falta de señal de video pueden relacionarse con controlador, GPU, cable o monitor; requiere aislar la causa.",
+      "recomendaciones": [
+        "Probar otro cable y monitor conocidos, y observar si el problema aparece también antes de iniciar el sistema operativo.",
+        "Revisar controladores y temperatura antes de atribuir la falla a la GPU."
+      ]
+    },
+    {
+      "id": "d_deteccion_almacenamiento",
+      "nombre": "Posible problema de detección de almacenamiento",
+      "categoria": "almacenamiento",
+      "descripcion": "La unidad ausente en BIOS/UEFI indica un problema de detección, conexión o de la propia unidad.",
+      "recomendaciones": [
+        "Comprobar la detección en BIOS/UEFI y la configuración de arranque.",
+        "Con el equipo apagado, revisar conexiones accesibles; preservar datos antes de reemplazar la unidad."
+      ]
+    },
+    {
+      "id": "d_salud_almacenamiento",
+      "nombre": "Posible deterioro de unidad o enlace de almacenamiento",
+      "categoria": "almacenamiento",
+      "descripcion": "Errores de entrada/salida justifican revisar la integridad de la unidad y su conexión, sin asumir cuál de ambos falla.",
+      "recomendaciones": [
+        "Realizar una copia de seguridad si la unidad sigue accesible.",
+        "Consultar registros y diagnóstico de la unidad y revisar cable o puerto antes de reemplazar componentes."
+      ]
+    },
+    {
+      "id": "d_sobrecalentamiento",
+      "nombre": "Temperatura anormal medida",
+      "categoria": "temperatura",
+      "descripcion": "Una medición fiable supera el límite recomendado para una pieza. El origen del calor y la causa de un eventual apagado todavía requieren revisión.",
+      "recomendaciones": [
+        "Reducir la carga y verificar ventilación, polvo y funcionamiento de ventiladores con el equipo apagado.",
+        "Contrastar la medición con límites del fabricante; pedir servicio técnico si persiste."
+      ]
+    },
+    {
+      "id": "d_arranque_so",
+      "nombre": "Posible problema de configuración o archivos de arranque",
+      "categoria": "sistema_operativo",
+      "descripcion": "El fallo de arranque con la unidad detectada apunta a revisar orden de arranque y estructura de inicio; aún puede haber otras causas.",
+      "recomendaciones": [
+        "Verificar orden y modo de arranque en BIOS/UEFI sin formatear la unidad.",
+        "Respaldar datos cuando sea posible y usar herramientas oficiales de reparación del sistema."
+      ]
+    },
+    {
+      "id": "d_error_critico_so",
+      "nombre": "Error crítico del sistema de causa pendiente",
+      "categoria": "sistema_operativo",
+      "descripcion": "Una pantalla azul señala inestabilidad, pero por sí sola no distingue controlador, software o hardware.",
+      "recomendaciones": [
+        "Registrar el código y momento del error y revisar eventos del sistema.",
+        "Comprobar cambios recientes de controladores y realizar pruebas de hardware antes de atribuir una causa."
+      ]
+    },
+    {
+      "id": "d_wifi_inhabilitado",
+      "nombre": "Conectividad Wi-Fi inhabilitada",
+      "categoria": "conectividad",
+      "descripcion": "El adaptador deshabilitado puede explicar la falta de conexión Wi-Fi de este equipo.",
+      "recomendaciones": [
+        "Desactivar modo avión y habilitar el adaptador Wi-Fi.",
+        "Verificar la conexión de nuevo antes de cambiar el router o reinstalar controladores."
+      ]
+    },
+    {
+      "id": "d_conectividad_local",
+      "nombre": "Posible problema de conectividad de este equipo",
+      "categoria": "conectividad",
+      "descripcion": "Si otros equipos funcionan en la misma red, conviene concentrar las pruebas en este equipo; todavía no se conoce la causa.",
+      "recomendaciones": [
+        "Revisar enlace, dirección IP, DNS y configuración del adaptador de este equipo.",
+        "Comparar con otro dispositivo de la misma red y registrar los resultados antes de modificar la configuración."
+      ]
+    },
+    {
+      "id": "d_espacio_insuficiente",
+      "nombre": "Posible lentitud por poco espacio disponible",
+      "categoria": "almacenamiento",
+      "descripcion": "La lentitud coincide con un aviso comprobado de poco espacio; aún pueden existir otras causas.",
+      "recomendaciones": [
+        "Revisar el espacio libre en la unidad principal y respaldar los archivos importantes.",
+        "Liberar espacio de forma segura y comprobar si mejora antes de reemplazar componentes."
+      ]
+    },
+    {
+      "id": "d_presion_memoria",
+      "nombre": "Posible lentitud por uso elevado de memoria",
+      "categoria": "memoria_ram",
+      "descripcion": "El uso medido de memoria es muy alto durante la lentitud; esto no demuestra una avería de RAM.",
+      "recomendaciones": [
+        "Cerrar programas que no se necesitan y observar si baja el uso de memoria.",
+        "Revisar qué programas consumen memoria antes de considerar una ampliación de capacidad."
+      ]
+    },
+    {
+      "id": "d_proceso_exigente",
+      "nombre": "Posible lentitud por un programa exigente",
+      "categoria": "sistema_operativo",
+      "descripcion": "Un proceso mantiene alto el uso del procesador o disco durante la lentitud; se desconoce todavía por qué.",
+      "recomendaciones": [
+        "Identificar el programa y comprobar si la tarea que ejecuta explica el consumo.",
+        "Revisar actualizaciones y configuración del programa antes de hacer cambios mayores."
+      ]
+    },
+    {
+      "id": "d_revision_inicio_energia",
+      "nombre": "Posible problema de inicio con energía presente",
+      "categoria": "alimentacion_electrica",
+      "descripcion": "Hay señales de energía, pero falta imagen o el sistema no queda utilizable; esto no identifica todavía la etapa exacta ni la pieza responsable.",
+      "recomendaciones": [
+        "Registrar si aparece imagen y hasta qué pantalla llega el inicio.",
+        "Si persiste, investigar video o arranque en la categoría correspondiente."
+      ]
+    },
+    {
+      "id": "d_indicios_termicos",
+      "nombre": "Indicios de posible problema térmico o de ventilación",
+      "categoria": "temperatura",
+      "descripcion": "El calor percibido acompañado de ruido o apagado orienta a revisar refrigeración; no confirma temperatura alta medida.",
+      "recomendaciones": [
+        "Dejar enfriar el equipo y comprobar que las rejillas estén libres.",
+        "Medir la temperatura si es posible antes de atribuir el apagado a sobrecalentamiento."
+      ]
+    },
+    {
+      "id": "d_red_compartida",
+      "nombre": "Posible problema de la red compartida",
+      "categoria": "conectividad",
+      "descripcion": "La falla simultánea en otro dispositivo de la misma red orienta a revisar la red o servicio compartido sin identificar aún la causa.",
+      "recomendaciones": [
+        "Comprobar el estado del router y de la conexión en más de un dispositivo.",
+        "Si persiste, consultar al responsable de la red o proveedor con los resultados observados."
+      ]
+    },
+    {
+      "id": "d_enlace_cable",
+      "nombre": "Posible problema del enlace de red por cable",
+      "categoria": "conectividad",
+      "descripcion": "El aviso de cable desconectado durante una conexión por cable orienta a revisar el enlace físico sin afirmar que el puerto esté averiado.",
+      "recomendaciones": [
+        "Revisar que ambos extremos del cable estén bien conectados.",
+        "Probar un cable o puerto conocido antes de reemplazar componentes."
+      ]
+    }
   ]
 }
