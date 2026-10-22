@@ -1,0 +1,30 @@
+{
+  "casos_excluidos": [
+    "D012",
+    "D022",
+    "D032",
+    "D043",
+    "D060"
+  ],
+  "diagnosticos_soporte_bajo_hasta_dos": [
+    "d_deteccion_almacenamiento",
+    "d_enlace_cable",
+    "d_espacio_insuficiente",
+    "d_pantalla_principal",
+    "d_presion_memoria",
+    "d_proceso_exigente",
+    "d_red_compartida",
+    "d_ruta_alimentacion",
+    "d_subsistema_video",
+    "d_wifi_inhabilitado"
+  ],
+  "limites": [
+    "Viñetas académicas hipotéticas; no confirman fallas físicas ni precisión en equipos reales.",
+    "A y B no aíslan el efecto del mecanismo multinivel porque B usa conocimiento adicional.",
+    "C reordena hipótesis de B; no cambia la exactitud de conjunto."
+  ],
+  "pruebas_globales_omitidas": [
+    "python validar_casos.py",
+    "python -m unittest discover -s tests -v"
+  ]
+}

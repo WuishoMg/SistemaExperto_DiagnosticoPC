@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "fecha_local": "2026-10-22",
+  "etapa": "Avance 2 - etapa 4",
+  "git_head_base": "0907b6220eac500aee5fb1eb5542df5862ddb385",
+  "estado": "archivos locales sin commit; modelos no ejecutados sobre casos",
+  "algoritmo": "SHA-256",
+  "archivos": {
+    "data/conocimiento/diagnosticos.json": "c1282496bf96cb6d436e86f144bde1fe828f4d1a2ace9b73aece28625a3e55f7",
+    "data/conocimiento/hechos.json": "84993e4db4b23e6df81e32c6c8b6c4371abccd6be69c7fd51bfd7eb797223c18",
+    "data/conocimiento/reglas.json": "9e736ae137d35af21a773463feeaa9f18b2358f5eef968889f3fa266800ec248",
+    "data/conocimiento_avance2/criterios_c.json": "5290a885a4706bc649673e33ee8784abcfe364f5caf5339e537ab26477e412da",
+    "data/conocimiento_avance2/hechos.json": "c0bb95a0eb9e13d274327f7f45e4e198531fa6c198c364cc9cebab1f8e0c804a",
+    "data/conocimiento_avance2/reglas.json": "d9c6e43249db09f8c3a4fc31cf741c1ce11545e3afba98370fcc7a94b7b7e31c",
+    "data/interfaz/preguntas.json": "25fb213bc8f87598e6d77386585a47f778377c6e011db13f592fff94ff424df0",
+    "data/interfaz/rutas.json": "523c5ad2ff217ba4114c104120550df8c897ca85329a97dd8c3a8980bda8b940",
+    "data/evaluacion/casos_desarrollo.json": "9f06ba6aad8b61d9d8ecc923c27e364d580e1bf55731d4674aed903019447da9",
+    "data/evaluacion/casos_finales_reservados.json": "7c609c0c614b1955d3fbbacca260b99f8c30f2b54e81473277bbe767f505d364",
+    "data/evaluacion/fuentes.json": "5c10f4156d941f58bec22ab950b8e9bc55926b3f78b66934393318238a75e822",
+    "validar_casos.py": "04ee1ceefa363870c5119e63d6b88dc0120a7ad8369aee1e12f5f504a4716bcc",
+    "docs/PROTOCOLO_EVALUACION_AVANCE_2.md": "6714b9adffa25f079f6d96b3a5cb204f557265ec171256071bc6353d5954c1b7",
+    "data/evaluacion/historico/casos_desarrollo_etapa4_v1.json": "3aad28d05c955aab1320416bd91653c8b2137ec2a3e9ea7a11f21f3cdf14972a",
+    "docs/REVISION_CASOS_ETAPA_4_1.md": "9dee2df465fdddf74c0bd3d876cac5ff5ce773080e14c500e5c02b427f5c721e"
+  },
+  "revision_desarrollo": {
+    "etapa": "4.1",
+    "original": "data/evaluacion/historico/casos_desarrollo_etapa4_v1.json",
+    "sha256_original": "3aad28d05c955aab1320416bd91653c8b2137ec2a3e9ea7a11f21f3cdf14972a",
+    "actual": "data/evaluacion/casos_desarrollo.json",
+    "sha256_actual": "9f06ba6aad8b61d9d8ecc923c27e364d580e1bf55731d4674aed903019447da9",
+    "criterio": "corrección metodológica previa a inferencia; sin predicciones"
+  }
+}

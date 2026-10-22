@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="408" viewBox="0 0 900 408">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="35" font-size="22" font-family="sans-serif">Métricas de conjunto y multietiqueta (%)</text>
+<rect x="640" y="17" width="13" height="13" fill="#2563eb"/>
+<text x="657" y="29" font-size="14" font-family="sans-serif">A</text>
+<rect x="718" y="17" width="13" height="13" fill="#d97706"/>
+<text x="735" y="29" font-size="14" font-family="sans-serif">B</text>
+<rect x="796" y="17" width="13" height="13" fill="#059669"/>
+<text x="813" y="29" font-size="14" font-family="sans-serif">C</text>
+<text x="24" y="90" font-size="14" font-family="sans-serif">Accuracy</text>
+<rect x="230" y="97" width="454" height="10" fill="#2563eb"/>
+<text x="689" y="106" font-size="12" font-family="sans-serif">87.3%</text>
+<rect x="230" y="110" width="454" height="10" fill="#d97706"/>
+<text x="689" y="119" font-size="12" font-family="sans-serif">87.3%</text>
+<rect x="230" y="123" width="454" height="10" fill="#059669"/>
+<text x="689" y="132" font-size="12" font-family="sans-serif">87.3%</text>
+<text x="24" y="162" font-size="14" font-family="sans-serif">Precisión micro</text>
+<rect x="230" y="169" width="464" height="10" fill="#2563eb"/>
+<text x="699" y="178" font-size="12" font-family="sans-serif">89.3%</text>
+<rect x="230" y="182" width="464" height="10" fill="#d97706"/>
+<text x="699" y="191" font-size="12" font-family="sans-serif">89.3%</text>
+<rect x="230" y="195" width="464" height="10" fill="#059669"/>
+<text x="699" y="204" font-size="12" font-family="sans-serif">89.3%</text>
+<text x="24" y="234" font-size="14" font-family="sans-serif">Recall micro</text>
+<rect x="230" y="241" width="510" height="10" fill="#2563eb"/>
+<text x="745" y="250" font-size="12" font-family="sans-serif">98.0%</text>
+<rect x="230" y="254" width="510" height="10" fill="#d97706"/>
+<text x="745" y="263" font-size="12" font-family="sans-serif">98.0%</text>
+<rect x="230" y="267" width="510" height="10" fill="#059669"/>
+<text x="745" y="276" font-size="12" font-family="sans-serif">98.0%</text>
+<text x="24" y="306" font-size="14" font-family="sans-serif">F1 micro</text>
+<rect x="230" y="313" width="486" height="10" fill="#2563eb"/>
+<text x="721" y="322" font-size="12" font-family="sans-serif">93.5%</text>
+<rect x="230" y="326" width="486" height="10" fill="#d97706"/>
+<text x="721" y="335" font-size="12" font-family="sans-serif">93.5%</text>
+<rect x="230" y="339" width="486" height="10" fill="#059669"/>
+<text x="721" y="348" font-size="12" font-family="sans-serif">93.5%</text>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "hechos": [
+    {
+      "id": "h_fallo_etapa_arranque",
+      "nombre": "Fallo situado en la etapa de arranque",
+      "descripcion": "La evidencia indica que el equipo llegó al inicio del sistema o mostró un mensaje de dispositivo de arranque ausente; aún no identifica la causa.",
+      "tipo": "derivado"
+    },
+    {
+      "id": "h_fallo_arranque_unidad_visible",
+      "nombre": "Fallo de arranque con unidad visible en firmware",
+      "descripcion": "El fallo se sitúa en la etapa de arranque y la unidad de arranque sí aparece en BIOS o UEFI; orienta a revisar configuración o archivos de arranque.",
+      "tipo": "derivado"
+    }
+  ]
+}

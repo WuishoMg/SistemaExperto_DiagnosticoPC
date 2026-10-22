@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1060" viewBox="0 0 1080 1060">
+<rect width="100%" height="100%" fill="white"/>
+<text x="20" y="32" font-size="22" font-family="sans-serif">Modelo B: matrices por diagnóstico (N=55)</text>
+<text x="20" y="55" font-size="13" font-family="sans-serif">Filas: referencia ausente/presente. Columnas: predicción ausente/presente.</text>
+<text x="20" y="93" font-size="15" font-family="sans-serif">d_arranque_so</text>
+<text x="20" y="112" font-size="12" font-family="sans-serif">soporte=4</text>
+<rect x="20" y="124" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="30" y="148" font-size="15" font-family="sans-serif">TN: 51</text>
+<rect x="184" y="124" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="194" y="148" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="20" y="169" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="30" y="193" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="184" y="169" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="194" y="193" font-size="15" font-family="sans-serif">TP: 4</text>
+<text x="375" y="93" font-size="15" font-family="sans-serif">d_conectividad_local</text>
+<text x="375" y="112" font-size="12" font-family="sans-serif">soporte=5</text>
+<rect x="375" y="124" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="385" y="148" font-size="15" font-family="sans-serif">TN: 50</text>
+<rect x="539" y="124" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="549" y="148" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="375" y="169" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="385" y="193" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="539" y="169" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="549" y="193" font-size="15" font-family="sans-serif">TP: 5</text>
+<text x="730" y="93" font-size="15" font-family="sans-serif">d_deteccion_almacenamiento</text>
+<text x="730" y="112" font-size="12" font-family="sans-serif">soporte=1</text>
+<rect x="730" y="124" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="740" y="148" font-size="15" font-family="sans-serif">TN: 54</text>
+<rect x="894" y="124" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="904" y="148" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="730" y="169" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="740" y="193" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="894" y="169" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="904" y="193" font-size="15" font-family="sans-serif">TP: 1</text>
+<text x="20" y="253" font-size="15" font-family="sans-serif">d_enlace_cable</text>
+<text x="20" y="272" font-size="12" font-family="sans-serif">soporte=2</text>
+<rect x="20" y="284" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="30" y="308" font-size="15" font-family="sans-serif">TN: 53</text>
+<rect x="184" y="284" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="194" y="308" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="20" y="329" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="30" y="353" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="184" y="329" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="194" y="353" font-size="15" font-family="sans-serif">TP: 2</text>
+<text x="375" y="253" font-size="15" font-family="sans-serif">d_error_critico_so</text>
+<text x="375" y="272" font-size="12" font-family="sans-serif">soporte=3</text>
+<rect x="375" y="284" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="385" y="308" font-size="15" font-family="sans-serif">TN: 52</text>
+<rect x="539" y="284" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="549" y="308" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="375" y="329" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="385" y="353" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="539" y="329" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="549" y="353" font-size="15" font-family="sans-serif">TP: 3</text>
+<text x="730" y="253" font-size="15" font-family="sans-serif">d_espacio_insuficiente</text>
+<text x="730" y="272" font-size="12" font-family="sans-serif">soporte=2</text>
+<rect x="730" y="284" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="740" y="308" font-size="15" font-family="sans-serif">TN: 53</text>
+<rect x="894" y="284" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="904" y="308" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="730" y="329" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="740" y="353" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="894" y="329" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="904" y="353" font-size="15" font-family="sans-serif">TP: 2</text>
+<text x="20" y="413" font-size="15" font-family="sans-serif">d_indicios_termicos</text>
+<text x="20" y="432" font-size="12" font-family="sans-serif">soporte=3</text>
+<rect x="20" y="444" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="30" y="468" font-size="15" font-family="sans-serif">TN: 52</text>
+<rect x="184" y="444" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="194" y="468" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="20" y="489" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="30" y="513" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="184" y="489" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="194" y="513" font-size="15" font-family="sans-serif">TP: 3</text>
+<text x="375" y="413" font-size="15" font-family="sans-serif">d_memoria_ram</text>
+<text x="375" y="432" font-size="12" font-family="sans-serif">soporte=3</text>
+<rect x="375" y="444" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="385" y="468" font-size="15" font-family="sans-serif">TN: 52</text>
+<rect x="539" y="444" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="549" y="468" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="375" y="489" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="385" y="513" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="539" y="489" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="549" y="513" font-size="15" font-family="sans-serif">TP: 3</text>
+<text x="730" y="413" font-size="15" font-family="sans-serif">d_pantalla_principal</text>
+<text x="730" y="432" font-size="12" font-family="sans-serif">soporte=2</text>
+<rect x="730" y="444" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="740" y="468" font-size="15" font-family="sans-serif">TN: 53</text>
+<rect x="894" y="444" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="904" y="468" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="730" y="489" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="740" y="513" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="894" y="489" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="904" y="513" font-size="15" font-family="sans-serif">TP: 2</text>
+<text x="20" y="573" font-size="15" font-family="sans-serif">d_presion_memoria</text>
+<text x="20" y="592" font-size="12" font-family="sans-serif">soporte=2</text>
+<rect x="20" y="604" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="30" y="628" font-size="15" font-family="sans-serif">TN: 53</text>
+<rect x="184" y="604" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="194" y="628" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="20" y="649" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="30" y="673" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="184" y="649" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="194" y="673" font-size="15" font-family="sans-serif">TP: 2</text>
+<text x="375" y="573" font-size="15" font-family="sans-serif">d_proceso_exigente</text>
+<text x="375" y="592" font-size="12" font-family="sans-serif">soporte=2</text>
+<rect x="375" y="604" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="385" y="628" font-size="15" font-family="sans-serif">TN: 53</text>
+<rect x="539" y="604" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="549" y="628" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="375" y="649" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="385" y="673" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="539" y="649" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="549" y="673" font-size="15" font-family="sans-serif">TP: 2</text>
+<text x="730" y="573" font-size="15" font-family="sans-serif">d_red_compartida</text>
+<text x="730" y="592" font-size="12" font-family="sans-serif">soporte=2</text>
+<rect x="730" y="604" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="740" y="628" font-size="15" font-family="sans-serif">TN: 53</text>
+<rect x="894" y="604" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="904" y="628" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="730" y="649" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="740" y="673" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="894" y="649" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="904" y="673" font-size="15" font-family="sans-serif">TP: 2</text>
+<text x="20" y="733" font-size="15" font-family="sans-serif">d_revision_inicio_energia</text>
+<text x="20" y="752" font-size="12" font-family="sans-serif">soporte=7</text>
+<rect x="20" y="764" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="30" y="788" font-size="15" font-family="sans-serif">TN: 44</text>
+<rect x="184" y="764" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="194" y="788" font-size="15" font-family="sans-serif">FP: 4</text>
+<rect x="20" y="809" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="30" y="833" font-size="15" font-family="sans-serif">FN: 1</text>
+<rect x="184" y="809" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="194" y="833" font-size="15" font-family="sans-serif">TP: 6</text>
+<text x="375" y="733" font-size="15" font-family="sans-serif">d_ruta_alimentacion</text>
+<text x="375" y="752" font-size="12" font-family="sans-serif">soporte=1</text>
+<rect x="375" y="764" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="385" y="788" font-size="15" font-family="sans-serif">TN: 54</text>
+<rect x="539" y="764" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="549" y="788" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="375" y="809" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="385" y="833" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="539" y="809" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="549" y="833" font-size="15" font-family="sans-serif">TP: 1</text>
+<text x="730" y="733" font-size="15" font-family="sans-serif">d_salud_almacenamiento</text>
+<text x="730" y="752" font-size="12" font-family="sans-serif">soporte=5</text>
+<rect x="730" y="764" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="740" y="788" font-size="15" font-family="sans-serif">TN: 50</text>
+<rect x="894" y="764" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="904" y="788" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="730" y="809" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="740" y="833" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="894" y="809" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="904" y="833" font-size="15" font-family="sans-serif">TP: 5</text>
+<text x="20" y="893" font-size="15" font-family="sans-serif">d_sobrecalentamiento</text>
+<text x="20" y="912" font-size="12" font-family="sans-serif">soporte=5</text>
+<rect x="20" y="924" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="30" y="948" font-size="15" font-family="sans-serif">TN: 50</text>
+<rect x="184" y="924" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="194" y="948" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="20" y="969" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="30" y="993" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="184" y="969" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="194" y="993" font-size="15" font-family="sans-serif">TP: 5</text>
+<text x="375" y="893" font-size="15" font-family="sans-serif">d_subsistema_video</text>
+<text x="375" y="912" font-size="12" font-family="sans-serif">soporte=1</text>
+<rect x="375" y="924" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="385" y="948" font-size="15" font-family="sans-serif">TN: 52</text>
+<rect x="539" y="924" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="549" y="948" font-size="15" font-family="sans-serif">FP: 2</text>
+<rect x="375" y="969" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="385" y="993" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="539" y="969" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="549" y="993" font-size="15" font-family="sans-serif">TP: 1</text>
+<text x="730" y="893" font-size="15" font-family="sans-serif">d_wifi_inhabilitado</text>
+<text x="730" y="912" font-size="12" font-family="sans-serif">soporte=1</text>
+<rect x="730" y="924" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="740" y="948" font-size="15" font-family="sans-serif">TN: 54</text>
+<rect x="894" y="924" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="904" y="948" font-size="15" font-family="sans-serif">FP: 0</text>
+<rect x="730" y="969" width="152" height="38" fill="#fee2e2" stroke="#9ca3af"/>
+<text x="740" y="993" font-size="15" font-family="sans-serif">FN: 0</text>
+<rect x="894" y="969" width="152" height="38" fill="#d1fae5" stroke="#9ca3af"/>
+<text x="904" y="993" font-size="15" font-family="sans-serif">TP: 1</text>
+</svg>

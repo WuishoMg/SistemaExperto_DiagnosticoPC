@@ -1,0 +1,425 @@
+{
+  "A": {
+    "ruta": {
+      "alimentacion": {
+        "abstenciones_correctas": 2,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 1
+      },
+      "conectividad": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 10,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 10,
+        "salidas_espurias": 0
+      },
+      "general": {
+        "abstenciones_correctas": 2,
+        "abstenciones_incorrectas": 0,
+        "casos": 5,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 4,
+        "salidas_espurias": 0
+      },
+      "lentitud": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 9,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 9,
+        "salidas_espurias": 0
+      },
+      "sistema": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 9,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 9,
+        "salidas_espurias": 0
+      },
+      "temperatura": {
+        "abstenciones_correctas": 2,
+        "abstenciones_incorrectas": 0,
+        "casos": 7,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 7,
+        "salidas_espurias": 0
+      },
+      "video": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 1,
+        "casos": 9,
+        "con_extras": 4,
+        "con_omisiones": 1,
+        "exactos": 4,
+        "salidas_espurias": 0
+      }
+    },
+    "tipo_escenario": {
+      "ambigua": {
+        "abstenciones_correctas": 4,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 6,
+        "salidas_espurias": 0
+      },
+      "comprobacion_adicional": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 1
+      },
+      "evidencia_suficiente": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 0,
+        "casos": 20,
+        "con_extras": 2,
+        "con_omisiones": 0,
+        "exactos": 18,
+        "salidas_espurias": 0
+      },
+      "fuera_cobertura": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 0,
+        "casos": 1,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 1,
+        "salidas_espurias": 0
+      },
+      "insuficiente": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 0,
+        "casos": 1,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 1,
+        "salidas_espurias": 0
+      },
+      "parcial": {
+        "abstenciones_correctas": 6,
+        "abstenciones_incorrectas": 1,
+        "casos": 8,
+        "con_extras": 0,
+        "con_omisiones": 1,
+        "exactos": 7,
+        "salidas_espurias": 0
+      },
+      "simultanea": {
+        "abstenciones_correctas": 0,
+        "abstenciones_incorrectas": 0,
+        "casos": 7,
+        "con_extras": 2,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 0
+      },
+      "tension_aparente": {
+        "abstenciones_correctas": 0,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 0
+      }
+    }
+  },
+  "B": {
+    "ruta": {
+      "alimentacion": {
+        "abstenciones_correctas": 2,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 1
+      },
+      "conectividad": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 10,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 10,
+        "salidas_espurias": 0
+      },
+      "general": {
+        "abstenciones_correctas": 2,
+        "abstenciones_incorrectas": 0,
+        "casos": 5,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 4,
+        "salidas_espurias": 0
+      },
+      "lentitud": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 9,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 9,
+        "salidas_espurias": 0
+      },
+      "sistema": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 9,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 9,
+        "salidas_espurias": 0
+      },
+      "temperatura": {
+        "abstenciones_correctas": 2,
+        "abstenciones_incorrectas": 0,
+        "casos": 7,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 7,
+        "salidas_espurias": 0
+      },
+      "video": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 1,
+        "casos": 9,
+        "con_extras": 4,
+        "con_omisiones": 1,
+        "exactos": 4,
+        "salidas_espurias": 0
+      }
+    },
+    "tipo_escenario": {
+      "ambigua": {
+        "abstenciones_correctas": 4,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 6,
+        "salidas_espurias": 0
+      },
+      "comprobacion_adicional": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 1
+      },
+      "evidencia_suficiente": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 0,
+        "casos": 20,
+        "con_extras": 2,
+        "con_omisiones": 0,
+        "exactos": 18,
+        "salidas_espurias": 0
+      },
+      "fuera_cobertura": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 0,
+        "casos": 1,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 1,
+        "salidas_espurias": 0
+      },
+      "insuficiente": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 0,
+        "casos": 1,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 1,
+        "salidas_espurias": 0
+      },
+      "parcial": {
+        "abstenciones_correctas": 6,
+        "abstenciones_incorrectas": 1,
+        "casos": 8,
+        "con_extras": 0,
+        "con_omisiones": 1,
+        "exactos": 7,
+        "salidas_espurias": 0
+      },
+      "simultanea": {
+        "abstenciones_correctas": 0,
+        "abstenciones_incorrectas": 0,
+        "casos": 7,
+        "con_extras": 2,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 0
+      },
+      "tension_aparente": {
+        "abstenciones_correctas": 0,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 0
+      }
+    }
+  },
+  "C": {
+    "ruta": {
+      "alimentacion": {
+        "abstenciones_correctas": 2,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 1
+      },
+      "conectividad": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 10,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 10,
+        "salidas_espurias": 0
+      },
+      "general": {
+        "abstenciones_correctas": 2,
+        "abstenciones_incorrectas": 0,
+        "casos": 5,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 4,
+        "salidas_espurias": 0
+      },
+      "lentitud": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 9,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 9,
+        "salidas_espurias": 0
+      },
+      "sistema": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 9,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 9,
+        "salidas_espurias": 0
+      },
+      "temperatura": {
+        "abstenciones_correctas": 2,
+        "abstenciones_incorrectas": 0,
+        "casos": 7,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 7,
+        "salidas_espurias": 0
+      },
+      "video": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 1,
+        "casos": 9,
+        "con_extras": 4,
+        "con_omisiones": 1,
+        "exactos": 4,
+        "salidas_espurias": 0
+      }
+    },
+    "tipo_escenario": {
+      "ambigua": {
+        "abstenciones_correctas": 4,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 6,
+        "salidas_espurias": 0
+      },
+      "comprobacion_adicional": {
+        "abstenciones_correctas": 3,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 1
+      },
+      "evidencia_suficiente": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 0,
+        "casos": 20,
+        "con_extras": 2,
+        "con_omisiones": 0,
+        "exactos": 18,
+        "salidas_espurias": 0
+      },
+      "fuera_cobertura": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 0,
+        "casos": 1,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 1,
+        "salidas_espurias": 0
+      },
+      "insuficiente": {
+        "abstenciones_correctas": 1,
+        "abstenciones_incorrectas": 0,
+        "casos": 1,
+        "con_extras": 0,
+        "con_omisiones": 0,
+        "exactos": 1,
+        "salidas_espurias": 0
+      },
+      "parcial": {
+        "abstenciones_correctas": 6,
+        "abstenciones_incorrectas": 1,
+        "casos": 8,
+        "con_extras": 0,
+        "con_omisiones": 1,
+        "exactos": 7,
+        "salidas_espurias": 0
+      },
+      "simultanea": {
+        "abstenciones_correctas": 0,
+        "abstenciones_incorrectas": 0,
+        "casos": 7,
+        "con_extras": 2,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 0
+      },
+      "tension_aparente": {
+        "abstenciones_correctas": 0,
+        "abstenciones_incorrectas": 0,
+        "casos": 6,
+        "con_extras": 1,
+        "con_omisiones": 0,
+        "exactos": 5,
+        "salidas_espurias": 0
+      }
+    }
+  }
+}

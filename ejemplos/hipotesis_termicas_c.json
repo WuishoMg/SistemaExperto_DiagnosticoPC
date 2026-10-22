@@ -1,0 +1,6 @@
+{
+  "s_temperatura_alta": "verdadero",
+  "s_calor_percibido": "verdadero",
+  "s_ventilador_ruidoso": "verdadero",
+  "s_apagado_bajo_carga": "verdadero"
+}

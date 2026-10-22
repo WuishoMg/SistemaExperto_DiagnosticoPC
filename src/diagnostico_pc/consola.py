@@ -1,4 +1,4 @@
-"""Interfaz de texto para consultar el Modelo A."""
+"""Interfaz de texto para consultar el modelo seleccionado."""
 
 import argparse
 import json
@@ -7,7 +7,12 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import TextIO
 
-from .modelo_a import DiagnosticoInferido, ModeloA, ResultadoModeloA
+from .modelo_a import DiagnosticoInferido
+from .contratos import ResultadoInferencia
+from .selector import MODELO_PREDETERMINADO, MODELOS, seleccionar_modelo
+from .modelo_b import ResultadoModeloB, TrazaInferencia
+from .modelo_c import ResultadoModeloC, motivo_precedencia
+from .conocimiento_c import CALIDADES, PRIORIDADES
 from .coherencia import detectar_contradicciones
 from .hechos import EstadoHecho, normalizar_observaciones
 from .preguntas import ErrorPreguntas, Pregunta, RespuestaVisible, cargar_preguntas
@@ -226,7 +231,7 @@ def _mostrar_diagnostico(diagnostico: DiagnosticoInferido, salida: TextIO) -> No
         print(f"  * {recomendacion}", file=salida)
 
 
-def mostrar_resultado(resultado: ResultadoModeloA, salida: TextIO) -> None:
+def mostrar_resultado(resultado: ResultadoInferencia, salida: TextIO) -> None:
     print("\n=== Resultado del Modelo A ===", file=salida)
     if resultado.principal is None:
         print("Sin diagnóstico concluyente.", file=salida)
@@ -265,16 +270,123 @@ def mostrar_resultado(resultado: ResultadoModeloA, salida: TextIO) -> None:
     print("\nEstas son hipótesis; confirme la causa con pruebas técnicas.", file=salida)
 
 
+def _mostrar_traza_b(
+    traza: TrazaInferencia, soportes: dict[str, list[TrazaInferencia]],
+    salida: TextIO, sangria: str = "  ",
+) -> None:
+    print(f"{sangria}Nivel {traza.nivel} — {traza.regla_id}: {traza.explicacion}", file=salida)
+    for condicion in traza.condiciones:
+        respaldos = [
+            soporte for soporte in soportes.get(condicion.hecho_id, [])
+            if soporte.conclusion_estado == condicion.estado
+        ]
+        origen = "derivado" if respaldos else "observado"
+        print(f"{sangria}  - {condicion.nombre} [{origen}]: {condicion.estado.value}", file=salida)
+        for indice, respaldo in enumerate(respaldos, start=1):
+            if len(respaldos) > 1:
+                print(f"{sangria}    Soporte alternativo {indice}:", file=salida)
+            _mostrar_traza_b(respaldo, soportes, salida, sangria + "    ")
+
+
+def mostrar_resultado_b(resultado: ResultadoModeloB, salida: TextIO) -> None:
+    print("\n=== Resultado del Modelo B ===", file=salida)
+    unidad = "ronda" if resultado.rondas == 1 else "rondas"
+    print(f"Punto fijo alcanzado tras {resultado.rondas} {unidad} con reglas activadas.", file=salida)
+    soportes: dict[str, list[TrazaInferencia]] = {}
+    por_regla = {}
+    for traza in resultado.trazas:
+        por_regla[traza.regla_id] = traza
+        if traza.conclusion_tipo == "hecho":
+            soportes.setdefault(traza.conclusion_id, []).append(traza)
+    if soportes:
+        print("Hechos derivados (no son respuestas del usuario):", file=salida)
+        for hecho_id in sorted(soportes):
+            traza = soportes[hecho_id][0]
+            print(
+                f"- {traza.conclusion_id}: {traza.conclusion_estado.value}; "
+                f"respaldado por {', '.join(s.regla_id for s in soportes[hecho_id])}",
+                file=salida,
+            )
+    if resultado.principal is None:
+        print("Sin diagnóstico concluyente.", file=salida)
+        print(resultado.explicacion_sin_conclusion, file=salida)
+        return
+    for indice, diagnostico in enumerate((resultado.principal, *resultado.alternativos)):
+        titulo = "Hipótesis principal" if indice == 0 else "Hipótesis alternativa"
+        print(f"\n{titulo}: {diagnostico.nombre} [{diagnostico.categoria}]", file=salida)
+        print(diagnostico.descripcion, file=salida)
+        print("Cadenas de inferencia y evidencias:", file=salida)
+        for regla in diagnostico.reglas:
+            _mostrar_traza_b(por_regla[regla.id], soportes, salida)
+        print("Recomendaciones:", file=salida)
+        for recomendacion in diagnostico.recomendaciones:
+            print(f"  * {recomendacion}", file=salida)
+    print("\nEstas son hipótesis; confirme la causa con pruebas técnicas.", file=salida)
+
+
+def mostrar_resultado_c(resultado: ResultadoModeloC, salida: TextIO) -> None:
+    print("\n=== Resultado del Modelo C ===", file=salida)
+    unidad = "ronda" if resultado.rondas == 1 else "rondas"
+    print(f"Cierre inferencial de B: {resultado.rondas} {unidad}; mismas reglas y hechos derivados.", file=salida)
+    print("Precedencia: calidad máxima de observación original, número de observaciones originales distintas, prioridad técnica ordinal, ID estable.", file=salida)
+    print("Estos criterios ordenan la revisión; no son probabilidades ni certeza diagnóstica.", file=salida)
+    print("Observaciones originales confirmadas:", file=salida)
+    for hecho_id, estado in sorted(resultado.observaciones_confirmadas.items()):
+        print(f"- {hecho_id}: {estado.value}", file=salida)
+    derivados: dict[str, list[str]] = {}
+    por_regla = {}
+    soportes: dict[str, list[TrazaInferencia]] = {}
+    for traza in resultado.trazas:
+        por_regla[traza.regla_id] = traza
+        if traza.conclusion_tipo == "hecho":
+            derivados.setdefault(traza.conclusion_id, []).append(traza.regla_id)
+            soportes.setdefault(traza.conclusion_id, []).append(traza)
+    print("Hechos derivados:", file=salida)
+    for hecho_id, reglas in sorted(derivados.items()):
+        print(f"- {hecho_id}: {resultado.memoria.hechos[hecho_id].value}; reglas {', '.join(reglas)}", file=salida)
+    if resultado.principal is None:
+        print("Sin diagnóstico concluyente.", file=salida)
+        print(resultado.explicacion_sin_conclusion, file=salida)
+        return
+    print(f"Decisión: {resultado.explicacion_prioridad}", file=salida)
+    for indice, (diagnostico, criterio) in enumerate(zip(
+        (resultado.principal, *resultado.alternativos), resultado.criterios
+    )):
+        titulo = "Hipótesis principal" if indice == 0 else f"Hipótesis alternativa {indice}"
+        print(f"\n{titulo}: {diagnostico.nombre} [{diagnostico.categoria}]", file=salida)
+        print(diagnostico.descripcion, file=salida)
+        print(
+            f"Criterios: calidad {criterio.calidad} ({CALIDADES[criterio.calidad]}); "
+            f"{criterio.especificidad} observaciones distintas; prioridad {criterio.prioridad} "
+            f"({PRIORIDADES[criterio.prioridad]}); ID {diagnostico.id}.", file=salida,
+        )
+        print(f"Soporte original: {', '.join(criterio.observaciones)}", file=salida)
+        if indice:
+            anterior = resultado.criterios[indice - 1]
+            print(f"Orden: {anterior.diagnostico_id} precede a {criterio.diagnostico_id} por {motivo_precedencia(anterior, criterio)}.", file=salida)
+        print("Reglas activadas y cadenas:", file=salida)
+        for regla in diagnostico.reglas:
+            _mostrar_traza_b(por_regla[regla.id], soportes, salida)
+        print("Recomendaciones:", file=salida)
+        for recomendacion in diagnostico.recomendaciones:
+            print(f"  * {recomendacion}", file=salida)
+    print("\nEstas son hipótesis; confirme la causa con pruebas técnicas.", file=salida)
+
+
 def main(argumentos: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Diagnóstico simbólico básico de fallas en PC")
     parser.add_argument(
         "--respuestas", type=Path,
         help="Archivo JSON opcional con estados por ID de síntoma; omisiones = desconocido",
     )
+    parser.add_argument(
+        "--modelo", type=str.upper, choices=MODELOS, default=MODELO_PREDETERMINADO,
+        help="Modelo de inferencia A, B o C (predeterminado: A)",
+    )
     opciones = parser.parse_args(argumentos)
     raiz = Path(__file__).resolve().parents[2]
     try:
-        modelo = ModeloA.desde_directorio(raiz / "data" / "conocimiento")
+        modelo = seleccionar_modelo(opciones.modelo, raiz / "data" / "conocimiento")
         if opciones.respuestas is None:
             preguntas = cargar_preguntas(raiz / "data" / "interfaz" / "preguntas.json", modelo.sintomas)
             rutas = cargar_rutas(raiz / "data" / "interfaz" / "rutas.json", preguntas)
@@ -292,7 +404,13 @@ def main(argumentos: list[str] | None = None) -> int:
             conflictos = detectar_contradicciones(normalizar_observaciones(modelo.sintomas, respuestas))
             if conflictos:
                 raise ValueError("Respuestas contradictorias: " + " ".join(c.explicacion for c in conflictos))
-        mostrar_resultado(modelo.evaluar(respuestas), sys.stdout)
+        resultado = modelo.evaluar(respuestas)
+        if isinstance(resultado, ResultadoModeloC):
+            mostrar_resultado_c(resultado, sys.stdout)
+        elif isinstance(resultado, ResultadoModeloB):
+            mostrar_resultado_b(resultado, sys.stdout)
+        else:
+            mostrar_resultado(resultado, sys.stdout)
     except (ErrorConocimiento, ErrorPreguntas, ErrorRutas, ValueError, OSError, UnicodeError, json.JSONDecodeError, EOFError) as error:
         print(f"No se pudo completar la consulta: {error}", file=sys.stderr)
         return 2

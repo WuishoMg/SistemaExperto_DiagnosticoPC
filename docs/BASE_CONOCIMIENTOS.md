@@ -1,4 +1,4 @@
-# Base de conocimientos — Avance 1
+# Base de conocimientos — modelos A, B y C
 
 ## Contrato
 
@@ -23,6 +23,14 @@ Los diagnósticos añadidos son `d_revision_inicio_energia`, `d_indicios_termico
 
 La corrección de coherencia I-01 a I-03 añadió seis hechos atómicos y cuatro reglas directas sin crear diagnósticos nuevos. `s_error_durante_uso` queda deliberadamente fuera de reglas causales: el cuestionario registra ese error y explica que no se identificó causa. La consola integra las reglas generales de energía como evidencia complementaria cuando la prueba sostenida de una segunda pantalla respalda una hipótesis más específica; el Modelo A conserva ambos resultados en su memoria.
 
+## Ampliación declarativa del Avance 2
+
+`data/conocimiento/` sigue siendo la base directa de A: 36 hechos observables, 42 reglas y 18 diagnósticos. `data/conocimiento_avance2/hechos.json` añade dos hechos **derivados**, separados de respuestas del usuario, y `data/conocimiento_avance2/reglas.json` añade cuatro reglas. Dos caminos alternativos sitúan un fallo en la etapa de arranque (`h_fallo_etapa_arranque`); comprobar además que la unidad aparece en firmware permite derivar `h_fallo_arranque_unidad_visible`. La última regla orienta al diagnóstico existente `d_arranque_so`. Ni el mensaje de arranque ni la cadena de reglas confirman una unidad averiada.
+
+El Modelo B aplica las reglas por rondas hasta que no se derivan hechos nuevos. Conserva trazas y soportes alternativos de cada conclusión. La validación de la ampliación rechaza ciclos entre hechos derivados y estados opuestos para un mismo hecho; una condición `falso` exige una negación observada o derivada, nunca una omisión. Los hechos observables siguen distinguiéndose de los derivados en memoria y en la explicación.
+
+`data/conocimiento_avance2/criterios_c.json` contiene metadatos para las 36 observaciones y los 18 diagnósticos. El Modelo C reutiliza exactamente el cierre y las hipótesis de B, y ordena las hipótesis por calidad máxima de la evidencia original, número de observaciones originales distintas, prioridad técnica ordinal e ID estable. Un hecho derivado no cuenta como una respuesta nueva. La prioridad orienta la revisión; no es probabilidad, confianza calibrada ni aprendizaje automático. La justificación de la selección de C y sus límites se encuentran en `AVANCE_2.md`.
+
 ## Límites
 
-Las pruebas demuestran integridad, activación de reglas y alcanzabilidad dentro del cuestionario. No miden precisión en equipos reales. El Avance 1 conserva inferencia directa y no emplea aprendizaje automático, modelos B/C ni heurísticas de selección. Los 20 casos finales reservados y los 80 casos previstos no se usaron para ajustar reglas.
+Las pruebas demuestran integridad, activación de reglas y alcanzabilidad dentro del cuestionario. La comparación del Avance 2 mide concordancia con viñetas académicas de desarrollo, no precisión en equipos reales. A conserva la inferencia directa; B y C añaden razonamiento simbólico sin modificar sus 42 reglas originales. Los 20 casos finales reservados no se usaron para ajustar reglas ni seleccionar modelo.

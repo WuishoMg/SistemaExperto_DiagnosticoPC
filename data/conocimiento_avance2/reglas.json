@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "reglas": [
+    {
+      "id": "r_b_arranque_tras_post",
+      "condiciones": [
+        {"hecho": "s_so_no_inicia", "estado": "verdadero"},
+        {"hecho": "s_post_completado", "estado": "verdadero"}
+      ],
+      "conclusion": {"tipo": "hecho", "id": "h_fallo_etapa_arranque", "estado": "verdadero"},
+      "explicacion": "El sistema no llega a estar utilizable después de superar la pantalla inicial; el problema se sitúa en la etapa de arranque, sin atribuir todavía una causa."
+    },
+    {
+      "id": "r_b_mensaje_arranque",
+      "condiciones": [
+        {"hecho": "s_sin_dispositivo_arranque", "estado": "verdadero"}
+      ],
+      "conclusion": {"tipo": "hecho", "id": "h_fallo_etapa_arranque", "estado": "verdadero"},
+      "explicacion": "El mensaje del firmware sobre ausencia de dispositivo de arranque sitúa el fallo en la etapa de arranque; no demuestra por sí solo que la unidad esté averiada."
+    },
+    {
+      "id": "r_b_arranque_unidad_visible",
+      "condiciones": [
+        {"hecho": "h_fallo_etapa_arranque", "estado": "verdadero"},
+        {"hecho": "s_unidad_no_detectada", "estado": "falso"}
+      ],
+      "conclusion": {"tipo": "hecho", "id": "h_fallo_arranque_unidad_visible", "estado": "verdadero"},
+      "explicacion": "El fallo ocurre en la etapa de arranque y la unidad sí aparece en firmware; corresponde revisar configuración y archivos antes de atribuir un defecto físico."
+    },
+    {
+      "id": "r_b_revision_arranque",
+      "condiciones": [
+        {"hecho": "h_fallo_arranque_unidad_visible", "estado": "verdadero"}
+      ],
+      "conclusion": {"tipo": "diagnostico", "id": "d_arranque_so"},
+      "explicacion": "La cadena de evidencia orienta a una revisión de configuración o archivos de arranque; es una hipótesis, no una confirmación de la causa."
+    }
+  ]
+}

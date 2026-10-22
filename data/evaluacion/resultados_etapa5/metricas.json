@@ -1,0 +1,212 @@
+{
+  "A": {
+    "abstenciones_correctas": {
+      "denominador": 17,
+      "numerador": 16,
+      "valor": 0.9411764705882353
+    },
+    "abstenciones_incorrectas": {
+      "denominador": 38,
+      "numerador": 1,
+      "valor": 0.02631578947368421
+    },
+    "accuracy": {
+      "denominador": 55,
+      "numerador": 48,
+      "valor": 0.8727272727272727
+    },
+    "accuracy_positivos": {
+      "denominador": 38,
+      "numerador": 32,
+      "valor": 0.8421052631578947
+    },
+    "accuracy_referencia_vacia": {
+      "denominador": 17,
+      "numerador": 16,
+      "valor": 0.9411764705882353
+    },
+    "casos": 55,
+    "f1_micro": {
+      "denominador": 107,
+      "numerador": 100,
+      "valor": 0.9345794392523364
+    },
+    "fn": 1,
+    "fp": 6,
+    "hipotesis_extra": 6,
+    "hipotesis_omitidas": 1,
+    "positivos": 38,
+    "precision_micro": {
+      "denominador": 56,
+      "numerador": 50,
+      "valor": 0.8928571428571429
+    },
+    "principal": {
+      "denominador": 38,
+      "numerador": 35,
+      "valor": 0.9210526315789473
+    },
+    "prioridad_principal": {
+      "denominador": 10,
+      "numerador": 2,
+      "valor": 0.2
+    },
+    "prioridad_rango_reciproco_medio": {
+      "denominador": 10,
+      "numerador": 5.666666666666666,
+      "valor": 0.5666666666666667
+    },
+    "recall_micro": {
+      "denominador": 51,
+      "numerador": 50,
+      "valor": 0.9803921568627451
+    },
+    "referencia_vacia": 17,
+    "salidas_espurias": {
+      "denominador": 17,
+      "numerador": 1,
+      "valor": 0.058823529411764705
+    },
+    "tp": 50
+  },
+  "B": {
+    "abstenciones_correctas": {
+      "denominador": 17,
+      "numerador": 16,
+      "valor": 0.9411764705882353
+    },
+    "abstenciones_incorrectas": {
+      "denominador": 38,
+      "numerador": 1,
+      "valor": 0.02631578947368421
+    },
+    "accuracy": {
+      "denominador": 55,
+      "numerador": 48,
+      "valor": 0.8727272727272727
+    },
+    "accuracy_positivos": {
+      "denominador": 38,
+      "numerador": 32,
+      "valor": 0.8421052631578947
+    },
+    "accuracy_referencia_vacia": {
+      "denominador": 17,
+      "numerador": 16,
+      "valor": 0.9411764705882353
+    },
+    "casos": 55,
+    "f1_micro": {
+      "denominador": 107,
+      "numerador": 100,
+      "valor": 0.9345794392523364
+    },
+    "fn": 1,
+    "fp": 6,
+    "hipotesis_extra": 6,
+    "hipotesis_omitidas": 1,
+    "positivos": 38,
+    "precision_micro": {
+      "denominador": 56,
+      "numerador": 50,
+      "valor": 0.8928571428571429
+    },
+    "principal": {
+      "denominador": 38,
+      "numerador": 35,
+      "valor": 0.9210526315789473
+    },
+    "prioridad_principal": {
+      "denominador": 10,
+      "numerador": 2,
+      "valor": 0.2
+    },
+    "prioridad_rango_reciproco_medio": {
+      "denominador": 10,
+      "numerador": 5.666666666666666,
+      "valor": 0.5666666666666667
+    },
+    "recall_micro": {
+      "denominador": 51,
+      "numerador": 50,
+      "valor": 0.9803921568627451
+    },
+    "referencia_vacia": 17,
+    "salidas_espurias": {
+      "denominador": 17,
+      "numerador": 1,
+      "valor": 0.058823529411764705
+    },
+    "tp": 50
+  },
+  "C": {
+    "abstenciones_correctas": {
+      "denominador": 17,
+      "numerador": 16,
+      "valor": 0.9411764705882353
+    },
+    "abstenciones_incorrectas": {
+      "denominador": 38,
+      "numerador": 1,
+      "valor": 0.02631578947368421
+    },
+    "accuracy": {
+      "denominador": 55,
+      "numerador": 48,
+      "valor": 0.8727272727272727
+    },
+    "accuracy_positivos": {
+      "denominador": 38,
+      "numerador": 32,
+      "valor": 0.8421052631578947
+    },
+    "accuracy_referencia_vacia": {
+      "denominador": 17,
+      "numerador": 16,
+      "valor": 0.9411764705882353
+    },
+    "casos": 55,
+    "f1_micro": {
+      "denominador": 107,
+      "numerador": 100,
+      "valor": 0.9345794392523364
+    },
+    "fn": 1,
+    "fp": 6,
+    "hipotesis_extra": 6,
+    "hipotesis_omitidas": 1,
+    "positivos": 38,
+    "precision_micro": {
+      "denominador": 56,
+      "numerador": 50,
+      "valor": 0.8928571428571429
+    },
+    "principal": {
+      "denominador": 38,
+      "numerador": 35,
+      "valor": 0.9210526315789473
+    },
+    "prioridad_principal": {
+      "denominador": 10,
+      "numerador": 4,
+      "valor": 0.4
+    },
+    "prioridad_rango_reciproco_medio": {
+      "denominador": 10,
+      "numerador": 7.0,
+      "valor": 0.7
+    },
+    "recall_micro": {
+      "denominador": 51,
+      "numerador": 50,
+      "valor": 0.9803921568627451
+    },
+    "referencia_vacia": 17,
+    "salidas_espurias": {
+      "denominador": 17,
+      "numerador": 1,
+      "valor": 0.058823529411764705
+    },
+    "tp": 50
+  }
+}

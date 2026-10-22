@@ -1,0 +1,3398 @@
+[
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D001",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_ruta_alimentacion"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_ruta_alimentacion"
+    ],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D002",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D003",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D004",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D005",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D006",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "alimentacion",
+    "salida_espuria": true,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D007",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_espacio_insuficiente"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_espacio_insuficiente"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D008",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_presion_memoria"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_presion_memoria"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D009",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_proceso_exigente"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_proceso_exigente"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D010",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_espacio_insuficiente",
+      "d_presion_memoria"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_espacio_insuficiente",
+      "d_presion_memoria"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D011",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D013",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_proceso_exigente",
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_proceso_exigente",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D014",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D015",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D016",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D017",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_pantalla_principal",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_pantalla_principal"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D018",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D019",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_subsistema_video"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_subsistema_video"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": true,
+    "exacto": false,
+    "extras": [],
+    "id": "D020",
+    "modelo": "A",
+    "omitidas": [
+      "d_revision_inicio_energia"
+    ],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_subsistema_video"
+    ],
+    "id": "D021",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_subsistema_video",
+      "d_memoria_ram",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": false,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_memoria_ram",
+    "referencia": [
+      "d_memoria_ram",
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D023",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_pantalla_principal",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_pantalla_principal"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D024",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_subsistema_video"
+    ],
+    "id": "D025",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_subsistema_video",
+      "d_revision_inicio_energia",
+      "d_memoria_ram"
+    ],
+    "principal_correcto": false,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_memoria_ram",
+    "referencia": [
+      "d_memoria_ram",
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D026",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "insuficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D027",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_arranque_so"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D028",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_deteccion_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_deteccion_almacenamiento"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D029",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D030",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so",
+      "d_salud_almacenamiento",
+      "d_error_critico_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_arranque_so",
+      "d_error_critico_so",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D031",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_error_critico_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_error_critico_so"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D033",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so",
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_arranque_so",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D034",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D035",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_memoria_ram"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_memoria_ram"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D036",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D037",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_indicios_termicos",
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_sobrecalentamiento",
+    "referencia": [
+      "d_indicios_termicos",
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D038",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_indicios_termicos"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_indicios_termicos"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D039",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D040",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D041",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D042",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D044",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_indicios_termicos",
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_sobrecalentamiento",
+    "referencia": [
+      "d_indicios_termicos",
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D045",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_wifi_inhabilitado",
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": true,
+    "prioridad_referencia": "d_wifi_inhabilitado",
+    "referencia": [
+      "d_conectividad_local",
+      "d_wifi_inhabilitado"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D046",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_enlace_cable",
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": true,
+    "prioridad_referencia": "d_enlace_cable",
+    "referencia": [
+      "d_conectividad_local",
+      "d_enlace_cable"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D047",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_red_compartida"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_red_compartida"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D048",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D049",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D050",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "fuera_cobertura"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D051",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_conectividad_local"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D052",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_enlace_cable",
+      "d_red_compartida"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_enlace_cable",
+      "d_red_compartida"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D053",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_conectividad_local"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D054",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_conectividad_local"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D055",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_error_critico_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_error_critico_so"
+    ],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D056",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D057",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D058",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D059",
+    "modelo": "A",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so",
+      "d_revision_inicio_energia",
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_arranque_so",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D001",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_ruta_alimentacion"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_ruta_alimentacion"
+    ],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D002",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D003",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D004",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D005",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D006",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "alimentacion",
+    "salida_espuria": true,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D007",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_espacio_insuficiente"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_espacio_insuficiente"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D008",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_presion_memoria"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_presion_memoria"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D009",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_proceso_exigente"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_proceso_exigente"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D010",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_espacio_insuficiente",
+      "d_presion_memoria"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_espacio_insuficiente",
+      "d_presion_memoria"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D011",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D013",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_proceso_exigente",
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_proceso_exigente",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D014",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D015",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D016",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D017",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_pantalla_principal",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_pantalla_principal"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D018",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D019",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_subsistema_video"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_subsistema_video"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": true,
+    "exacto": false,
+    "extras": [],
+    "id": "D020",
+    "modelo": "B",
+    "omitidas": [
+      "d_revision_inicio_energia"
+    ],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_subsistema_video"
+    ],
+    "id": "D021",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_subsistema_video",
+      "d_memoria_ram",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": false,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_memoria_ram",
+    "referencia": [
+      "d_memoria_ram",
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D023",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_pantalla_principal",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_pantalla_principal"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D024",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_subsistema_video"
+    ],
+    "id": "D025",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_subsistema_video",
+      "d_revision_inicio_energia",
+      "d_memoria_ram"
+    ],
+    "principal_correcto": false,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_memoria_ram",
+    "referencia": [
+      "d_memoria_ram",
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D026",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "insuficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D027",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_arranque_so"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D028",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_deteccion_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_deteccion_almacenamiento"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D029",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D030",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so",
+      "d_salud_almacenamiento",
+      "d_error_critico_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_arranque_so",
+      "d_error_critico_so",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D031",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_error_critico_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_error_critico_so"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D033",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so",
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_arranque_so",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D034",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D035",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_memoria_ram"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_memoria_ram"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D036",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D037",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_indicios_termicos",
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_sobrecalentamiento",
+    "referencia": [
+      "d_indicios_termicos",
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D038",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_indicios_termicos"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_indicios_termicos"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D039",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D040",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D041",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D042",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D044",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_indicios_termicos",
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_sobrecalentamiento",
+    "referencia": [
+      "d_indicios_termicos",
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D045",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_wifi_inhabilitado",
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": true,
+    "prioridad_referencia": "d_wifi_inhabilitado",
+    "referencia": [
+      "d_conectividad_local",
+      "d_wifi_inhabilitado"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D046",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_enlace_cable",
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": true,
+    "prioridad_referencia": "d_enlace_cable",
+    "referencia": [
+      "d_conectividad_local",
+      "d_enlace_cable"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D047",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_red_compartida"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_red_compartida"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D048",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D049",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D050",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "fuera_cobertura"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D051",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_conectividad_local"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D052",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_enlace_cable",
+      "d_red_compartida"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_enlace_cable",
+      "d_red_compartida"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D053",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_conectividad_local"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D054",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_conectividad_local"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D055",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_error_critico_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_error_critico_so"
+    ],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D056",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D057",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D058",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D059",
+    "modelo": "B",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so",
+      "d_revision_inicio_energia",
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_arranque_so",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D001",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_ruta_alimentacion"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_ruta_alimentacion"
+    ],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D002",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D003",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D004",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D005",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "alimentacion",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D006",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "alimentacion",
+    "salida_espuria": true,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D007",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_espacio_insuficiente"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_espacio_insuficiente"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D008",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_presion_memoria"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_presion_memoria"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D009",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_proceso_exigente"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_proceso_exigente"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D010",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_espacio_insuficiente",
+      "d_presion_memoria"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_espacio_insuficiente",
+      "d_presion_memoria"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D011",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D013",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_proceso_exigente",
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_proceso_exigente",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D014",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D015",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D016",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "lentitud",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D017",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_pantalla_principal",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_pantalla_principal"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D018",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D019",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_subsistema_video"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_subsistema_video"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": true,
+    "exacto": false,
+    "extras": [],
+    "id": "D020",
+    "modelo": "C",
+    "omitidas": [
+      "d_revision_inicio_energia"
+    ],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_subsistema_video"
+    ],
+    "id": "D021",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_subsistema_video",
+      "d_memoria_ram",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": false,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_memoria_ram",
+    "referencia": [
+      "d_memoria_ram",
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D023",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_pantalla_principal",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_pantalla_principal"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D024",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_subsistema_video"
+    ],
+    "id": "D025",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_subsistema_video",
+      "d_memoria_ram",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": false,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_memoria_ram",
+    "referencia": [
+      "d_memoria_ram",
+      "d_revision_inicio_energia"
+    ],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D026",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "video",
+    "salida_espuria": false,
+    "tipo_escenario": "insuficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D027",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_arranque_so"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D028",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_deteccion_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_deteccion_almacenamiento"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D029",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D030",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so",
+      "d_salud_almacenamiento",
+      "d_error_critico_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_arranque_so",
+      "d_error_critico_so",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D031",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_error_critico_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_error_critico_so"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D033",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so",
+      "d_salud_almacenamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_arranque_so",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D034",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D035",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_memoria_ram"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_memoria_ram"
+    ],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D036",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "sistema",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D037",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento",
+      "d_indicios_termicos"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": true,
+    "prioridad_referencia": "d_sobrecalentamiento",
+    "referencia": [
+      "d_indicios_termicos",
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D038",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_indicios_termicos"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_indicios_termicos"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D039",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D040",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D041",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D042",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D044",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento",
+      "d_indicios_termicos"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": true,
+    "prioridad_referencia": "d_sobrecalentamiento",
+    "referencia": [
+      "d_indicios_termicos",
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "temperatura",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D045",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_wifi_inhabilitado",
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": true,
+    "prioridad_referencia": "d_wifi_inhabilitado",
+    "referencia": [
+      "d_conectividad_local",
+      "d_wifi_inhabilitado"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D046",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_enlace_cable",
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": true,
+    "prioridad_referencia": "d_enlace_cable",
+    "referencia": [
+      "d_conectividad_local",
+      "d_enlace_cable"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D047",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_red_compartida"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_red_compartida"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D048",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D049",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "ambigua"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D050",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "fuera_cobertura"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D051",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_conectividad_local"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D052",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_enlace_cable",
+      "d_red_compartida"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_enlace_cable",
+      "d_red_compartida"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D053",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_conectividad_local"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "tension_aparente"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D054",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_conectividad_local"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_conectividad_local"
+    ],
+    "ruta": "conectividad",
+    "salida_espuria": false,
+    "tipo_escenario": "comprobacion_adicional"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D055",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_error_critico_so"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_error_critico_so"
+    ],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D056",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D057",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_sobrecalentamiento"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [
+      "d_sobrecalentamiento"
+    ],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "evidencia_suficiente"
+  },
+  {
+    "abstencion_correcta": true,
+    "abstencion_incorrecta": false,
+    "exacto": true,
+    "extras": [],
+    "id": "D058",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [],
+    "principal_correcto": false,
+    "prioridad_correcta": null,
+    "prioridad_referencia": null,
+    "referencia": [],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "parcial"
+  },
+  {
+    "abstencion_correcta": false,
+    "abstencion_incorrecta": false,
+    "exacto": false,
+    "extras": [
+      "d_revision_inicio_energia"
+    ],
+    "id": "D059",
+    "modelo": "C",
+    "omitidas": [],
+    "prediccion": [
+      "d_arranque_so",
+      "d_salud_almacenamiento",
+      "d_revision_inicio_energia"
+    ],
+    "principal_correcto": true,
+    "prioridad_correcta": false,
+    "prioridad_referencia": "d_salud_almacenamiento",
+    "referencia": [
+      "d_arranque_so",
+      "d_salud_almacenamiento"
+    ],
+    "ruta": "general",
+    "salida_espuria": false,
+    "tipo_escenario": "simultanea"
+  }
+]

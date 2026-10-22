@@ -1,0 +1,2506 @@
+{
+  "casos": [
+    {
+      "id": "D001",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_ruta_alimentacion"
+          ],
+          "principal": "d_ruta_alimentacion",
+          "reglas_activadas": [
+            "r_alimentacion_sin_senales"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_ruta_alimentacion"
+          ],
+          "principal": "d_ruta_alimentacion",
+          "reglas_activadas": [
+            "r_alimentacion_sin_senales"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_ruta_alimentacion"
+          ],
+          "principal": "d_ruta_alimentacion",
+          "reglas_activadas": [
+            "r_alimentacion_sin_senales"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_led_encendido": "falso",
+        "s_ventiladores_giran": "falso"
+      },
+      "ruta": "alimentacion",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D002",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_led_encendido": "desconocido",
+        "s_ventiladores_giran": "falso"
+      },
+      "ruta": "alimentacion",
+      "tipo_escenario": "parcial"
+    },
+    {
+      "id": "D003",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_sin_imagen": "falso",
+        "s_so_no_inicia": "falso",
+        "s_ventiladores_giran": "falso"
+      },
+      "ruta": "alimentacion",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D004",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_sin_imagen": "verdadero",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "alimentacion",
+      "tipo_escenario": "ambigua"
+    },
+    {
+      "id": "D005",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_ventilador"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_ventilador"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_ventilador"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_led_encendido": "falso",
+        "s_sin_imagen": "verdadero",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "alimentacion",
+      "tipo_escenario": "tension_aparente"
+    },
+    {
+      "id": "D006",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_so_luz"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_so_luz"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_so_luz"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_sin_imagen": "falso",
+        "s_so_no_inicia": "verdadero",
+        "s_ventiladores_giran": "desconocido"
+      },
+      "ruta": "alimentacion",
+      "tipo_escenario": "comprobacion_adicional"
+    },
+    {
+      "id": "D007",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_espacio_insuficiente"
+          ],
+          "principal": "d_espacio_insuficiente",
+          "reglas_activadas": [
+            "r_lentitud_espacio"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_espacio_insuficiente"
+          ],
+          "principal": "d_espacio_insuficiente",
+          "reglas_activadas": [
+            "r_lentitud_espacio"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_espacio_insuficiente"
+          ],
+          "principal": "d_espacio_insuficiente",
+          "reglas_activadas": [
+            "r_lentitud_espacio"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_congelamientos": "falso",
+        "s_espacio_sistema_bajo": "verdadero",
+        "s_lentitud_programas": "verdadero",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "falso",
+        "s_uso_memoria_alto": "falso"
+      },
+      "ruta": "lentitud",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D008",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_presion_memoria"
+          ],
+          "principal": "d_presion_memoria",
+          "reglas_activadas": [
+            "r_congelamiento_memoria",
+            "r_lentitud_memoria"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_presion_memoria"
+          ],
+          "principal": "d_presion_memoria",
+          "reglas_activadas": [
+            "r_congelamiento_memoria",
+            "r_lentitud_memoria"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_presion_memoria"
+          ],
+          "principal": "d_presion_memoria",
+          "reglas_activadas": [
+            "r_congelamiento_memoria",
+            "r_lentitud_memoria"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_congelamientos": "verdadero",
+        "s_error_prueba_ram": "desconocido",
+        "s_errores_entrada_salida": "falso",
+        "s_espacio_sistema_bajo": "falso",
+        "s_lentitud_programas": "verdadero",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "desconocido",
+        "s_uso_memoria_alto": "verdadero"
+      },
+      "ruta": "lentitud",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D009",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_proceso_exigente"
+          ],
+          "principal": "d_proceso_exigente",
+          "reglas_activadas": [
+            "r_lentitud_cpu"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_proceso_exigente"
+          ],
+          "principal": "d_proceso_exigente",
+          "reglas_activadas": [
+            "r_lentitud_cpu"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_proceso_exigente"
+          ],
+          "principal": "d_proceso_exigente",
+          "reglas_activadas": [
+            "r_lentitud_cpu"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_congelamientos": "falso",
+        "s_espacio_sistema_bajo": "falso",
+        "s_lentitud_programas": "verdadero",
+        "s_proceso_cpu_alto": "verdadero",
+        "s_proceso_disco_alto": "falso",
+        "s_uso_memoria_alto": "falso"
+      },
+      "ruta": "lentitud",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D010",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_espacio_insuficiente",
+            "d_presion_memoria"
+          ],
+          "principal": "d_espacio_insuficiente",
+          "reglas_activadas": [
+            "r_congelamiento_espacio",
+            "r_congelamiento_memoria",
+            "r_lentitud_espacio",
+            "r_lentitud_memoria"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_espacio_insuficiente",
+            "d_presion_memoria"
+          ],
+          "principal": "d_espacio_insuficiente",
+          "reglas_activadas": [
+            "r_congelamiento_espacio",
+            "r_congelamiento_memoria",
+            "r_lentitud_espacio",
+            "r_lentitud_memoria"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_espacio_insuficiente",
+            "d_presion_memoria"
+          ],
+          "principal": "d_espacio_insuficiente",
+          "reglas_activadas": [
+            "r_congelamiento_espacio",
+            "r_congelamiento_memoria",
+            "r_lentitud_espacio",
+            "r_lentitud_memoria"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_congelamientos": "verdadero",
+        "s_error_prueba_ram": "falso",
+        "s_errores_entrada_salida": "falso",
+        "s_espacio_sistema_bajo": "verdadero",
+        "s_lentitud_programas": "verdadero",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "falso",
+        "s_uso_memoria_alto": "verdadero"
+      },
+      "ruta": "lentitud",
+      "tipo_escenario": "simultanea"
+    },
+    {
+      "id": "D011",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_congelamientos": "verdadero",
+        "s_error_prueba_ram": "desconocido",
+        "s_errores_entrada_salida": "falso",
+        "s_espacio_sistema_bajo": "desconocido",
+        "s_lentitud_programas": "falso",
+        "s_proceso_cpu_alto": "desconocido",
+        "s_proceso_disco_alto": "desconocido",
+        "s_uso_memoria_alto": "desconocido"
+      },
+      "ruta": "lentitud",
+      "tipo_escenario": "ambigua"
+    },
+    {
+      "id": "D013",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_proceso_exigente",
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_proceso_exigente",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_io",
+            "r_congelamiento_disco",
+            "r_lentitud_disco"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_proceso_exigente",
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_proceso_exigente",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_io",
+            "r_congelamiento_disco",
+            "r_lentitud_disco"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_proceso_exigente",
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_proceso_exigente",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_io",
+            "r_congelamiento_disco",
+            "r_lentitud_disco"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_congelamientos": "verdadero",
+        "s_errores_entrada_salida": "verdadero",
+        "s_espacio_sistema_bajo": "falso",
+        "s_lentitud_programas": "verdadero",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "verdadero",
+        "s_uso_memoria_alto": "falso"
+      },
+      "ruta": "lentitud",
+      "tipo_escenario": "simultanea"
+    },
+    {
+      "id": "D014",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_congelamientos": "falso",
+        "s_espacio_sistema_bajo": "desconocido",
+        "s_lentitud_programas": "verdadero",
+        "s_proceso_cpu_alto": "desconocido",
+        "s_proceso_disco_alto": "desconocido",
+        "s_uso_memoria_alto": "desconocido"
+      },
+      "ruta": "lentitud",
+      "tipo_escenario": "parcial"
+    },
+    {
+      "id": "D015",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_salud_almacenamiento",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_io"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_salud_almacenamiento",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_io"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_salud_almacenamiento",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_io"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_congelamientos": "verdadero",
+        "s_errores_entrada_salida": "verdadero",
+        "s_espacio_sistema_bajo": "falso",
+        "s_lentitud_programas": "verdadero",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "falso",
+        "s_uso_memoria_alto": "falso"
+      },
+      "ruta": "lentitud",
+      "tipo_escenario": "tension_aparente"
+    },
+    {
+      "id": "D016",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_congelamientos": "verdadero",
+        "s_error_prueba_ram": "desconocido",
+        "s_errores_entrada_salida": "falso",
+        "s_espacio_sistema_bajo": "falso",
+        "s_lentitud_programas": "verdadero",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "falso",
+        "s_uso_memoria_alto": "falso"
+      },
+      "ruta": "lentitud",
+      "tipo_escenario": "comprobacion_adicional"
+    },
+    {
+      "id": "D017",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_pantalla_principal",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_pantalla_principal",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador",
+            "r_pantalla_externa"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_pantalla_principal",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_pantalla_principal",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador",
+            "r_pantalla_externa"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_pantalla_principal",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_pantalla_principal",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador",
+            "r_pantalla_externa"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_monitor_externo_funciona": "verdadero",
+        "s_sin_imagen": "verdadero",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "video",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D018",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_error_prueba_ram": "desconocido",
+        "s_led_encendido": "verdadero",
+        "s_monitor_externo_funciona": "desconocido",
+        "s_pitidos_ram_post": "desconocido",
+        "s_reinicios_post": "falso",
+        "s_sin_imagen": "verdadero",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "video",
+      "tipo_escenario": "ambigua"
+    },
+    {
+      "id": "D019",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_subsistema_video"
+          ],
+          "principal": "d_subsistema_video",
+          "reglas_activadas": [
+            "r_video_artefactos"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_subsistema_video"
+          ],
+          "principal": "d_subsistema_video",
+          "reglas_activadas": [
+            "r_video_artefactos"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_subsistema_video"
+          ],
+          "principal": "d_subsistema_video",
+          "reglas_activadas": [
+            "r_video_artefactos"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_artefactos_video": "verdadero",
+        "s_imagen_desaparece_tras_inicio": "falso",
+        "s_sin_imagen": "falso"
+      },
+      "ruta": "video",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D020",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_error_prueba_ram": "desconocido",
+        "s_imagen_desaparece_tras_inicio": "verdadero",
+        "s_monitor_externo_funciona": "desconocido",
+        "s_pitidos_ram_post": "desconocido",
+        "s_reinicios_post": "falso",
+        "s_sin_imagen": "falso"
+      },
+      "ruta": "video",
+      "tipo_escenario": "parcial"
+    },
+    {
+      "id": "D021",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_subsistema_video",
+            "d_memoria_ram",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_subsistema_video",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador",
+            "r_ram_codigo_post",
+            "r_ram_reinicio_post",
+            "r_video_sin_salida"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_subsistema_video",
+            "d_memoria_ram",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_subsistema_video",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador",
+            "r_ram_codigo_post",
+            "r_ram_reinicio_post",
+            "r_video_sin_salida"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_subsistema_video",
+            "d_memoria_ram",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_subsistema_video",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador",
+            "r_ram_codigo_post",
+            "r_ram_reinicio_post",
+            "r_video_sin_salida"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_monitor_externo_funciona": "falso",
+        "s_pitidos_ram_post": "verdadero",
+        "s_reinicios_post": "verdadero",
+        "s_sin_imagen": "verdadero",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "video",
+      "tipo_escenario": "simultanea"
+    },
+    {
+      "id": "D023",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_pantalla_principal",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_pantalla_principal",
+          "reglas_activadas": [
+            "r_inicio_energia_ventilador",
+            "r_pantalla_externa"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_pantalla_principal",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_pantalla_principal",
+          "reglas_activadas": [
+            "r_inicio_energia_ventilador",
+            "r_pantalla_externa"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_pantalla_principal",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_pantalla_principal",
+          "reglas_activadas": [
+            "r_inicio_energia_ventilador",
+            "r_pantalla_externa"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_led_encendido": "falso",
+        "s_monitor_externo_funciona": "verdadero",
+        "s_sin_imagen": "verdadero",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "video",
+      "tipo_escenario": "tension_aparente"
+    },
+    {
+      "id": "D024",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_luz"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_luz"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_revision_inicio_energia",
+          "reglas_activadas": [
+            "r_inicio_energia_luz"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_error_prueba_ram": "desconocido",
+        "s_led_encendido": "verdadero",
+        "s_monitor_externo_funciona": "falso",
+        "s_pitidos_ram_post": "desconocido",
+        "s_reinicios_post": "falso",
+        "s_sin_imagen": "verdadero",
+        "s_ventiladores_giran": "falso"
+      },
+      "ruta": "video",
+      "tipo_escenario": "comprobacion_adicional"
+    },
+    {
+      "id": "D025",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_subsistema_video",
+            "d_revision_inicio_energia",
+            "d_memoria_ram"
+          ],
+          "principal": "d_subsistema_video",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador",
+            "r_ram_prueba",
+            "r_video_sin_salida"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_subsistema_video",
+            "d_revision_inicio_energia",
+            "d_memoria_ram"
+          ],
+          "principal": "d_subsistema_video",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador",
+            "r_ram_prueba",
+            "r_video_sin_salida"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_subsistema_video",
+            "d_memoria_ram",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_subsistema_video",
+          "reglas_activadas": [
+            "r_inicio_energia_luz",
+            "r_inicio_energia_ventilador",
+            "r_ram_prueba",
+            "r_video_sin_salida"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_error_prueba_ram": "verdadero",
+        "s_led_encendido": "verdadero",
+        "s_monitor_externo_funciona": "falso",
+        "s_pitidos_ram_post": "falso",
+        "s_reinicios_post": "falso",
+        "s_sin_imagen": "verdadero",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "video",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D026",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_artefactos_video": "desconocido",
+        "s_imagen_desaparece_tras_inicio": "falso",
+        "s_sin_imagen": "falso"
+      },
+      "ruta": "video",
+      "tipo_escenario": "insuficiente"
+    },
+    {
+      "id": "D027",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_arranque_so"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_so_mensaje_unidad_presente",
+            "r_so_no_inicia_unidad_presente"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {
+            "h_fallo_arranque_unidad_visible": "verdadero",
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [
+            "d_arranque_so"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_b_arranque_tras_post",
+            "r_b_mensaje_arranque",
+            "r_so_mensaje_unidad_presente",
+            "r_so_no_inicia_unidad_presente",
+            "r_b_arranque_unidad_visible",
+            "r_b_revision_arranque"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {
+            "h_fallo_arranque_unidad_visible": "verdadero",
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [
+            "d_arranque_so"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_b_arranque_tras_post",
+            "r_b_mensaje_arranque",
+            "r_so_mensaje_unidad_presente",
+            "r_so_no_inicia_unidad_presente",
+            "r_b_arranque_unidad_visible",
+            "r_b_revision_arranque"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_errores_entrada_salida": "falso",
+        "s_pantalla_azul": "falso",
+        "s_post_completado": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_sin_dispositivo_arranque": "verdadero",
+        "s_so_no_inicia": "verdadero",
+        "s_unidad_no_detectada": "falso"
+      },
+      "ruta": "sistema",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D028",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_deteccion_almacenamiento"
+          ],
+          "principal": "d_deteccion_almacenamiento",
+          "reglas_activadas": [
+            "r_almacenamiento_firmware",
+            "r_almacenamiento_sin_arranque"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [
+            "d_deteccion_almacenamiento"
+          ],
+          "principal": "d_deteccion_almacenamiento",
+          "reglas_activadas": [
+            "r_almacenamiento_firmware",
+            "r_almacenamiento_sin_arranque",
+            "r_b_arranque_tras_post",
+            "r_b_mensaje_arranque"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [
+            "d_deteccion_almacenamiento"
+          ],
+          "principal": "d_deteccion_almacenamiento",
+          "reglas_activadas": [
+            "r_almacenamiento_firmware",
+            "r_almacenamiento_sin_arranque",
+            "r_b_arranque_tras_post",
+            "r_b_mensaje_arranque"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_errores_entrada_salida": "desconocido",
+        "s_pantalla_azul": "falso",
+        "s_post_completado": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_sin_dispositivo_arranque": "verdadero",
+        "s_so_no_inicia": "verdadero",
+        "s_unidad_no_detectada": "verdadero"
+      },
+      "ruta": "sistema",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D029",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": [
+            "r_b_arranque_tras_post"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": [
+            "r_b_arranque_tras_post"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_errores_entrada_salida": "desconocido",
+        "s_pantalla_azul": "falso",
+        "s_post_completado": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_sin_dispositivo_arranque": "desconocido",
+        "s_so_no_inicia": "verdadero",
+        "s_unidad_no_detectada": "desconocido"
+      },
+      "ruta": "sistema",
+      "tipo_escenario": "parcial"
+    },
+    {
+      "id": "D030",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_arranque_so",
+            "d_salud_almacenamiento",
+            "d_error_critico_so"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_arranque",
+            "r_almacenamiento_errores_io",
+            "r_so_error_critico",
+            "r_so_no_inicia_unidad_presente"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {
+            "h_fallo_arranque_unidad_visible": "verdadero",
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [
+            "d_arranque_so",
+            "d_salud_almacenamiento",
+            "d_error_critico_so"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_arranque",
+            "r_almacenamiento_errores_io",
+            "r_b_arranque_tras_post",
+            "r_so_error_critico",
+            "r_so_no_inicia_unidad_presente",
+            "r_b_arranque_unidad_visible",
+            "r_b_revision_arranque"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {
+            "h_fallo_arranque_unidad_visible": "verdadero",
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [
+            "d_arranque_so",
+            "d_salud_almacenamiento",
+            "d_error_critico_so"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_arranque",
+            "r_almacenamiento_errores_io",
+            "r_b_arranque_tras_post",
+            "r_so_error_critico",
+            "r_so_no_inicia_unidad_presente",
+            "r_b_arranque_unidad_visible",
+            "r_b_revision_arranque"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_artefactos_video": "falso",
+        "s_errores_entrada_salida": "verdadero",
+        "s_pantalla_azul": "verdadero",
+        "s_post_completado": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_sin_dispositivo_arranque": "falso",
+        "s_so_no_inicia": "verdadero",
+        "s_unidad_no_detectada": "falso"
+      },
+      "ruta": "sistema",
+      "tipo_escenario": "simultanea"
+    },
+    {
+      "id": "D031",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_error_critico_so"
+          ],
+          "principal": "d_error_critico_so",
+          "reglas_activadas": [
+            "r_so_error_critico"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_error_critico_so"
+          ],
+          "principal": "d_error_critico_so",
+          "reglas_activadas": [
+            "r_so_error_critico"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_error_critico_so"
+          ],
+          "principal": "d_error_critico_so",
+          "reglas_activadas": [
+            "r_so_error_critico"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_artefactos_video": "falso",
+        "s_errores_entrada_salida": "falso",
+        "s_pantalla_azul": "verdadero",
+        "s_so_no_inicia": "falso"
+      },
+      "ruta": "sistema",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D033",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_arranque_so",
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_arranque",
+            "r_almacenamiento_errores_io",
+            "r_so_mensaje_unidad_presente",
+            "r_so_no_inicia_unidad_presente"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {
+            "h_fallo_arranque_unidad_visible": "verdadero",
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [
+            "d_arranque_so",
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_arranque",
+            "r_almacenamiento_errores_io",
+            "r_b_arranque_tras_post",
+            "r_b_mensaje_arranque",
+            "r_so_mensaje_unidad_presente",
+            "r_so_no_inicia_unidad_presente",
+            "r_b_arranque_unidad_visible",
+            "r_b_revision_arranque"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {
+            "h_fallo_arranque_unidad_visible": "verdadero",
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [
+            "d_arranque_so",
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_arranque",
+            "r_almacenamiento_errores_io",
+            "r_b_arranque_tras_post",
+            "r_b_mensaje_arranque",
+            "r_so_mensaje_unidad_presente",
+            "r_so_no_inicia_unidad_presente",
+            "r_b_arranque_unidad_visible",
+            "r_b_revision_arranque"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_errores_entrada_salida": "verdadero",
+        "s_pantalla_azul": "falso",
+        "s_post_completado": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_sin_dispositivo_arranque": "verdadero",
+        "s_so_no_inicia": "verdadero",
+        "s_unidad_no_detectada": "falso"
+      },
+      "ruta": "sistema",
+      "tipo_escenario": "tension_aparente"
+    },
+    {
+      "id": "D034",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_error_prueba_ram": "desconocido",
+        "s_pitidos_ram_post": "desconocido",
+        "s_reinicios_post": "verdadero",
+        "s_so_no_inicia": "verdadero"
+      },
+      "ruta": "sistema",
+      "tipo_escenario": "comprobacion_adicional"
+    },
+    {
+      "id": "D035",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_memoria_ram"
+          ],
+          "principal": "d_memoria_ram",
+          "reglas_activadas": [
+            "r_ram_codigo_post",
+            "r_ram_reinicio_post"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_memoria_ram"
+          ],
+          "principal": "d_memoria_ram",
+          "reglas_activadas": [
+            "r_ram_codigo_post",
+            "r_ram_reinicio_post"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_memoria_ram"
+          ],
+          "principal": "d_memoria_ram",
+          "reglas_activadas": [
+            "r_ram_codigo_post",
+            "r_ram_reinicio_post"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_pitidos_ram_post": "verdadero",
+        "s_reinicios_post": "verdadero",
+        "s_so_no_inicia": "verdadero"
+      },
+      "ruta": "sistema",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D036",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_error_durante_uso": "desconocido",
+        "s_errores_entrada_salida": "desconocido",
+        "s_pantalla_azul": "falso",
+        "s_so_no_inicia": "falso"
+      },
+      "ruta": "sistema",
+      "tipo_escenario": "ambigua"
+    },
+    {
+      "id": "D037",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_indicios_termicos",
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_indicios_termicos",
+          "reglas_activadas": [
+            "r_indicios_termicos_apagado",
+            "r_indicios_termicos_ventilador",
+            "r_temperatura_apagado",
+            "r_temperatura_medida",
+            "r_temperatura_ventilador"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_indicios_termicos",
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_indicios_termicos",
+          "reglas_activadas": [
+            "r_indicios_termicos_apagado",
+            "r_indicios_termicos_ventilador",
+            "r_temperatura_apagado",
+            "r_temperatura_medida",
+            "r_temperatura_ventilador"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento",
+            "d_indicios_termicos"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_indicios_termicos_apagado",
+            "r_indicios_termicos_ventilador",
+            "r_temperatura_apagado",
+            "r_temperatura_medida",
+            "r_temperatura_ventilador"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_apagado_bajo_carga": "verdadero",
+        "s_calor_percibido": "verdadero",
+        "s_temperatura_alta": "verdadero",
+        "s_ventilador_ruidoso": "verdadero"
+      },
+      "ruta": "temperatura",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D038",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_indicios_termicos"
+          ],
+          "principal": "d_indicios_termicos",
+          "reglas_activadas": [
+            "r_indicios_termicos_ventilador"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_indicios_termicos"
+          ],
+          "principal": "d_indicios_termicos",
+          "reglas_activadas": [
+            "r_indicios_termicos_ventilador"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_indicios_termicos"
+          ],
+          "principal": "d_indicios_termicos",
+          "reglas_activadas": [
+            "r_indicios_termicos_ventilador"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_apagado_bajo_carga": "falso",
+        "s_calor_percibido": "verdadero",
+        "s_temperatura_alta": "desconocido",
+        "s_ventilador_ruidoso": "verdadero"
+      },
+      "ruta": "temperatura",
+      "tipo_escenario": "parcial"
+    },
+    {
+      "id": "D039",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_apagado_bajo_carga": "verdadero",
+        "s_calor_percibido": "falso",
+        "s_temperatura_alta": "desconocido",
+        "s_ventilador_ruidoso": "falso"
+      },
+      "ruta": "temperatura",
+      "tipo_escenario": "ambigua"
+    },
+    {
+      "id": "D040",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_temperatura_apagado",
+            "r_temperatura_medida"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_temperatura_apagado",
+            "r_temperatura_medida"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_temperatura_apagado",
+            "r_temperatura_medida"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_apagado_bajo_carga": "verdadero",
+        "s_calor_percibido": "falso",
+        "s_temperatura_alta": "verdadero",
+        "s_ventilador_ruidoso": "falso"
+      },
+      "ruta": "temperatura",
+      "tipo_escenario": "tension_aparente"
+    },
+    {
+      "id": "D041",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_apagado_bajo_carga": "falso",
+        "s_calor_percibido": "verdadero",
+        "s_temperatura_alta": "desconocido",
+        "s_ventilador_ruidoso": "falso"
+      },
+      "ruta": "temperatura",
+      "tipo_escenario": "comprobacion_adicional"
+    },
+    {
+      "id": "D042",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_temperatura_medida",
+            "r_temperatura_ventilador"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_temperatura_medida",
+            "r_temperatura_ventilador"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_temperatura_medida",
+            "r_temperatura_ventilador"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_apagado_bajo_carga": "falso",
+        "s_calor_percibido": "desconocido",
+        "s_temperatura_alta": "verdadero",
+        "s_ventilador_ruidoso": "verdadero"
+      },
+      "ruta": "temperatura",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D044",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_indicios_termicos",
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_indicios_termicos",
+          "reglas_activadas": [
+            "r_indicios_termicos_apagado",
+            "r_temperatura_apagado",
+            "r_temperatura_medida"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_indicios_termicos",
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_indicios_termicos",
+          "reglas_activadas": [
+            "r_indicios_termicos_apagado",
+            "r_temperatura_apagado",
+            "r_temperatura_medida"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento",
+            "d_indicios_termicos"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_indicios_termicos_apagado",
+            "r_temperatura_apagado",
+            "r_temperatura_medida"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_apagado_bajo_carga": "verdadero",
+        "s_calor_percibido": "verdadero",
+        "s_temperatura_alta": "verdadero",
+        "s_ventilador_ruidoso": "falso"
+      },
+      "ruta": "temperatura",
+      "tipo_escenario": "simultanea"
+    },
+    {
+      "id": "D045",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_wifi_inhabilitado",
+            "d_conectividad_local"
+          ],
+          "principal": "d_wifi_inhabilitado",
+          "reglas_activadas": [
+            "r_red_otros_conectan",
+            "r_wifi_otros_conectan",
+            "r_wifi_sin_red"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_wifi_inhabilitado",
+            "d_conectividad_local"
+          ],
+          "principal": "d_wifi_inhabilitado",
+          "reglas_activadas": [
+            "r_red_otros_conectan",
+            "r_wifi_otros_conectan",
+            "r_wifi_sin_red"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_wifi_inhabilitado",
+            "d_conectividad_local"
+          ],
+          "principal": "d_wifi_inhabilitado",
+          "reglas_activadas": [
+            "r_red_otros_conectan",
+            "r_wifi_otros_conectan",
+            "r_wifi_sin_red"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_conexion_wifi_intentada": "verdadero",
+        "s_otros_equipos_conectan": "verdadero",
+        "s_sin_red": "verdadero",
+        "s_wifi_deshabilitado": "verdadero"
+      },
+      "ruta": "conectividad",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D046",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_enlace_cable",
+            "d_conectividad_local"
+          ],
+          "principal": "d_enlace_cable",
+          "reglas_activadas": [
+            "r_red_cable_desconectado",
+            "r_red_otros_conectan"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_enlace_cable",
+            "d_conectividad_local"
+          ],
+          "principal": "d_enlace_cable",
+          "reglas_activadas": [
+            "r_red_cable_desconectado",
+            "r_red_otros_conectan"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_enlace_cable",
+            "d_conectividad_local"
+          ],
+          "principal": "d_enlace_cable",
+          "reglas_activadas": [
+            "r_red_cable_desconectado",
+            "r_red_otros_conectan"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_aviso_cable_desconectado": "verdadero",
+        "s_conexion_cable_intentada": "verdadero",
+        "s_conexion_wifi_intentada": "falso",
+        "s_otros_equipos_conectan": "verdadero",
+        "s_sin_red": "verdadero"
+      },
+      "ruta": "conectividad",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D047",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_red_compartida"
+          ],
+          "principal": "d_red_compartida",
+          "reglas_activadas": [
+            "r_red_intermitente_compartida"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_red_compartida"
+          ],
+          "principal": "d_red_compartida",
+          "reglas_activadas": [
+            "r_red_intermitente_compartida"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_red_compartida"
+          ],
+          "principal": "d_red_compartida",
+          "reglas_activadas": [
+            "r_red_intermitente_compartida"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_otros_equipos_fallan_al_mismo_tiempo": "verdadero",
+        "s_red_intermitente": "verdadero",
+        "s_sin_red": "falso"
+      },
+      "ruta": "conectividad",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D048",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_conexion_wifi_intentada": "verdadero",
+        "s_otros_equipos_conectan": "desconocido",
+        "s_sin_red": "verdadero",
+        "s_wifi_deshabilitado": "falso"
+      },
+      "ruta": "conectividad",
+      "tipo_escenario": "parcial"
+    },
+    {
+      "id": "D049",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_otros_equipos_fallan_al_mismo_tiempo": "desconocido",
+        "s_red_intermitente": "verdadero",
+        "s_sin_red": "falso"
+      },
+      "ruta": "conectividad",
+      "tipo_escenario": "ambigua"
+    },
+    {
+      "id": "D050",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_pagina_especifica_falla": "verdadero",
+        "s_pagina_fallida_abre_en_otro": "falso",
+        "s_red_intermitente": "falso",
+        "s_sin_red": "falso"
+      },
+      "ruta": "conectividad",
+      "tipo_escenario": "fuera_cobertura"
+    },
+    {
+      "id": "D051",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_conectividad_local"
+          ],
+          "principal": "d_conectividad_local",
+          "reglas_activadas": [
+            "r_red_pagina_fallida_local"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_conectividad_local"
+          ],
+          "principal": "d_conectividad_local",
+          "reglas_activadas": [
+            "r_red_pagina_fallida_local"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_conectividad_local"
+          ],
+          "principal": "d_conectividad_local",
+          "reglas_activadas": [
+            "r_red_pagina_fallida_local"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_pagina_especifica_falla": "verdadero",
+        "s_pagina_fallida_abre_en_otro": "verdadero",
+        "s_red_intermitente": "falso",
+        "s_sin_red": "falso"
+      },
+      "ruta": "conectividad",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D052",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_enlace_cable",
+            "d_red_compartida"
+          ],
+          "principal": "d_enlace_cable",
+          "reglas_activadas": [
+            "r_red_cable_desconectado",
+            "r_red_compartida"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_enlace_cable",
+            "d_red_compartida"
+          ],
+          "principal": "d_enlace_cable",
+          "reglas_activadas": [
+            "r_red_cable_desconectado",
+            "r_red_compartida"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_enlace_cable",
+            "d_red_compartida"
+          ],
+          "principal": "d_enlace_cable",
+          "reglas_activadas": [
+            "r_red_cable_desconectado",
+            "r_red_compartida"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_aviso_cable_desconectado": "verdadero",
+        "s_conexion_cable_intentada": "verdadero",
+        "s_conexion_wifi_intentada": "falso",
+        "s_otros_equipos_conectan": "falso",
+        "s_sin_red": "verdadero"
+      },
+      "ruta": "conectividad",
+      "tipo_escenario": "simultanea"
+    },
+    {
+      "id": "D053",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_conectividad_local"
+          ],
+          "principal": "d_conectividad_local",
+          "reglas_activadas": [
+            "r_red_intermitente_local"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_conectividad_local"
+          ],
+          "principal": "d_conectividad_local",
+          "reglas_activadas": [
+            "r_red_intermitente_local"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_conectividad_local"
+          ],
+          "principal": "d_conectividad_local",
+          "reglas_activadas": [
+            "r_red_intermitente_local"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_otros_equipos_fallan_al_mismo_tiempo": "falso",
+        "s_red_intermitente": "verdadero",
+        "s_sin_red": "falso"
+      },
+      "ruta": "conectividad",
+      "tipo_escenario": "tension_aparente"
+    },
+    {
+      "id": "D054",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_conectividad_local"
+          ],
+          "principal": "d_conectividad_local",
+          "reglas_activadas": [
+            "r_red_otros_conectan"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_conectividad_local"
+          ],
+          "principal": "d_conectividad_local",
+          "reglas_activadas": [
+            "r_red_otros_conectan"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_conectividad_local"
+          ],
+          "principal": "d_conectividad_local",
+          "reglas_activadas": [
+            "r_red_otros_conectan"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_aviso_cable_desconectado": "falso",
+        "s_conexion_cable_intentada": "verdadero",
+        "s_conexion_wifi_intentada": "falso",
+        "s_otros_equipos_conectan": "verdadero",
+        "s_sin_red": "verdadero"
+      },
+      "ruta": "conectividad",
+      "tipo_escenario": "comprobacion_adicional"
+    },
+    {
+      "id": "D055",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_error_critico_so"
+          ],
+          "principal": "d_error_critico_so",
+          "reglas_activadas": [
+            "r_so_error_critico"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_error_critico_so"
+          ],
+          "principal": "d_error_critico_so",
+          "reglas_activadas": [
+            "r_so_error_critico"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_error_critico_so"
+          ],
+          "principal": "d_error_critico_so",
+          "reglas_activadas": [
+            "r_so_error_critico"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_apagado_bajo_carga": "falso",
+        "s_artefactos_video": "falso",
+        "s_calor_percibido": "falso",
+        "s_congelamientos": "falso",
+        "s_errores_entrada_salida": "falso",
+        "s_led_encendido": "verdadero",
+        "s_lentitud_programas": "falso",
+        "s_pantalla_azul": "verdadero",
+        "s_sin_imagen": "falso",
+        "s_sin_red": "falso",
+        "s_so_no_inicia": "falso",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "general",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D056",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_led_encendido": "desconocido",
+        "s_sin_imagen": "desconocido",
+        "s_ventiladores_giran": "desconocido"
+      },
+      "ruta": "general",
+      "tipo_escenario": "parcial"
+    },
+    {
+      "id": "D057",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_temperatura_medida"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_temperatura_medida"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_sobrecalentamiento"
+          ],
+          "principal": "d_sobrecalentamiento",
+          "reglas_activadas": [
+            "r_temperatura_medida"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_apagado_bajo_carga": "falso",
+        "s_calor_percibido": "verdadero",
+        "s_congelamientos": "falso",
+        "s_led_encendido": "verdadero",
+        "s_lentitud_programas": "falso",
+        "s_sin_imagen": "falso",
+        "s_sin_red": "falso",
+        "s_so_no_inicia": "falso",
+        "s_temperatura_alta": "verdadero",
+        "s_ventilador_ruidoso": "falso",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "general",
+      "tipo_escenario": "evidencia_suficiente"
+    },
+    {
+      "id": "D058",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "B": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        },
+        "C": {
+          "hechos_derivados": {},
+          "orden": [],
+          "principal": null,
+          "reglas_activadas": []
+        }
+      },
+      "observaciones": {
+        "s_apagado_bajo_carga": "falso",
+        "s_artefactos_video": "desconocido",
+        "s_calor_percibido": "desconocido",
+        "s_congelamientos": "falso",
+        "s_led_encendido": "verdadero",
+        "s_lentitud_programas": "falso",
+        "s_pantalla_azul": "desconocido",
+        "s_sin_imagen": "falso",
+        "s_sin_red": "falso",
+        "s_so_no_inicia": "falso",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "general",
+      "tipo_escenario": "parcial"
+    },
+    {
+      "id": "D059",
+      "modelos": {
+        "A": {
+          "hechos_derivados": {},
+          "orden": [
+            "d_arranque_so",
+            "d_revision_inicio_energia",
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_arranque",
+            "r_almacenamiento_errores_io",
+            "r_inicio_so_luz",
+            "r_inicio_so_ventilador",
+            "r_so_mensaje_unidad_presente",
+            "r_so_no_inicia_unidad_presente"
+          ]
+        },
+        "B": {
+          "hechos_derivados": {
+            "h_fallo_arranque_unidad_visible": "verdadero",
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [
+            "d_arranque_so",
+            "d_revision_inicio_energia",
+            "d_salud_almacenamiento"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_arranque",
+            "r_almacenamiento_errores_io",
+            "r_b_arranque_tras_post",
+            "r_b_mensaje_arranque",
+            "r_inicio_so_luz",
+            "r_inicio_so_ventilador",
+            "r_so_mensaje_unidad_presente",
+            "r_so_no_inicia_unidad_presente",
+            "r_b_arranque_unidad_visible",
+            "r_b_revision_arranque"
+          ]
+        },
+        "C": {
+          "hechos_derivados": {
+            "h_fallo_arranque_unidad_visible": "verdadero",
+            "h_fallo_etapa_arranque": "verdadero"
+          },
+          "orden": [
+            "d_arranque_so",
+            "d_salud_almacenamiento",
+            "d_revision_inicio_energia"
+          ],
+          "principal": "d_arranque_so",
+          "reglas_activadas": [
+            "r_almacenamiento_errores_arranque",
+            "r_almacenamiento_errores_io",
+            "r_b_arranque_tras_post",
+            "r_b_mensaje_arranque",
+            "r_inicio_so_luz",
+            "r_inicio_so_ventilador",
+            "r_so_mensaje_unidad_presente",
+            "r_so_no_inicia_unidad_presente",
+            "r_b_arranque_unidad_visible",
+            "r_b_revision_arranque"
+          ]
+        }
+      },
+      "observaciones": {
+        "s_errores_entrada_salida": "verdadero",
+        "s_led_encendido": "verdadero",
+        "s_pantalla_azul": "falso",
+        "s_post_completado": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_sin_dispositivo_arranque": "verdadero",
+        "s_sin_imagen": "falso",
+        "s_so_no_inicia": "verdadero",
+        "s_unidad_no_detectada": "falso",
+        "s_ventiladores_giran": "verdadero"
+      },
+      "ruta": "general",
+      "tipo_escenario": "simultanea"
+    }
+  ],
+  "desarrollo_sha256": "9f06ba6aad8b61d9d8ecc923c27e364d580e1bf55731d4674aed903019447da9",
+  "elegibles": 55,
+  "excluidos": [
+    "D012",
+    "D022",
+    "D032",
+    "D043",
+    "D060"
+  ],
+  "version": 1
+}

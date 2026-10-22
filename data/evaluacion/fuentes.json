@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "fuentes": [
+    {
+      "id": "dell_inicio",
+      "entidad": "Dell",
+      "titulo": "Resolve No Power, No POST, No Boot or No Video Issues",
+      "url": "https://www.dell.com/support/kbdoc/en-us/000125609/resolve-no-power-no-post-no-boot-or-no-video-issues-with-your-dell-computer",
+      "uso": "Separación de etapas de energía, POST, video y arranque; consulta de códigos del equipo."
+    },
+    {
+      "id": "dell_memoria",
+      "entidad": "Dell",
+      "titulo": "How to Diagnose and Resolve Common Memory Issues on a Dell Laptop",
+      "url": "https://www.dell.com/support/kbdoc/en-us/000126066/how-to-diagnose-and-resolve-common-memory-issues-on-a-dell-notebook-pc",
+      "uso": "Diagnósticos y códigos de memoria; no equiparar lentitud con avería física."
+    },
+    {
+      "id": "dell_unidad",
+      "entidad": "Dell",
+      "titulo": "Fix Hard Drive and SSD Issues",
+      "url": "https://www.dell.com/support/contents/en-bs/article/product-support/self-support-knowledgebase/data-storage-backup-and-recovery/hard-drive-ssd-issues",
+      "uso": "Distinguir detección de unidad y causas posibles de enlace o medio."
+    },
+    {
+      "id": "ms_inicio",
+      "entidad": "Microsoft",
+      "titulo": "Startup Repair",
+      "url": "https://support.microsoft.com/en-us/windows/experience/startup-boot/startup-repair",
+      "uso": "Revisión de configuración y archivos de arranque sin asumir daño físico."
+    },
+    {
+      "id": "ms_azul",
+      "entidad": "Microsoft",
+      "titulo": "Resolving Blue Screen errors in Windows",
+      "url": "https://support.microsoft.com/en-US/windows/resolving-blue-screen-errors-in-windows-60b01860-58f2-be66-7516-5c45a66ae3c6",
+      "uso": "Código de parada como síntoma de error crítico con causa pendiente."
+    },
+    {
+      "id": "ms_pantalla",
+      "entidad": "Microsoft",
+      "titulo": "Troubleshooting blank screens in Windows",
+      "url": "https://support.microsoft.com/en-us/windows/hardware/display-graphics/troubleshooting-blank-screens-in-windows",
+      "uso": "Pantalla negra después del inicio y pruebas para ubicar la etapa."
+    },
+    {
+      "id": "ms_rendimiento",
+      "entidad": "Microsoft",
+      "titulo": "Tips to improve PC performance in Windows",
+      "url": "https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows",
+      "uso": "Espacio, memoria, CPU y disco como varias causas posibles de lentitud."
+    },
+    {
+      "id": "ms_wifi",
+      "entidad": "Microsoft",
+      "titulo": "Fix Wi-Fi connection issues in Windows",
+      "url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+      "uso": "Distinguir problemas de adaptador, equipo y red compartida."
+    },
+    {
+      "id": "ms_ethernet",
+      "entidad": "Microsoft",
+      "titulo": "Fix Ethernet connection problems in Windows",
+      "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-ethernet-connection-problems-in-windows",
+      "uso": "Prueba de cable, puerto y comparación con otros equipos."
+    },
+    {
+      "id": "intel_termica",
+      "entidad": "Intel",
+      "titulo": "What Is Throttling and How Can It Be Resolved?",
+      "url": "https://www.intel.com/content/www/us/en/support/articles/000088048/processors.html",
+      "uso": "Temperatura medida frente a límite de componente y revisión de solución térmica."
+    },
+    {
+      "id": "ms_color",
+      "entidad": "Microsoft",
+      "titulo": "Change display brightness and color in Windows",
+      "url": "https://support.microsoft.com/en-us/windows/hardware/display-graphics/change-display-brightness-and-color-in-windows",
+      "uso": "Perfiles de color y calibración fuera del cuestionario de video."
+    },
+    {
+      "id": "ms_usb",
+      "entidad": "Microsoft",
+      "titulo": "Fix USB-C problems in Windows",
+      "url": "https://support.microsoft.com/en-us/windows/hardware/usb/fix-usb-c-problems-in-windows",
+      "uso": "Problemas de periféricos USB-C no codificados por el cuestionario."
+    },
+    {
+      "id": "ms_lapiz",
+      "entidad": "Microsoft",
+      "titulo": "Use a pen with Windows",
+      "url": "https://support.microsoft.com/en-gb/windows/hardware/input-devices/use-a-pen-with-windows",
+      "uso": "Emparejamiento y funcionamiento del lápiz digital fuera del catálogo."
+    },
+    {
+      "id": "ms_licencia",
+      "entidad": "Microsoft",
+      "titulo": "Unlicensed Product and activation errors in Office",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-activation-licensing/office-install/unlicensed-product-and-activation-errors-in-office",
+      "uso": "Aviso de licencia de aplicación sin implicar error del sistema operativo."
+    },
+    {
+      "id": "ms_acceso",
+      "entidad": "Microsoft",
+      "titulo": "Error 400 when signing in",
+      "url": "https://support.microsoft.com/en-us/accounts-billing/manage/error-400-when-signing-in",
+      "uso": "Error de acceso a aplicación sin inferir falla de hardware."
+    },
+    {
+      "id": "dell_ventilador",
+      "entidad": "Dell",
+      "titulo": "How to Troubleshoot Fan Issues",
+      "url": "https://www.dell.com/support/kbdoc/en-us/000179087/how-to-troubleshoot-fan-issues",
+      "uso": "Ruido de ventilador como revisión separada de temperatura medida."
+    }
+  ]
+}

@@ -1,0 +1,440 @@
+{
+  "A": {
+    "d_arranque_so": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 4,
+      "tn": 51,
+      "total": 55,
+      "tp": 4
+    },
+    "d_conectividad_local": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 5,
+      "tn": 50,
+      "total": 55,
+      "tp": 5
+    },
+    "d_deteccion_almacenamiento": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 1,
+      "tn": 54,
+      "total": 55,
+      "tp": 1
+    },
+    "d_enlace_cable": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_error_critico_so": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 3,
+      "tn": 52,
+      "total": 55,
+      "tp": 3
+    },
+    "d_espacio_insuficiente": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_indicios_termicos": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 3,
+      "tn": 52,
+      "total": 55,
+      "tp": 3
+    },
+    "d_memoria_ram": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 3,
+      "tn": 52,
+      "total": 55,
+      "tp": 3
+    },
+    "d_pantalla_principal": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_presion_memoria": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_proceso_exigente": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_red_compartida": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_revision_inicio_energia": {
+      "fn": 1,
+      "fp": 4,
+      "soporte": 7,
+      "tn": 44,
+      "total": 55,
+      "tp": 6
+    },
+    "d_ruta_alimentacion": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 1,
+      "tn": 54,
+      "total": 55,
+      "tp": 1
+    },
+    "d_salud_almacenamiento": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 5,
+      "tn": 50,
+      "total": 55,
+      "tp": 5
+    },
+    "d_sobrecalentamiento": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 5,
+      "tn": 50,
+      "total": 55,
+      "tp": 5
+    },
+    "d_subsistema_video": {
+      "fn": 0,
+      "fp": 2,
+      "soporte": 1,
+      "tn": 52,
+      "total": 55,
+      "tp": 1
+    },
+    "d_wifi_inhabilitado": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 1,
+      "tn": 54,
+      "total": 55,
+      "tp": 1
+    }
+  },
+  "B": {
+    "d_arranque_so": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 4,
+      "tn": 51,
+      "total": 55,
+      "tp": 4
+    },
+    "d_conectividad_local": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 5,
+      "tn": 50,
+      "total": 55,
+      "tp": 5
+    },
+    "d_deteccion_almacenamiento": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 1,
+      "tn": 54,
+      "total": 55,
+      "tp": 1
+    },
+    "d_enlace_cable": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_error_critico_so": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 3,
+      "tn": 52,
+      "total": 55,
+      "tp": 3
+    },
+    "d_espacio_insuficiente": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_indicios_termicos": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 3,
+      "tn": 52,
+      "total": 55,
+      "tp": 3
+    },
+    "d_memoria_ram": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 3,
+      "tn": 52,
+      "total": 55,
+      "tp": 3
+    },
+    "d_pantalla_principal": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_presion_memoria": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_proceso_exigente": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_red_compartida": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_revision_inicio_energia": {
+      "fn": 1,
+      "fp": 4,
+      "soporte": 7,
+      "tn": 44,
+      "total": 55,
+      "tp": 6
+    },
+    "d_ruta_alimentacion": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 1,
+      "tn": 54,
+      "total": 55,
+      "tp": 1
+    },
+    "d_salud_almacenamiento": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 5,
+      "tn": 50,
+      "total": 55,
+      "tp": 5
+    },
+    "d_sobrecalentamiento": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 5,
+      "tn": 50,
+      "total": 55,
+      "tp": 5
+    },
+    "d_subsistema_video": {
+      "fn": 0,
+      "fp": 2,
+      "soporte": 1,
+      "tn": 52,
+      "total": 55,
+      "tp": 1
+    },
+    "d_wifi_inhabilitado": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 1,
+      "tn": 54,
+      "total": 55,
+      "tp": 1
+    }
+  },
+  "C": {
+    "d_arranque_so": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 4,
+      "tn": 51,
+      "total": 55,
+      "tp": 4
+    },
+    "d_conectividad_local": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 5,
+      "tn": 50,
+      "total": 55,
+      "tp": 5
+    },
+    "d_deteccion_almacenamiento": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 1,
+      "tn": 54,
+      "total": 55,
+      "tp": 1
+    },
+    "d_enlace_cable": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_error_critico_so": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 3,
+      "tn": 52,
+      "total": 55,
+      "tp": 3
+    },
+    "d_espacio_insuficiente": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_indicios_termicos": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 3,
+      "tn": 52,
+      "total": 55,
+      "tp": 3
+    },
+    "d_memoria_ram": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 3,
+      "tn": 52,
+      "total": 55,
+      "tp": 3
+    },
+    "d_pantalla_principal": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_presion_memoria": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_proceso_exigente": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_red_compartida": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 2,
+      "tn": 53,
+      "total": 55,
+      "tp": 2
+    },
+    "d_revision_inicio_energia": {
+      "fn": 1,
+      "fp": 4,
+      "soporte": 7,
+      "tn": 44,
+      "total": 55,
+      "tp": 6
+    },
+    "d_ruta_alimentacion": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 1,
+      "tn": 54,
+      "total": 55,
+      "tp": 1
+    },
+    "d_salud_almacenamiento": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 5,
+      "tn": 50,
+      "total": 55,
+      "tp": 5
+    },
+    "d_sobrecalentamiento": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 5,
+      "tn": 50,
+      "total": 55,
+      "tp": 5
+    },
+    "d_subsistema_video": {
+      "fn": 0,
+      "fp": 2,
+      "soporte": 1,
+      "tn": 52,
+      "total": 55,
+      "tp": 1
+    },
+    "d_wifi_inhabilitado": {
+      "fn": 0,
+      "fp": 0,
+      "soporte": 1,
+      "tn": 54,
+      "total": 55,
+      "tp": 1
+    }
+  }
+}

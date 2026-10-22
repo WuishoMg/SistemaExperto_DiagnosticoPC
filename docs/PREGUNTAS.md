@@ -1,6 +1,26 @@
-# Preguntas visibles del Avance 1
+# Cuestionario dinámico y preguntas visibles
 
-El catálogo JSON es la fuente de texto, ayuda y polaridad. La ruta elige solo preguntas relacionadas con la categoría y con respuestas anteriores; las correcciones posteriores al rediseño se documentan en `AUDITORIA_COHERENCIA_AVANCE_1.md`. La consola acepta `1/2/3` o `s/n/?`. En todas las preguntas, «No estoy seguro» registra `desconocido`.
+`data/interfaz/preguntas.json` es la fuente vigente de texto, ayuda, hecho asociado y polaridad; `data/interfaz/rutas.json` es la fuente del grafo de siete categorías. La tabla siguiente sirve para consultar las 36 preguntas, pero no reemplaza esos JSON. La consola acepta `1/2/3` o `s/n/?`. En todas las preguntas, «No estoy seguro» y Enter durante la consulta registran `desconocido`, nunca `falso`.
+
+## Adquisición contextual y rutas
+
+Cada nodo del grafo tiene destinos para Sí, No y No estoy seguro; las condiciones de transición usan los hechos adquiridos y el último destino aplicable es el predeterminado. El `GestorPreguntas` reconstruye los hechos desde el historial, elige la siguiente pregunta y evita ciclos. **No ejecuta reglas diagnósticas**: solo los modelos A, B o C infieren hipótesis después de la adquisición. Una pregunta puede servir a varias rutas cuando aporta una observación pertinente.
+
+| Ruta elegida | Primera pregunta | Propósito de las siguientes comprobaciones |
+| --- | --- | --- |
+| Alimentación | `p02` | Separar luz y ventilador; con energía presente, comprobar imagen e inicio utilizable. |
+| Lentitud o congelamientos | `p21` | Distinguir ambos síntomas y consultar espacio, memoria, procesos, disco o pruebas solo según el trayecto. |
+| Video | `p07` | Distinguir imagen presente o ausente; comprobar energía antes de la segunda pantalla y registrar artefactos cuando proceda. |
+| Sistema | `p16` | Separar arranque utilizable, POST, detección de unidad, mensajes y errores durante el uso. |
+| Temperatura o apagado | `p30` | Distinguir calor percibido, apagado, ventilador y medición alta. |
+| Conectividad | `p18` | Separar página accesible, Wi-Fi, cable y comparación con otro dispositivo. |
+| Orientación general | `p02` | Adquirir señales básicas y continuar por el tramo pertinente sin cambiar la categoría mostrada. |
+
+`@resultado` termina la adquisición y permite evaluar los hechos disponibles. `@insuficiente` indica que no quedan preguntas útiles; `@bloqueo_*` explica una incompatibilidad de contexto y puede ofrecer iniciar otra consulta. La categoría elegida permanece fija hasta que el usuario solicita un cambio; la consola exige confirmación y abre una sesión sin respuestas anteriores. `v` vuelve una respuesta, `e` permite editar una anterior y descarta las posteriores porque quizá ya no sean aplicables; `f` finaliza con la evidencia disponible. Las contradicciones detectadas del mismo intento detienen el resultado hasta corregir las respuestas. Estos contratos de adquisición y estado son la base para una futura interfaz PySide6, sin trasladar inferencia al cuestionario.
+
+Las correcciones del Avance 1 evitaron terminar prematuramente ante incertidumbre, pedir la segunda pantalla antes de aclarar energía, atribuir Wi-Fi a un enlace por cable y confundir POST con inicio del sistema. `p32` distingue imagen transitoria; `p33/p34/p36/p37` piden comparaciones de red pertinentes; `p35` registra un error genérico durante el uso sin inventar su causa. La validación estructural del grafo y las pruebas de alcanzabilidad de reglas son controles distintos. La historia detallada anterior al cierre puede recuperarse del tag `avance-1`.
+
+## Catálogo de preguntas
 
 | ID | Hecho interno | Pregunta visible | Ayuda mostrada | Sí → | No → |
 | --- | --- | --- | --- | :---: | :---: |

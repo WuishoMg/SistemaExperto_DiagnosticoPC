@@ -1,0 +1,3692 @@
+{
+  "version": 1,
+  "naturaleza": "viñetas académicas; ninguna causa física confirmada",
+  "grupo": "desarrollo",
+  "casos": [
+    {
+      "id": "D001",
+      "ruta": "alimentacion",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "Una torre que funcionaba ayer no da señales al pulsar encendido: ni el indicador del gabinete ni el flujo de aire aparecen. La persona aún no ha revisado toma ni cable.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03"
+      ],
+      "observaciones": {
+        "s_led_encendido": "falso",
+        "s_ventiladores_giran": "falso"
+      },
+      "hipotesis_defendibles": [
+        "d_ruta_alimentacion"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "falso",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "falso",
+          "detalle": "Ventiladores en movimiento"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Comprobar toma, cable y fuente compatible antes de intervenir internamente."
+      ],
+      "justificacion_tecnica": "La ausencia conjunta de señales orienta a la ruta de alimentación, sin localizar la pieza.",
+      "referencias": [
+        "dell_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D002",
+      "ruta": "alimentacion",
+      "tipo_escenario": "parcial",
+      "relato": "En una laptop cerrada no se oye ventilador al intentar iniciar; la luz de encendido queda oculta por la funda y no se pudo verla.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03"
+      ],
+      "observaciones": {
+        "s_led_encendido": "desconocido",
+        "s_ventiladores_giran": "falso"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "falso",
+          "detalle": "Ventiladores en movimiento"
+        }
+      ],
+      "informacion_faltante": [
+        "s_led_encendido"
+      ],
+      "comprobaciones_adicionales": [
+        "Retirar la funda y observar indicador y pantalla en un nuevo intento."
+      ],
+      "justificacion_tecnica": "Una sola señal ausente no permite distinguir alimentación, suspensión u otra etapa.",
+      "referencias": [
+        "dell_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D003",
+      "ruta": "alimentacion",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "El indicador de un equipo compacto se ilumina; el ventilador permanece quieto, pero se ve el logotipo y luego el escritorio funciona.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03",
+        "p07",
+        "p16"
+      ],
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "falso",
+        "s_sin_imagen": "falso",
+        "s_so_no_inicia": "falso"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "falso",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "falso",
+          "detalle": "Sistema operativo no inicia"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Observar el ventilador durante una tarea y consultar el diseño de refrigeración."
+      ],
+      "justificacion_tecnica": "La imagen visible y el inicio utilizable no demuestran una avería de alimentación.",
+      "referencias": [
+        "dell_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D004",
+      "ruta": "alimentacion",
+      "tipo_escenario": "ambigua",
+      "relato": "Se ilumina el botón y se escucha aire al encender, pero la pantalla principal permanece negra. El usuario no puede determinar si el sistema terminó de iniciar.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03",
+        "p07"
+      ],
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "verdadero",
+        "s_sin_imagen": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_revision_inicio_energia"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero",
+          "detalle": "Sin imagen en pantalla principal"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Probar una pantalla conocida y observar códigos POST."
+      ],
+      "justificacion_tecnica": "Hay energía, aunque la etapa exacta del fallo sigue abierta.",
+      "referencias": [
+        "dell_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D005",
+      "ruta": "alimentacion",
+      "tipo_escenario": "tension_aparente",
+      "relato": "La luz frontal de una torre no enciende, pero un ventilador gira y la pantalla principal permanece negra.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03",
+        "p07"
+      ],
+      "observaciones": {
+        "s_led_encendido": "falso",
+        "s_ventiladores_giran": "verdadero",
+        "s_sin_imagen": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_revision_inicio_energia"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "falso",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero",
+          "detalle": "Sin imagen en pantalla principal"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Verificar indicador, salida de video y progreso de inicio."
+      ],
+      "justificacion_tecnica": "Un indicador apagado no niega energía cuando hay giro; falta separar video y arranque.",
+      "referencias": [
+        "dell_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D006",
+      "ruta": "alimentacion",
+      "tipo_escenario": "comprobacion_adicional",
+      "relato": "Una laptop ilumina el botón y muestra el logotipo, pero queda detenida antes del escritorio. No puede evaluarse el ventilador desde fuera.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03",
+        "p07",
+        "p16"
+      ],
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "desconocido",
+        "s_sin_imagen": "falso",
+        "s_so_no_inicia": "verdadero"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero",
+          "detalle": "Sistema operativo no inicia"
+        }
+      ],
+      "informacion_faltante": [
+        "s_ventiladores_giran"
+      ],
+      "comprobaciones_adicionales": [
+        "Cambiar explícitamente a sistema y revisar si aparece un mensaje de arranque."
+      ],
+      "justificacion_tecnica": "La ruta elegida revela un fallo de inicio y dirige a sistema; no sostiene una causa de alimentación.",
+      "referencias": [
+        "dell_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D007",
+      "ruta": "lentitud",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "Los programas tardan en abrir y el sistema avisa poco espacio libre; el administrador de tareas no muestra presión sostenida de memoria, CPU o disco.",
+      "trayecto_preguntas": [
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28"
+      ],
+      "observaciones": {
+        "s_lentitud_programas": "verdadero",
+        "s_congelamientos": "falso",
+        "s_espacio_sistema_bajo": "verdadero",
+        "s_uso_memoria_alto": "falso",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "falso"
+      },
+      "hipotesis_defendibles": [
+        "d_espacio_insuficiente"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "falso",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "verdadero",
+          "detalle": "Poco espacio libre en la unidad principal"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "falso",
+          "detalle": "Uso de memoria muy alto"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del procesador"
+        },
+        {
+          "hecho": "s_proceso_disco_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del disco"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Medir espacio libre, respaldar y comprobar si mejora tras liberar espacio."
+      ],
+      "justificacion_tecnica": "El aviso de capacidad junto con lentitud justifica revisar espacio, sin atribuir toda la demora a ello.",
+      "referencias": [
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D008",
+      "ruta": "lentitud",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "Varias aplicaciones dejan de responder cuando la memoria permanece casi llena. No hubo aviso de poco espacio y no se ha ejecutado prueba de RAM.",
+      "trayecto_preguntas": [
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28",
+        "p11",
+        "p05"
+      ],
+      "observaciones": {
+        "s_lentitud_programas": "verdadero",
+        "s_congelamientos": "verdadero",
+        "s_espacio_sistema_bajo": "falso",
+        "s_uso_memoria_alto": "verdadero",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "desconocido",
+        "s_errores_entrada_salida": "falso",
+        "s_error_prueba_ram": "desconocido"
+      },
+      "hipotesis_defendibles": [
+        "d_presion_memoria"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "verdadero",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "falso",
+          "detalle": "Poco espacio libre en la unidad principal"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "verdadero",
+          "detalle": "Uso de memoria muy alto"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del procesador"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "falso",
+          "detalle": "Errores de entrada/salida"
+        }
+      ],
+      "informacion_faltante": [
+        "s_proceso_disco_alto",
+        "s_error_prueba_ram"
+      ],
+      "comprobaciones_adicionales": [
+        "Identificar procesos que consumen memoria y repetir la observación."
+      ],
+      "justificacion_tecnica": "Uso alto durante el problema respalda presión de capacidad, no falla física de RAM.",
+      "referencias": [
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D009",
+      "ruta": "lentitud",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "Al abrir una herramienta de edición, los programas se demoran; ese proceso ocupa casi todo el CPU mientras ocurre y el uso de disco no es alto.",
+      "trayecto_preguntas": [
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28"
+      ],
+      "observaciones": {
+        "s_lentitud_programas": "verdadero",
+        "s_congelamientos": "falso",
+        "s_espacio_sistema_bajo": "falso",
+        "s_uso_memoria_alto": "falso",
+        "s_proceso_cpu_alto": "verdadero",
+        "s_proceso_disco_alto": "falso"
+      },
+      "hipotesis_defendibles": [
+        "d_proceso_exigente"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "falso",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "falso",
+          "detalle": "Poco espacio libre en la unidad principal"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "falso",
+          "detalle": "Uso de memoria muy alto"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "verdadero",
+          "detalle": "Programa con uso alto del procesador"
+        },
+        {
+          "hecho": "s_proceso_disco_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del disco"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Identificar tarea y comparar el rendimiento cuando termina."
+      ],
+      "justificacion_tecnica": "La coincidencia temporal con un proceso de CPU exigente orienta a revisar la carga de ese programa.",
+      "referencias": [
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D010",
+      "ruta": "lentitud",
+      "tipo_escenario": "simultanea",
+      "relato": "Una estación de trabajo abre lentamente y a veces se congela. Hay aviso de poco espacio y memoria casi llena; no se observan errores de lectura ni en prueba de RAM.",
+      "trayecto_preguntas": [
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28",
+        "p11",
+        "p05"
+      ],
+      "observaciones": {
+        "s_lentitud_programas": "verdadero",
+        "s_congelamientos": "verdadero",
+        "s_espacio_sistema_bajo": "verdadero",
+        "s_uso_memoria_alto": "verdadero",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "falso",
+        "s_errores_entrada_salida": "falso",
+        "s_error_prueba_ram": "falso"
+      },
+      "hipotesis_defendibles": [
+        "d_espacio_insuficiente",
+        "d_presion_memoria"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_espacio_insuficiente",
+        "justificacion": "Dos recursos medidos pueden contribuir simultáneamente; no se infiere avería de memoria."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "verdadero",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "verdadero",
+          "detalle": "Poco espacio libre en la unidad principal"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "verdadero",
+          "detalle": "Uso de memoria muy alto"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del procesador"
+        },
+        {
+          "hecho": "s_proceso_disco_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del disco"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "falso",
+          "detalle": "Errores de entrada/salida"
+        },
+        {
+          "hecho": "s_error_prueba_ram",
+          "estado": "falso",
+          "detalle": "Error en prueba de RAM"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Liberar espacio de modo seguro y revisar consumo de memoria por separado."
+      ],
+      "justificacion_tecnica": "Dos recursos medidos pueden contribuir simultáneamente; no se infiere avería de memoria.",
+      "referencias": [
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D011",
+      "ruta": "lentitud",
+      "tipo_escenario": "ambigua",
+      "relato": "El escritorio abre aplicaciones con rapidez habitual, pero a ratos deja de responder. Nadie revisó uso de recursos ni ejecutó prueba de memoria.",
+      "trayecto_preguntas": [
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28",
+        "p11",
+        "p05"
+      ],
+      "observaciones": {
+        "s_lentitud_programas": "falso",
+        "s_congelamientos": "verdadero",
+        "s_espacio_sistema_bajo": "desconocido",
+        "s_uso_memoria_alto": "desconocido",
+        "s_proceso_cpu_alto": "desconocido",
+        "s_proceso_disco_alto": "desconocido",
+        "s_errores_entrada_salida": "falso",
+        "s_error_prueba_ram": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "falso",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "verdadero",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "falso",
+          "detalle": "Errores de entrada/salida"
+        }
+      ],
+      "informacion_faltante": [
+        "s_espacio_sistema_bajo",
+        "s_uso_memoria_alto",
+        "s_proceso_cpu_alto",
+        "s_proceso_disco_alto",
+        "s_error_prueba_ram"
+      ],
+      "comprobaciones_adicionales": [
+        "Registrar hora del congelamiento y medir CPU, memoria y disco en ese momento."
+      ],
+      "justificacion_tecnica": "Un congelamiento aislado no respalda ninguna causa específica del catálogo.",
+      "referencias": [
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D012",
+      "ruta": "lentitud",
+      "tipo_escenario": "fuera_cobertura",
+      "relato": "Solo una aplicación antigua tarda al abrir, mientras otras funcionan normalmente y no se observan avisos ni consumos altos en el sistema.",
+      "trayecto_preguntas": [
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28"
+      ],
+      "observaciones": {
+        "s_lentitud_programas": "verdadero",
+        "s_congelamientos": "falso",
+        "s_espacio_sistema_bajo": "falso",
+        "s_uso_memoria_alto": "falso",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "falso"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "falso",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "falso",
+          "detalle": "Poco espacio libre en la unidad principal"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "falso",
+          "detalle": "Uso de memoria muy alto"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del procesador"
+        },
+        {
+          "hecho": "s_proceso_disco_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del disco"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Comprobar requisitos y registros de esa aplicación."
+      ],
+      "justificacion_tecnica": "La compatibilidad de una aplicación concreta no tiene diagnóstico propio en el catálogo.",
+      "referencias": [
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "limitacion_cuestionario"
+    },
+    {
+      "id": "D013",
+      "ruta": "lentitud",
+      "tipo_escenario": "simultanea",
+      "relato": "El equipo tarda en abrir programas; un proceso mantiene alto uso de disco y además aparecen errores al leer archivos de la unidad.",
+      "trayecto_preguntas": [
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28",
+        "p11"
+      ],
+      "observaciones": {
+        "s_lentitud_programas": "verdadero",
+        "s_congelamientos": "verdadero",
+        "s_espacio_sistema_bajo": "falso",
+        "s_uso_memoria_alto": "falso",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "verdadero",
+        "s_errores_entrada_salida": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_proceso_exigente",
+        "d_salud_almacenamiento"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_salud_almacenamiento",
+        "justificacion": "La actividad del proceso y los errores de lectura justifican dos líneas de revisión sin asumir que una causa la otra."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "verdadero",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "falso",
+          "detalle": "Poco espacio libre en la unidad principal"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "falso",
+          "detalle": "Uso de memoria muy alto"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del procesador"
+        },
+        {
+          "hecho": "s_proceso_disco_alto",
+          "estado": "verdadero",
+          "detalle": "Programa con uso alto del disco"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "verdadero",
+          "detalle": "Errores de entrada/salida"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Respaldar datos y revisar registros, proceso y conexión de la unidad."
+      ],
+      "justificacion_tecnica": "La actividad del proceso y los errores de lectura justifican dos líneas de revisión sin asumir que una causa la otra.",
+      "referencias": [
+        "dell_unidad",
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D014",
+      "ruta": "lentitud",
+      "tipo_escenario": "parcial",
+      "relato": "Después de iniciar sesión los programas tardan; la persona no consultó espacio ni administrador de tareas.",
+      "trayecto_preguntas": [
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28"
+      ],
+      "observaciones": {
+        "s_lentitud_programas": "verdadero",
+        "s_congelamientos": "falso",
+        "s_espacio_sistema_bajo": "desconocido",
+        "s_uso_memoria_alto": "desconocido",
+        "s_proceso_cpu_alto": "desconocido",
+        "s_proceso_disco_alto": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "falso",
+          "detalle": "Equipo deja de responder"
+        }
+      ],
+      "informacion_faltante": [
+        "s_espacio_sistema_bajo",
+        "s_uso_memoria_alto",
+        "s_proceso_cpu_alto",
+        "s_proceso_disco_alto"
+      ],
+      "comprobaciones_adicionales": [
+        "Medir espacio y recursos mientras se reproduce la demora."
+      ],
+      "justificacion_tecnica": "La lentitud sola no separa espacio, memoria, CPU, disco ni software.",
+      "referencias": [
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D015",
+      "ruta": "lentitud",
+      "tipo_escenario": "tension_aparente",
+      "relato": "Hay pausas y demora al abrir archivos, aunque el administrador no muestra un proceso que sature el disco; sí aparece un aviso de error de lectura.",
+      "trayecto_preguntas": [
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28",
+        "p11"
+      ],
+      "observaciones": {
+        "s_lentitud_programas": "verdadero",
+        "s_congelamientos": "verdadero",
+        "s_espacio_sistema_bajo": "falso",
+        "s_uso_memoria_alto": "falso",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "falso",
+        "s_errores_entrada_salida": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_salud_almacenamiento"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "verdadero",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "falso",
+          "detalle": "Poco espacio libre en la unidad principal"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "falso",
+          "detalle": "Uso de memoria muy alto"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del procesador"
+        },
+        {
+          "hecho": "s_proceso_disco_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del disco"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "verdadero",
+          "detalle": "Errores de entrada/salida"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Respaldar y examinar registros y estado de unidad y enlace."
+      ],
+      "justificacion_tecnica": "El bajo uso agregado de disco no invalida un error de entrada/salida concreto.",
+      "referencias": [
+        "dell_unidad",
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D016",
+      "ruta": "lentitud",
+      "tipo_escenario": "comprobacion_adicional",
+      "relato": "Los bloqueos son breves y el uso de recursos permanece normal al mirarlo; no se hizo prueba de memoria y no hay error de lectura visible.",
+      "trayecto_preguntas": [
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28",
+        "p11",
+        "p05"
+      ],
+      "observaciones": {
+        "s_lentitud_programas": "verdadero",
+        "s_congelamientos": "verdadero",
+        "s_espacio_sistema_bajo": "falso",
+        "s_uso_memoria_alto": "falso",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "falso",
+        "s_errores_entrada_salida": "falso",
+        "s_error_prueba_ram": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "verdadero",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "falso",
+          "detalle": "Poco espacio libre en la unidad principal"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "falso",
+          "detalle": "Uso de memoria muy alto"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del procesador"
+        },
+        {
+          "hecho": "s_proceso_disco_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del disco"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "falso",
+          "detalle": "Errores de entrada/salida"
+        }
+      ],
+      "informacion_faltante": [
+        "s_error_prueba_ram"
+      ],
+      "comprobaciones_adicionales": [
+        "Registrar eventos y repetir las mediciones durante el bloqueo."
+      ],
+      "justificacion_tecnica": "Las observaciones descartan explicaciones inmediatas del catálogo, pero no establecen causa alternativa.",
+      "referencias": [
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D017",
+      "ruta": "video",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "La pantalla integrada de una laptop nunca muestra imagen, mientras una pantalla externa conocida conserva el escritorio. Luces y ventilación están presentes.",
+      "trayecto_preguntas": [
+        "p07",
+        "p02",
+        "p03",
+        "p08"
+      ],
+      "observaciones": {
+        "s_sin_imagen": "verdadero",
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "verdadero",
+        "s_monitor_externo_funciona": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_pantalla_principal"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_monitor_externo_funciona",
+          "estado": "verdadero",
+          "detalle": "Monitor externo funciona"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Comprobar brillo, conector y panel con diagnóstico del fabricante."
+      ],
+      "justificacion_tecnica": "La comparación de salidas concentra la revisión en pantalla principal y su trayecto.",
+      "referencias": [
+        "dell_inicio",
+        "ms_pantalla"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D018",
+      "ruta": "video",
+      "tipo_escenario": "ambigua",
+      "relato": "Una torre enciende con indicador y ventilador, pero el monitor principal sigue negro; no se probó otra pantalla ni se interpretaron pitidos.",
+      "trayecto_preguntas": [
+        "p07",
+        "p02",
+        "p03",
+        "p08",
+        "p04",
+        "p06",
+        "p05"
+      ],
+      "observaciones": {
+        "s_sin_imagen": "verdadero",
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "verdadero",
+        "s_monitor_externo_funciona": "desconocido",
+        "s_pitidos_ram_post": "desconocido",
+        "s_reinicios_post": "falso",
+        "s_error_prueba_ram": "desconocido"
+      },
+      "hipotesis_defendibles": [
+        "d_revision_inicio_energia"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "falso",
+          "detalle": "Reinicios durante POST"
+        }
+      ],
+      "informacion_faltante": [
+        "s_monitor_externo_funciona",
+        "s_pitidos_ram_post",
+        "s_error_prueba_ram"
+      ],
+      "comprobaciones_adicionales": [
+        "Probar cable y monitor conocidos y registrar señales POST."
+      ],
+      "justificacion_tecnica": "El encendido sin imagen solo ubica una etapa amplia; video, monitor y POST siguen abiertos.",
+      "referencias": [
+        "dell_inicio",
+        "ms_pantalla"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D019",
+      "ruta": "video",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "El logotipo permanece visible al iniciar, y después aparecen líneas persistentes en la imagen.",
+      "trayecto_preguntas": [
+        "p07",
+        "p32",
+        "p09"
+      ],
+      "observaciones": {
+        "s_sin_imagen": "falso",
+        "s_imagen_desaparece_tras_inicio": "falso",
+        "s_artefactos_video": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_subsistema_video"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_imagen_desaparece_tras_inicio",
+          "estado": "falso",
+          "detalle": "Imagen desaparece después del inicio"
+        },
+        {
+          "hecho": "s_artefactos_video",
+          "estado": "verdadero",
+          "detalle": "Artefactos de video"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Comparar otra pantalla y comprobar si las líneas aparecen antes del sistema."
+      ],
+      "justificacion_tecnica": "Los artefactos persistentes justifican revisar cadena de video, no atribuir automáticamente la GPU.",
+      "referencias": [
+        "dell_inicio",
+        "ms_pantalla"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D020",
+      "ruta": "video",
+      "tipo_escenario": "parcial",
+      "relato": "Se ve brevemente la marca al arrancar y luego la pantalla principal queda negra. No hay una segunda pantalla disponible.",
+      "trayecto_preguntas": [
+        "p07",
+        "p32",
+        "p08",
+        "p04",
+        "p06",
+        "p05"
+      ],
+      "observaciones": {
+        "s_sin_imagen": "falso",
+        "s_imagen_desaparece_tras_inicio": "verdadero",
+        "s_monitor_externo_funciona": "desconocido",
+        "s_pitidos_ram_post": "desconocido",
+        "s_reinicios_post": "falso",
+        "s_error_prueba_ram": "desconocido"
+      },
+      "hipotesis_defendibles": [
+        "d_revision_inicio_energia"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_imagen_desaparece_tras_inicio",
+          "estado": "verdadero",
+          "detalle": "Imagen desaparece después del inicio"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "falso",
+          "detalle": "Reinicios durante POST"
+        }
+      ],
+      "informacion_faltante": [
+        "s_monitor_externo_funciona",
+        "s_pitidos_ram_post",
+        "s_error_prueba_ram"
+      ],
+      "comprobaciones_adicionales": [
+        "Probar salida externa y observar si el sistema llega al escritorio."
+      ],
+      "justificacion_tecnica": "La imagen breve demuestra señal inicial; falta localizar si el problema está en presentación o inicio.",
+      "referencias": [
+        "dell_inicio",
+        "ms_pantalla"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D021",
+      "ruta": "video",
+      "tipo_escenario": "simultanea",
+      "relato": "No hay imagen en dos monitores. El manual identifica el patrón de pitidos como memoria y el equipo reinicia antes del inicio del sistema.",
+      "trayecto_preguntas": [
+        "p07",
+        "p02",
+        "p03",
+        "p08",
+        "p04",
+        "p06"
+      ],
+      "observaciones": {
+        "s_sin_imagen": "verdadero",
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "verdadero",
+        "s_monitor_externo_funciona": "falso",
+        "s_pitidos_ram_post": "verdadero",
+        "s_reinicios_post": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_memoria_ram",
+        "d_revision_inicio_energia"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_memoria_ram",
+        "justificacion": "El código específico orienta a RAM; la ausencia de imagen con energía también exige revisar la etapa de inicio."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_monitor_externo_funciona",
+          "estado": "falso",
+          "detalle": "Monitor externo funciona"
+        },
+        {
+          "hecho": "s_pitidos_ram_post",
+          "estado": "verdadero",
+          "detalle": "Código POST de memoria"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "verdadero",
+          "detalle": "Reinicios durante POST"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Confirmar código por modelo y ejecutar diagnóstico de memoria."
+      ],
+      "justificacion_tecnica": "El código específico orienta a RAM; la ausencia de imagen con energía también exige revisar la etapa de inicio.",
+      "referencias": [
+        "dell_inicio",
+        "dell_memoria",
+        "ms_pantalla"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D022",
+      "ruta": "video",
+      "tipo_escenario": "fuera_cobertura",
+      "relato": "La imagen permanece estable en el sistema. La consulta surge porque los colores de una única fotografía se ven distintos de una impresión.",
+      "trayecto_preguntas": [
+        "p07",
+        "p32",
+        "p09"
+      ],
+      "observaciones": {
+        "s_sin_imagen": "falso",
+        "s_imagen_desaparece_tras_inicio": "falso",
+        "s_artefactos_video": "falso"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_imagen_desaparece_tras_inicio",
+          "estado": "falso",
+          "detalle": "Imagen desaparece después del inicio"
+        },
+        {
+          "hecho": "s_artefactos_video",
+          "estado": "falso",
+          "detalle": "Artefactos de video"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Comparar archivo, perfil de color y pantalla calibrada."
+      ],
+      "justificacion_tecnica": "El cuestionario no recoge perfil de color ni impresión; no hay falla de video respaldada.",
+      "referencias": [
+        "dell_inicio",
+        "ms_color",
+        "ms_pantalla"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "limitacion_cuestionario"
+    },
+    {
+      "id": "D023",
+      "ruta": "video",
+      "tipo_escenario": "tension_aparente",
+      "relato": "El indicador frontal está apagado, pero el ventilador gira. La pantalla integrada es negra y la externa muestra imagen estable.",
+      "trayecto_preguntas": [
+        "p07",
+        "p02",
+        "p03",
+        "p08"
+      ],
+      "observaciones": {
+        "s_sin_imagen": "verdadero",
+        "s_led_encendido": "falso",
+        "s_ventiladores_giran": "verdadero",
+        "s_monitor_externo_funciona": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_pantalla_principal"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_led_encendido",
+          "estado": "falso",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_monitor_externo_funciona",
+          "estado": "verdadero",
+          "detalle": "Monitor externo funciona"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Verificar indicador y conexión del panel principal."
+      ],
+      "justificacion_tecnica": "La falta de LED no contradice la prueba funcional de la salida externa; conviene revisar pantalla principal.",
+      "referencias": [
+        "dell_inicio",
+        "ms_pantalla"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D024",
+      "ruta": "video",
+      "tipo_escenario": "comprobacion_adicional",
+      "relato": "Hay energía indicada, pero ninguna de dos pantallas muestra imagen; no se ha interpretado el código acústico ni probado memoria.",
+      "trayecto_preguntas": [
+        "p07",
+        "p02",
+        "p03",
+        "p08",
+        "p04",
+        "p06",
+        "p05"
+      ],
+      "observaciones": {
+        "s_sin_imagen": "verdadero",
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "falso",
+        "s_monitor_externo_funciona": "falso",
+        "s_pitidos_ram_post": "desconocido",
+        "s_reinicios_post": "falso",
+        "s_error_prueba_ram": "desconocido"
+      },
+      "hipotesis_defendibles": [
+        "d_revision_inicio_energia"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "falso",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_monitor_externo_funciona",
+          "estado": "falso",
+          "detalle": "Monitor externo funciona"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "falso",
+          "detalle": "Reinicios durante POST"
+        }
+      ],
+      "informacion_faltante": [
+        "s_pitidos_ram_post",
+        "s_error_prueba_ram"
+      ],
+      "comprobaciones_adicionales": [
+        "Consultar manual de códigos POST y ejecutar diagnóstico apropiado."
+      ],
+      "justificacion_tecnica": "La comparación de pantallas no basta para aislar video frente a POST u otra etapa.",
+      "referencias": [
+        "dell_inicio",
+        "ms_pantalla"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D025",
+      "ruta": "video",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "Ambas pantallas permanecen negras; no hay código POST de memoria, pero una prueba de memoria ejecutada antes mostró errores reproducibles.",
+      "trayecto_preguntas": [
+        "p07",
+        "p02",
+        "p03",
+        "p08",
+        "p04",
+        "p06",
+        "p05"
+      ],
+      "observaciones": {
+        "s_sin_imagen": "verdadero",
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "verdadero",
+        "s_monitor_externo_funciona": "falso",
+        "s_pitidos_ram_post": "falso",
+        "s_reinicios_post": "falso",
+        "s_error_prueba_ram": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_memoria_ram",
+        "d_revision_inicio_energia"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_memoria_ram",
+        "justificacion": "La prueba específica respalda revisión de RAM, mientras la ausencia de video con energía sigue siendo una observación amplia."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_monitor_externo_funciona",
+          "estado": "falso",
+          "detalle": "Monitor externo funciona"
+        },
+        {
+          "hecho": "s_pitidos_ram_post",
+          "estado": "falso",
+          "detalle": "Código POST de memoria"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "falso",
+          "detalle": "Reinicios durante POST"
+        },
+        {
+          "hecho": "s_error_prueba_ram",
+          "estado": "verdadero",
+          "detalle": "Error en prueba de RAM"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Repetir prueba de memoria por módulo y verificar pantalla/cable."
+      ],
+      "justificacion_tecnica": "La prueba específica respalda revisión de RAM, mientras la ausencia de video con energía sigue siendo una observación amplia.",
+      "referencias": [
+        "dell_inicio",
+        "dell_memoria",
+        "ms_pantalla"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D026",
+      "ruta": "video",
+      "tipo_escenario": "insuficiente",
+      "relato": "La imagen permanece visible, pero la persona cree haber visto un destello que no pudo repetir; no sabe si hay distorsión persistente.",
+      "trayecto_preguntas": [
+        "p07",
+        "p32",
+        "p09"
+      ],
+      "observaciones": {
+        "s_sin_imagen": "falso",
+        "s_imagen_desaparece_tras_inicio": "falso",
+        "s_artefactos_video": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_imagen_desaparece_tras_inicio",
+          "estado": "falso",
+          "detalle": "Imagen desaparece después del inicio"
+        }
+      ],
+      "informacion_faltante": [
+        "s_artefactos_video"
+      ],
+      "comprobaciones_adicionales": [
+        "Reproducir el destello y probar otra pantalla si aparece de nuevo."
+      ],
+      "justificacion_tecnica": "No hay artefacto confirmado ni pérdida de imagen que sostenga una hipótesis.",
+      "referencias": [
+        "dell_inicio",
+        "ms_pantalla"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D027",
+      "ruta": "sistema",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "Tras el logotipo aparece un aviso de dispositivo de arranque ausente; la unidad sí figura en firmware y no hay error de lectura visible.",
+      "trayecto_preguntas": [
+        "p16",
+        "p06",
+        "p26",
+        "p12",
+        "p10",
+        "p17",
+        "p11"
+      ],
+      "observaciones": {
+        "s_so_no_inicia": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_post_completado": "verdadero",
+        "s_sin_dispositivo_arranque": "verdadero",
+        "s_unidad_no_detectada": "falso",
+        "s_pantalla_azul": "falso",
+        "s_errores_entrada_salida": "falso"
+      },
+      "hipotesis_defendibles": [
+        "d_arranque_so"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "falso",
+          "detalle": "Reinicios durante POST"
+        },
+        {
+          "hecho": "s_post_completado",
+          "estado": "verdadero",
+          "detalle": "Arranque del sistema alcanzado"
+        },
+        {
+          "hecho": "s_sin_dispositivo_arranque",
+          "estado": "verdadero",
+          "detalle": "Mensaje de dispositivo de arranque ausente"
+        },
+        {
+          "hecho": "s_unidad_no_detectada",
+          "estado": "falso",
+          "detalle": "Unidad no detectada por firmware"
+        },
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "falso",
+          "detalle": "Error crítico del sistema"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "falso",
+          "detalle": "Errores de entrada/salida"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Verificar orden y modo de arranque antes de reparar archivos."
+      ],
+      "justificacion_tecnica": "Unidad visible y fallo posterior al POST orientan a configuración o archivos de arranque.",
+      "referencias": [
+        "dell_inicio",
+        "ms_azul",
+        "ms_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D028",
+      "ruta": "sistema",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "El sistema no carga; firmware informa que no hay dispositivo de arranque y tampoco lista la unidad principal.",
+      "trayecto_preguntas": [
+        "p16",
+        "p06",
+        "p26",
+        "p12",
+        "p10",
+        "p17",
+        "p11"
+      ],
+      "observaciones": {
+        "s_so_no_inicia": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_post_completado": "verdadero",
+        "s_sin_dispositivo_arranque": "verdadero",
+        "s_unidad_no_detectada": "verdadero",
+        "s_pantalla_azul": "falso",
+        "s_errores_entrada_salida": "desconocido"
+      },
+      "hipotesis_defendibles": [
+        "d_deteccion_almacenamiento"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "falso",
+          "detalle": "Reinicios durante POST"
+        },
+        {
+          "hecho": "s_post_completado",
+          "estado": "verdadero",
+          "detalle": "Arranque del sistema alcanzado"
+        },
+        {
+          "hecho": "s_sin_dispositivo_arranque",
+          "estado": "verdadero",
+          "detalle": "Mensaje de dispositivo de arranque ausente"
+        },
+        {
+          "hecho": "s_unidad_no_detectada",
+          "estado": "verdadero",
+          "detalle": "Unidad no detectada por firmware"
+        },
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "falso",
+          "detalle": "Error crítico del sistema"
+        }
+      ],
+      "informacion_faltante": [
+        "s_errores_entrada_salida"
+      ],
+      "comprobaciones_adicionales": [
+        "Preservar datos y revisar detección, cable y puerto."
+      ],
+      "justificacion_tecnica": "La ausencia de unidad en firmware exige revisar detección, conexión o unidad, sin confirmar cuál.",
+      "referencias": [
+        "dell_inicio",
+        "dell_unidad",
+        "ms_azul",
+        "ms_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D029",
+      "ruta": "sistema",
+      "tipo_escenario": "parcial",
+      "relato": "El logotipo pasa a una pantalla de reparación y nunca llega al escritorio. No se revisó firmware ni se leyó el mensaje completo.",
+      "trayecto_preguntas": [
+        "p16",
+        "p06",
+        "p26",
+        "p12",
+        "p10",
+        "p17",
+        "p11"
+      ],
+      "observaciones": {
+        "s_so_no_inicia": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_post_completado": "verdadero",
+        "s_sin_dispositivo_arranque": "desconocido",
+        "s_unidad_no_detectada": "desconocido",
+        "s_pantalla_azul": "falso",
+        "s_errores_entrada_salida": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "falso",
+          "detalle": "Reinicios durante POST"
+        },
+        {
+          "hecho": "s_post_completado",
+          "estado": "verdadero",
+          "detalle": "Arranque del sistema alcanzado"
+        },
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "falso",
+          "detalle": "Error crítico del sistema"
+        }
+      ],
+      "informacion_faltante": [
+        "s_sin_dispositivo_arranque",
+        "s_unidad_no_detectada",
+        "s_errores_entrada_salida"
+      ],
+      "comprobaciones_adicionales": [
+        "Registrar mensaje y comprobar visibilidad de la unidad en firmware."
+      ],
+      "justificacion_tecnica": "El fallo de arranque sin estado de unidad no permite etiquetar una causa concreta.",
+      "referencias": [
+        "dell_inicio",
+        "ms_azul",
+        "ms_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D030",
+      "ruta": "sistema",
+      "tipo_escenario": "simultanea",
+      "relato": "El sistema no queda utilizable. La unidad aparece en firmware, pero durante los intentos hay errores de lectura y una pantalla azul con código.",
+      "trayecto_preguntas": [
+        "p16",
+        "p06",
+        "p26",
+        "p12",
+        "p10",
+        "p17",
+        "p09",
+        "p11"
+      ],
+      "observaciones": {
+        "s_so_no_inicia": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_post_completado": "verdadero",
+        "s_sin_dispositivo_arranque": "falso",
+        "s_unidad_no_detectada": "falso",
+        "s_pantalla_azul": "verdadero",
+        "s_artefactos_video": "falso",
+        "s_errores_entrada_salida": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_salud_almacenamiento",
+        "d_error_critico_so",
+        "d_arranque_so"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_salud_almacenamiento",
+        "justificacion": "Error de E/S y pantalla azul respaldan revisiones distintas; el inicio fallido con unidad visible añade arranque como hipótesis."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "falso",
+          "detalle": "Reinicios durante POST"
+        },
+        {
+          "hecho": "s_post_completado",
+          "estado": "verdadero",
+          "detalle": "Arranque del sistema alcanzado"
+        },
+        {
+          "hecho": "s_sin_dispositivo_arranque",
+          "estado": "falso",
+          "detalle": "Mensaje de dispositivo de arranque ausente"
+        },
+        {
+          "hecho": "s_unidad_no_detectada",
+          "estado": "falso",
+          "detalle": "Unidad no detectada por firmware"
+        },
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "verdadero",
+          "detalle": "Error crítico del sistema"
+        },
+        {
+          "hecho": "s_artefactos_video",
+          "estado": "falso",
+          "detalle": "Artefactos de video"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "verdadero",
+          "detalle": "Errores de entrada/salida"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Respaldar datos, anotar código y examinar registros de unidad."
+      ],
+      "justificacion_tecnica": "Error de E/S y pantalla azul respaldan revisiones distintas; el inicio fallido con unidad visible añade arranque como hipótesis.",
+      "referencias": [
+        "dell_inicio",
+        "dell_unidad",
+        "ms_azul",
+        "ms_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D031",
+      "ruta": "sistema",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "La sesión sí abre, pero una pantalla azul aparece durante el trabajo. No hay distorsión visible ni error de lectura.",
+      "trayecto_preguntas": [
+        "p16",
+        "p17",
+        "p09",
+        "p11"
+      ],
+      "observaciones": {
+        "s_so_no_inicia": "falso",
+        "s_pantalla_azul": "verdadero",
+        "s_artefactos_video": "falso",
+        "s_errores_entrada_salida": "falso"
+      },
+      "hipotesis_defendibles": [
+        "d_error_critico_so"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "falso",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "verdadero",
+          "detalle": "Error crítico del sistema"
+        },
+        {
+          "hecho": "s_artefactos_video",
+          "estado": "falso",
+          "detalle": "Artefactos de video"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "falso",
+          "detalle": "Errores de entrada/salida"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Anotar código y revisar eventos y cambios recientes."
+      ],
+      "justificacion_tecnica": "El código de parada es un síntoma de error crítico, sin causa física identificada.",
+      "referencias": [
+        "dell_inicio",
+        "ms_azul",
+        "ms_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D032",
+      "ruta": "sistema",
+      "tipo_escenario": "fuera_cobertura",
+      "relato": "El escritorio funciona. Al abrir una hoja de cálculo de Microsoft 365 aparece un aviso de producto sin licencia, distinto de pantalla azul o error de lectura.",
+      "trayecto_preguntas": [
+        "p16",
+        "p17",
+        "p11",
+        "p35"
+      ],
+      "observaciones": {
+        "s_so_no_inicia": "falso",
+        "s_pantalla_azul": "falso",
+        "s_errores_entrada_salida": "falso",
+        "s_error_durante_uso": "verdadero"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "falso",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "falso",
+          "detalle": "Error crítico del sistema"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "falso",
+          "detalle": "Errores de entrada/salida"
+        },
+        {
+          "hecho": "s_error_durante_uso",
+          "estado": "verdadero",
+          "detalle": "Error durante el uso del sistema"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Revisar licencia y soporte de la aplicación."
+      ],
+      "justificacion_tecnica": "La licencia de una aplicación está fuera de los diagnósticos y no demuestra falla general del sistema.",
+      "referencias": [
+        "dell_inicio",
+        "ms_azul",
+        "ms_inicio",
+        "ms_licencia"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "limitacion_cuestionario"
+    },
+    {
+      "id": "D033",
+      "ruta": "sistema",
+      "tipo_escenario": "tension_aparente",
+      "relato": "Firmware detecta la unidad aunque anuncia que no hay dispositivo iniciable; además aparecen errores al leer archivos durante recuperación.",
+      "trayecto_preguntas": [
+        "p16",
+        "p06",
+        "p26",
+        "p12",
+        "p10",
+        "p17",
+        "p11"
+      ],
+      "observaciones": {
+        "s_so_no_inicia": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_post_completado": "verdadero",
+        "s_sin_dispositivo_arranque": "verdadero",
+        "s_unidad_no_detectada": "falso",
+        "s_pantalla_azul": "falso",
+        "s_errores_entrada_salida": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_arranque_so",
+        "d_salud_almacenamiento"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_salud_almacenamiento",
+        "justificacion": "La unidad visible no prueba salud del medio; coexisten fallo de arranque y error de lectura."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "falso",
+          "detalle": "Reinicios durante POST"
+        },
+        {
+          "hecho": "s_post_completado",
+          "estado": "verdadero",
+          "detalle": "Arranque del sistema alcanzado"
+        },
+        {
+          "hecho": "s_sin_dispositivo_arranque",
+          "estado": "verdadero",
+          "detalle": "Mensaje de dispositivo de arranque ausente"
+        },
+        {
+          "hecho": "s_unidad_no_detectada",
+          "estado": "falso",
+          "detalle": "Unidad no detectada por firmware"
+        },
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "falso",
+          "detalle": "Error crítico del sistema"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "verdadero",
+          "detalle": "Errores de entrada/salida"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Respaldar antes de reparar inicio y comprobar unidad/enlace."
+      ],
+      "justificacion_tecnica": "La unidad visible no prueba salud del medio; coexisten fallo de arranque y error de lectura.",
+      "referencias": [
+        "dell_inicio",
+        "dell_unidad",
+        "ms_azul",
+        "ms_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D034",
+      "ruta": "sistema",
+      "tipo_escenario": "comprobacion_adicional",
+      "relato": "El equipo reinicia repetidamente antes de salir del logotipo; no se interpretaron pitidos ni se ejecutó prueba de memoria.",
+      "trayecto_preguntas": [
+        "p16",
+        "p06",
+        "p04",
+        "p05"
+      ],
+      "observaciones": {
+        "s_so_no_inicia": "verdadero",
+        "s_reinicios_post": "verdadero",
+        "s_pitidos_ram_post": "desconocido",
+        "s_error_prueba_ram": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "verdadero",
+          "detalle": "Reinicios durante POST"
+        }
+      ],
+      "informacion_faltante": [
+        "s_pitidos_ram_post",
+        "s_error_prueba_ram"
+      ],
+      "comprobaciones_adicionales": [
+        "Registrar códigos POST y ejecutar diagnóstico previo al arranque."
+      ],
+      "justificacion_tecnica": "El reinicio antes del POST no identifica RAM ni archivos de arranque.",
+      "referencias": [
+        "dell_inicio",
+        "ms_azul",
+        "ms_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D035",
+      "ruta": "sistema",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "Antes de iniciar el sistema se repite un código acústico que el manual de ese modelo asigna a memoria.",
+      "trayecto_preguntas": [
+        "p16",
+        "p06",
+        "p04"
+      ],
+      "observaciones": {
+        "s_so_no_inicia": "verdadero",
+        "s_reinicios_post": "verdadero",
+        "s_pitidos_ram_post": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_memoria_ram"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "verdadero",
+          "detalle": "Reinicios durante POST"
+        },
+        {
+          "hecho": "s_pitidos_ram_post",
+          "estado": "verdadero",
+          "detalle": "Código POST de memoria"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Confirmar manual exacto y probar módulos con el equipo desconectado."
+      ],
+      "justificacion_tecnica": "El significado documentado del código POST respalda revisar RAM o su conexión.",
+      "referencias": [
+        "dell_inicio",
+        "dell_memoria",
+        "ms_azul",
+        "ms_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D036",
+      "ruta": "sistema",
+      "tipo_escenario": "ambigua",
+      "relato": "Windows carga y se puede usar, pero el usuario recuerda un fallo sin fecha ni mensaje y no sabe si era lectura de archivos.",
+      "trayecto_preguntas": [
+        "p16",
+        "p17",
+        "p11",
+        "p35"
+      ],
+      "observaciones": {
+        "s_so_no_inicia": "falso",
+        "s_pantalla_azul": "falso",
+        "s_errores_entrada_salida": "desconocido",
+        "s_error_durante_uso": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "falso",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "falso",
+          "detalle": "Error crítico del sistema"
+        }
+      ],
+      "informacion_faltante": [
+        "s_errores_entrada_salida",
+        "s_error_durante_uso"
+      ],
+      "comprobaciones_adicionales": [
+        "Reproducir el fallo y registrar texto, hora y contexto."
+      ],
+      "justificacion_tecnica": "No hay observación específica confirmada para una etiqueta del catálogo.",
+      "referencias": [
+        "dell_inicio",
+        "ms_azul",
+        "ms_inicio"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D037",
+      "ruta": "temperatura",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "Durante un render la carcasa se calienta y el ventilador aumenta el ruido; una medición comparada con el límite de la pieza lo supera antes del apagado.",
+      "trayecto_preguntas": [
+        "p30",
+        "p14",
+        "p15",
+        "p13"
+      ],
+      "observaciones": {
+        "s_calor_percibido": "verdadero",
+        "s_apagado_bajo_carga": "verdadero",
+        "s_ventilador_ruidoso": "verdadero",
+        "s_temperatura_alta": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_sobrecalentamiento",
+        "d_indicios_termicos"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_sobrecalentamiento",
+        "justificacion": "La medición sostiene temperatura anormal; señales perceptivas también justifican revisar ventilación."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_calor_percibido",
+          "estado": "verdadero",
+          "detalle": "Carcasa más caliente de lo habitual"
+        },
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "verdadero",
+          "detalle": "Apagado bajo carga"
+        },
+        {
+          "hecho": "s_ventilador_ruidoso",
+          "estado": "verdadero",
+          "detalle": "Ventilador anormalmente ruidoso"
+        },
+        {
+          "hecho": "s_temperatura_alta",
+          "estado": "verdadero",
+          "detalle": "Temperatura anormalmente alta"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Corroborar sensor y límite, limpiar ventilación con equipo apagado."
+      ],
+      "justificacion_tecnica": "La medición sostiene temperatura anormal; señales perceptivas también justifican revisar ventilación.",
+      "referencias": [
+        "intel_termica"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D038",
+      "ruta": "temperatura",
+      "tipo_escenario": "parcial",
+      "relato": "La carcasa se siente muy caliente y el ventilador suena más fuerte, pero no se midió temperatura ni hubo apagado.",
+      "trayecto_preguntas": [
+        "p30",
+        "p14",
+        "p15",
+        "p13"
+      ],
+      "observaciones": {
+        "s_calor_percibido": "verdadero",
+        "s_apagado_bajo_carga": "falso",
+        "s_ventilador_ruidoso": "verdadero",
+        "s_temperatura_alta": "desconocido"
+      },
+      "hipotesis_defendibles": [
+        "d_indicios_termicos"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_calor_percibido",
+          "estado": "verdadero",
+          "detalle": "Carcasa más caliente de lo habitual"
+        },
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "falso",
+          "detalle": "Apagado bajo carga"
+        },
+        {
+          "hecho": "s_ventilador_ruidoso",
+          "estado": "verdadero",
+          "detalle": "Ventilador anormalmente ruidoso"
+        }
+      ],
+      "informacion_faltante": [
+        "s_temperatura_alta"
+      ],
+      "comprobaciones_adicionales": [
+        "Medir temperatura bajo la misma carga y comparar con fabricante."
+      ],
+      "justificacion_tecnica": "Calor percibido y ruido son indicios; no se puede etiquetar temperatura medida.",
+      "referencias": [
+        "intel_termica"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D039",
+      "ruta": "temperatura",
+      "tipo_escenario": "ambigua",
+      "relato": "Un equipo se apaga durante un juego, pero la carcasa no se siente caliente y el ventilador no suena anormal. No hay lectura térmica.",
+      "trayecto_preguntas": [
+        "p30",
+        "p14",
+        "p15",
+        "p13"
+      ],
+      "observaciones": {
+        "s_calor_percibido": "falso",
+        "s_apagado_bajo_carga": "verdadero",
+        "s_ventilador_ruidoso": "falso",
+        "s_temperatura_alta": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_calor_percibido",
+          "estado": "falso",
+          "detalle": "Carcasa más caliente de lo habitual"
+        },
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "verdadero",
+          "detalle": "Apagado bajo carga"
+        },
+        {
+          "hecho": "s_ventilador_ruidoso",
+          "estado": "falso",
+          "detalle": "Ventilador anormalmente ruidoso"
+        }
+      ],
+      "informacion_faltante": [
+        "s_temperatura_alta"
+      ],
+      "comprobaciones_adicionales": [
+        "Medir temperatura y revisar alimentación durante la carga."
+      ],
+      "justificacion_tecnica": "El apagado bajo carga tiene varias causas; faltan mediciones para atribuirlo al calor.",
+      "referencias": [
+        "intel_termica"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D040",
+      "ruta": "temperatura",
+      "tipo_escenario": "tension_aparente",
+      "relato": "La carcasa parece normal al tacto, pero un sensor confiable supera el límite publicado durante el cálculo y el equipo se apaga.",
+      "trayecto_preguntas": [
+        "p30",
+        "p14",
+        "p15",
+        "p13"
+      ],
+      "observaciones": {
+        "s_calor_percibido": "falso",
+        "s_apagado_bajo_carga": "verdadero",
+        "s_ventilador_ruidoso": "falso",
+        "s_temperatura_alta": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_sobrecalentamiento"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_calor_percibido",
+          "estado": "falso",
+          "detalle": "Carcasa más caliente de lo habitual"
+        },
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "verdadero",
+          "detalle": "Apagado bajo carga"
+        },
+        {
+          "hecho": "s_ventilador_ruidoso",
+          "estado": "falso",
+          "detalle": "Ventilador anormalmente ruidoso"
+        },
+        {
+          "hecho": "s_temperatura_alta",
+          "estado": "verdadero",
+          "detalle": "Temperatura anormalmente alta"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Verificar sensor/límite y revisar ventilación y disipador."
+      ],
+      "justificacion_tecnica": "La percepción externa no invalida la medición de la pieza.",
+      "referencias": [
+        "intel_termica"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D041",
+      "ruta": "temperatura",
+      "tipo_escenario": "comprobacion_adicional",
+      "relato": "La base de una laptop se siente más caliente tras videollamada, sin apagado ni ruido inusual; no se conocen límites de la pieza.",
+      "trayecto_preguntas": [
+        "p30",
+        "p14",
+        "p15",
+        "p13"
+      ],
+      "observaciones": {
+        "s_calor_percibido": "verdadero",
+        "s_apagado_bajo_carga": "falso",
+        "s_ventilador_ruidoso": "falso",
+        "s_temperatura_alta": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_calor_percibido",
+          "estado": "verdadero",
+          "detalle": "Carcasa más caliente de lo habitual"
+        },
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "falso",
+          "detalle": "Apagado bajo carga"
+        },
+        {
+          "hecho": "s_ventilador_ruidoso",
+          "estado": "falso",
+          "detalle": "Ventilador anormalmente ruidoso"
+        }
+      ],
+      "informacion_faltante": [
+        "s_temperatura_alta"
+      ],
+      "comprobaciones_adicionales": [
+        "Medir la temperatura y revisar carga y ventilación."
+      ],
+      "justificacion_tecnica": "El calor al tacto aislado no basta para una hipótesis térmica del catálogo.",
+      "referencias": [
+        "intel_termica"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D042",
+      "ruta": "temperatura",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "No se puede palpar la carcasa en un equipo montado en gabinete. El ventilador se acelera y el sensor excede el máximo documentado.",
+      "trayecto_preguntas": [
+        "p30",
+        "p14",
+        "p15",
+        "p13"
+      ],
+      "observaciones": {
+        "s_calor_percibido": "desconocido",
+        "s_apagado_bajo_carga": "falso",
+        "s_ventilador_ruidoso": "verdadero",
+        "s_temperatura_alta": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_sobrecalentamiento"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "falso",
+          "detalle": "Apagado bajo carga"
+        },
+        {
+          "hecho": "s_ventilador_ruidoso",
+          "estado": "verdadero",
+          "detalle": "Ventilador anormalmente ruidoso"
+        },
+        {
+          "hecho": "s_temperatura_alta",
+          "estado": "verdadero",
+          "detalle": "Temperatura anormalmente alta"
+        }
+      ],
+      "informacion_faltante": [
+        "s_calor_percibido"
+      ],
+      "comprobaciones_adicionales": [
+        "Comprobar sensor y flujo de aire antes de volver a cargarlo."
+      ],
+      "justificacion_tecnica": "La medición supera el umbral sin depender de sensación externa.",
+      "referencias": [
+        "intel_termica"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D043",
+      "ruta": "temperatura",
+      "tipo_escenario": "fuera_cobertura",
+      "relato": "El ventilador hace ruido mecánico al ralentí, pero las temperaturas medidas están dentro del rango y no hay apagados.",
+      "trayecto_preguntas": [
+        "p30",
+        "p14",
+        "p15",
+        "p13"
+      ],
+      "observaciones": {
+        "s_calor_percibido": "falso",
+        "s_apagado_bajo_carga": "falso",
+        "s_ventilador_ruidoso": "verdadero",
+        "s_temperatura_alta": "falso"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_calor_percibido",
+          "estado": "falso",
+          "detalle": "Carcasa más caliente de lo habitual"
+        },
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "falso",
+          "detalle": "Apagado bajo carga"
+        },
+        {
+          "hecho": "s_ventilador_ruidoso",
+          "estado": "verdadero",
+          "detalle": "Ventilador anormalmente ruidoso"
+        },
+        {
+          "hecho": "s_temperatura_alta",
+          "estado": "falso",
+          "detalle": "Temperatura anormalmente alta"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Inspeccionar ventilador apagado y consultar servicio de mantenimiento."
+      ],
+      "justificacion_tecnica": "Ruido de rodamiento por sí solo no equivale a temperatura anormal ni patrón térmico combinado.",
+      "referencias": [
+        "dell_ventilador",
+        "intel_termica"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "limitacion_cuestionario"
+    },
+    {
+      "id": "D044",
+      "ruta": "temperatura",
+      "tipo_escenario": "simultanea",
+      "relato": "Una laptop supera el límite térmico medido bajo carga y se apaga; el ventilador no suena más fuerte, quizá por control o fallo de giro.",
+      "trayecto_preguntas": [
+        "p30",
+        "p14",
+        "p15",
+        "p13"
+      ],
+      "observaciones": {
+        "s_calor_percibido": "verdadero",
+        "s_apagado_bajo_carga": "verdadero",
+        "s_ventilador_ruidoso": "falso",
+        "s_temperatura_alta": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_sobrecalentamiento",
+        "d_indicios_termicos"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_sobrecalentamiento",
+        "justificacion": "Medición y apagado justifican temperatura anormal e indicios de ventilación, sin confirmar el ventilador."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_calor_percibido",
+          "estado": "verdadero",
+          "detalle": "Carcasa más caliente de lo habitual"
+        },
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "verdadero",
+          "detalle": "Apagado bajo carga"
+        },
+        {
+          "hecho": "s_ventilador_ruidoso",
+          "estado": "falso",
+          "detalle": "Ventilador anormalmente ruidoso"
+        },
+        {
+          "hecho": "s_temperatura_alta",
+          "estado": "verdadero",
+          "detalle": "Temperatura anormalmente alta"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Verificar lectura, funcionamiento del ventilador y obstrucciones."
+      ],
+      "justificacion_tecnica": "Medición y apagado justifican temperatura anormal e indicios de ventilación, sin confirmar el ventilador.",
+      "referencias": [
+        "intel_termica"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D045",
+      "ruta": "conectividad",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "El PC no abre una página habitual por Wi-Fi. El control inalámbrico está apagado y un teléfono en la misma red abre la página.",
+      "trayecto_preguntas": [
+        "p18",
+        "p25",
+        "p20",
+        "p19"
+      ],
+      "observaciones": {
+        "s_sin_red": "verdadero",
+        "s_conexion_wifi_intentada": "verdadero",
+        "s_wifi_deshabilitado": "verdadero",
+        "s_otros_equipos_conectan": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_wifi_inhabilitado",
+        "d_conectividad_local"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_wifi_inhabilitado",
+        "justificacion": "El adaptador deshabilitado explica una causa local plausible; la comparación con otro equipo confirma el ámbito local."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_conexion_wifi_intentada",
+          "estado": "verdadero",
+          "detalle": "Conexión Wi-Fi intentada"
+        },
+        {
+          "hecho": "s_wifi_deshabilitado",
+          "estado": "verdadero",
+          "detalle": "Adaptador Wi-Fi deshabilitado"
+        },
+        {
+          "hecho": "s_otros_equipos_conectan",
+          "estado": "verdadero",
+          "detalle": "Otros equipos sí se conectan"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Habilitar Wi-Fi y repetir la prueba."
+      ],
+      "justificacion_tecnica": "El adaptador deshabilitado explica una causa local plausible; la comparación con otro equipo confirma el ámbito local.",
+      "referencias": [
+        "ms_ethernet",
+        "ms_wifi"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D046",
+      "ruta": "conectividad",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "Un PC conectado por Ethernet no llega a la web y muestra aviso de cable desconectado; otro dispositivo navega en la misma red.",
+      "trayecto_preguntas": [
+        "p18",
+        "p25",
+        "p29",
+        "p31",
+        "p19"
+      ],
+      "observaciones": {
+        "s_sin_red": "verdadero",
+        "s_conexion_wifi_intentada": "falso",
+        "s_conexion_cable_intentada": "verdadero",
+        "s_aviso_cable_desconectado": "verdadero",
+        "s_otros_equipos_conectan": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_enlace_cable",
+        "d_conectividad_local"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_enlace_cable",
+        "justificacion": "El aviso orienta al enlace local y la comparación descarta un fallo general observado."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_conexion_wifi_intentada",
+          "estado": "falso",
+          "detalle": "Conexión Wi-Fi intentada"
+        },
+        {
+          "hecho": "s_conexion_cable_intentada",
+          "estado": "verdadero",
+          "detalle": "Conexión por cable intentada"
+        },
+        {
+          "hecho": "s_aviso_cable_desconectado",
+          "estado": "verdadero",
+          "detalle": "Aviso de cable de red desconectado"
+        },
+        {
+          "hecho": "s_otros_equipos_conectan",
+          "estado": "verdadero",
+          "detalle": "Otros equipos sí se conectan"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Revisar extremos y probar cable o puerto conocido."
+      ],
+      "justificacion_tecnica": "El aviso orienta al enlace local y la comparación descarta un fallo general observado.",
+      "referencias": [
+        "ms_ethernet",
+        "ms_wifi"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D047",
+      "ruta": "conectividad",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "La página de prueba abre ahora, pero durante cortes coincidentes también falla un segundo equipo de la red.",
+      "trayecto_preguntas": [
+        "p18",
+        "p33",
+        "p36"
+      ],
+      "observaciones": {
+        "s_sin_red": "falso",
+        "s_red_intermitente": "verdadero",
+        "s_otros_equipos_fallan_al_mismo_tiempo": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_red_compartida"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "falso",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_red_intermitente",
+          "estado": "verdadero",
+          "detalle": "Conexión intermitente en este equipo"
+        },
+        {
+          "hecho": "s_otros_equipos_fallan_al_mismo_tiempo",
+          "estado": "verdadero",
+          "detalle": "Falla simultánea en otro equipo"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Observar router y enlace del proveedor durante un corte."
+      ],
+      "justificacion_tecnica": "La coincidencia temporal en dos equipos orienta a un elemento compartido.",
+      "referencias": [
+        "ms_ethernet",
+        "ms_wifi"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D048",
+      "ruta": "conectividad",
+      "tipo_escenario": "parcial",
+      "relato": "La computadora no abre la página por Wi-Fi; el adaptador está activo, pero nadie comparó otro equipo.",
+      "trayecto_preguntas": [
+        "p18",
+        "p25",
+        "p20",
+        "p19"
+      ],
+      "observaciones": {
+        "s_sin_red": "verdadero",
+        "s_conexion_wifi_intentada": "verdadero",
+        "s_wifi_deshabilitado": "falso",
+        "s_otros_equipos_conectan": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_conexion_wifi_intentada",
+          "estado": "verdadero",
+          "detalle": "Conexión Wi-Fi intentada"
+        },
+        {
+          "hecho": "s_wifi_deshabilitado",
+          "estado": "falso",
+          "detalle": "Adaptador Wi-Fi deshabilitado"
+        }
+      ],
+      "informacion_faltante": [
+        "s_otros_equipos_conectan"
+      ],
+      "comprobaciones_adicionales": [
+        "Probar la misma página desde otro dispositivo en la red."
+      ],
+      "justificacion_tecnica": "La falta de red sin comparación no distingue equipo, router ni servicio.",
+      "referencias": [
+        "ms_ethernet",
+        "ms_wifi"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D049",
+      "ruta": "conectividad",
+      "tipo_escenario": "ambigua",
+      "relato": "Internet responde entre cortes en un PC; no se pudo observar si otros equipos fallan al mismo tiempo.",
+      "trayecto_preguntas": [
+        "p18",
+        "p33",
+        "p36"
+      ],
+      "observaciones": {
+        "s_sin_red": "falso",
+        "s_red_intermitente": "verdadero",
+        "s_otros_equipos_fallan_al_mismo_tiempo": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "falso",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_red_intermitente",
+          "estado": "verdadero",
+          "detalle": "Conexión intermitente en este equipo"
+        }
+      ],
+      "informacion_faltante": [
+        "s_otros_equipos_fallan_al_mismo_tiempo"
+      ],
+      "comprobaciones_adicionales": [
+        "Probar dos dispositivos simultáneamente durante el siguiente corte."
+      ],
+      "justificacion_tecnica": "Intermitencia sin comparación temporal no localiza el problema.",
+      "referencias": [
+        "ms_ethernet",
+        "ms_wifi"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D050",
+      "ruta": "conectividad",
+      "tipo_escenario": "fuera_cobertura",
+      "relato": "La página de prueba abre y la conexión es estable. Un sitio concreto falla igual en otro dispositivo de la misma red.",
+      "trayecto_preguntas": [
+        "p18",
+        "p33",
+        "p34",
+        "p37"
+      ],
+      "observaciones": {
+        "s_sin_red": "falso",
+        "s_red_intermitente": "falso",
+        "s_pagina_especifica_falla": "verdadero",
+        "s_pagina_fallida_abre_en_otro": "falso"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "falso",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_red_intermitente",
+          "estado": "falso",
+          "detalle": "Conexión intermitente en este equipo"
+        },
+        {
+          "hecho": "s_pagina_especifica_falla",
+          "estado": "verdadero",
+          "detalle": "Página concreta falla en este equipo"
+        },
+        {
+          "hecho": "s_pagina_fallida_abre_en_otro",
+          "estado": "falso",
+          "detalle": "Página fallida abre en otro equipo"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Consultar estado del sitio y probar otra red."
+      ],
+      "justificacion_tecnica": "Un servicio web específico caído no tiene diagnóstico propio; no hay evidencia de fallo del PC.",
+      "referencias": [
+        "ms_ethernet",
+        "ms_wifi"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "fuera_catalogo"
+    },
+    {
+      "id": "D051",
+      "ruta": "conectividad",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "La red general funciona y no se corta; un portal concreto falla en este PC pero abre en otro de la misma red.",
+      "trayecto_preguntas": [
+        "p18",
+        "p33",
+        "p34",
+        "p37"
+      ],
+      "observaciones": {
+        "s_sin_red": "falso",
+        "s_red_intermitente": "falso",
+        "s_pagina_especifica_falla": "verdadero",
+        "s_pagina_fallida_abre_en_otro": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_conectividad_local"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "falso",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_red_intermitente",
+          "estado": "falso",
+          "detalle": "Conexión intermitente en este equipo"
+        },
+        {
+          "hecho": "s_pagina_especifica_falla",
+          "estado": "verdadero",
+          "detalle": "Página concreta falla en este equipo"
+        },
+        {
+          "hecho": "s_pagina_fallida_abre_en_otro",
+          "estado": "verdadero",
+          "detalle": "Página fallida abre en otro equipo"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Comparar DNS, navegador y configuración del equipo."
+      ],
+      "justificacion_tecnica": "La comparación de la misma página acota el problema a configuración o software local.",
+      "referencias": [
+        "ms_ethernet",
+        "ms_wifi"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D052",
+      "ruta": "conectividad",
+      "tipo_escenario": "simultanea",
+      "relato": "Un PC por cable muestra enlace desconectado mientras otro equipo tampoco llega a Internet; se observa un problema local y quizá compartido a la vez.",
+      "trayecto_preguntas": [
+        "p18",
+        "p25",
+        "p29",
+        "p31",
+        "p19"
+      ],
+      "observaciones": {
+        "s_sin_red": "verdadero",
+        "s_conexion_wifi_intentada": "falso",
+        "s_conexion_cable_intentada": "verdadero",
+        "s_aviso_cable_desconectado": "verdadero",
+        "s_otros_equipos_conectan": "falso"
+      },
+      "hipotesis_defendibles": [
+        "d_enlace_cable",
+        "d_red_compartida"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_enlace_cable",
+        "justificacion": "El aviso físico y la falla del segundo equipo son dos ámbitos que requieren pruebas separadas."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_conexion_wifi_intentada",
+          "estado": "falso",
+          "detalle": "Conexión Wi-Fi intentada"
+        },
+        {
+          "hecho": "s_conexion_cable_intentada",
+          "estado": "verdadero",
+          "detalle": "Conexión por cable intentada"
+        },
+        {
+          "hecho": "s_aviso_cable_desconectado",
+          "estado": "verdadero",
+          "detalle": "Aviso de cable de red desconectado"
+        },
+        {
+          "hecho": "s_otros_equipos_conectan",
+          "estado": "falso",
+          "detalle": "Otros equipos sí se conectan"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Probar cable/puerto local y estado de router/proveedor."
+      ],
+      "justificacion_tecnica": "El aviso físico y la falla del segundo equipo son dos ámbitos que requieren pruebas separadas.",
+      "referencias": [
+        "ms_ethernet",
+        "ms_wifi"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D053",
+      "ruta": "conectividad",
+      "tipo_escenario": "tension_aparente",
+      "relato": "Un PC navega entre cortes repetidos, mientras el teléfono de la misma red mantiene la conexión durante esos episodios.",
+      "trayecto_preguntas": [
+        "p18",
+        "p33",
+        "p36"
+      ],
+      "observaciones": {
+        "s_sin_red": "falso",
+        "s_red_intermitente": "verdadero",
+        "s_otros_equipos_fallan_al_mismo_tiempo": "falso"
+      },
+      "hipotesis_defendibles": [
+        "d_conectividad_local"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "falso",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_red_intermitente",
+          "estado": "verdadero",
+          "detalle": "Conexión intermitente en este equipo"
+        },
+        {
+          "hecho": "s_otros_equipos_fallan_al_mismo_tiempo",
+          "estado": "falso",
+          "detalle": "Falla simultánea en otro equipo"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Comparar adaptador, señal y registros durante el corte."
+      ],
+      "justificacion_tecnica": "La comparación temporal orienta al equipo, aunque no identifica el mecanismo local.",
+      "referencias": [
+        "ms_ethernet",
+        "ms_wifi"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D054",
+      "ruta": "conectividad",
+      "tipo_escenario": "comprobacion_adicional",
+      "relato": "Hay cable conectado y no aparece aviso de desconexión, pero este PC no abre una página que otro equipo sí abre.",
+      "trayecto_preguntas": [
+        "p18",
+        "p25",
+        "p29",
+        "p31",
+        "p19"
+      ],
+      "observaciones": {
+        "s_sin_red": "verdadero",
+        "s_conexion_wifi_intentada": "falso",
+        "s_conexion_cable_intentada": "verdadero",
+        "s_aviso_cable_desconectado": "falso",
+        "s_otros_equipos_conectan": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_conectividad_local"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_sin_red",
+          "estado": "verdadero",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_conexion_wifi_intentada",
+          "estado": "falso",
+          "detalle": "Conexión Wi-Fi intentada"
+        },
+        {
+          "hecho": "s_conexion_cable_intentada",
+          "estado": "verdadero",
+          "detalle": "Conexión por cable intentada"
+        },
+        {
+          "hecho": "s_aviso_cable_desconectado",
+          "estado": "falso",
+          "detalle": "Aviso de cable de red desconectado"
+        },
+        {
+          "hecho": "s_otros_equipos_conectan",
+          "estado": "verdadero",
+          "detalle": "Otros equipos sí se conectan"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Revisar IP, DNS y ruta antes de cambiar el cable."
+      ],
+      "justificacion_tecnica": "La comparación orienta al equipo, pero un enlace físico aparente no identifica la causa.",
+      "referencias": [
+        "ms_ethernet",
+        "ms_wifi"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D055",
+      "ruta": "general",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "El usuario no sabe por dónde empezar. Al pulsar encendido no ve luz del equipo ni escucha giro de ventilador.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03"
+      ],
+      "observaciones": {
+        "s_led_encendido": "falso",
+        "s_ventiladores_giran": "falso"
+      },
+      "hipotesis_defendibles": [
+        "d_ruta_alimentacion"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "falso",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "falso",
+          "detalle": "Ventiladores en movimiento"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Comprobar toma, cable y cargador compatible."
+      ],
+      "justificacion_tecnica": "Las señales básicas sitúan la primera revisión en alimentación.",
+      "referencias": [
+        "dell_inicio",
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D056",
+      "ruta": "general",
+      "tipo_escenario": "parcial",
+      "relato": "El aviso inicial solo dice «no funciona»; no se logró observar ni indicadores ni pantalla al encender.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03",
+        "p07"
+      ],
+      "observaciones": {
+        "s_led_encendido": "desconocido",
+        "s_ventiladores_giran": "desconocido",
+        "s_sin_imagen": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [],
+      "informacion_faltante": [
+        "s_led_encendido",
+        "s_ventiladores_giran",
+        "s_sin_imagen"
+      ],
+      "comprobaciones_adicionales": [
+        "Repetir encendido en condiciones visibles y anotar señales."
+      ],
+      "justificacion_tecnica": "No hay observaciones para distinguir una ruta diagnóstica.",
+      "referencias": [
+        "dell_inicio",
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D057",
+      "ruta": "general",
+      "tipo_escenario": "evidencia_suficiente",
+      "relato": "El equipo tiene energía, la pantalla integrada sigue negra y una externa conocida conserva la imagen.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03",
+        "p07",
+        "p08"
+      ],
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "verdadero",
+        "s_sin_imagen": "verdadero",
+        "s_monitor_externo_funciona": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_pantalla_principal"
+      ],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "verdadero",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_monitor_externo_funciona",
+          "estado": "verdadero",
+          "detalle": "Monitor externo funciona"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Comprobar brillo, panel y conexión."
+      ],
+      "justificacion_tecnica": "La prueba de salida externa respalda revisar pantalla principal.",
+      "referencias": [
+        "dell_inicio",
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D058",
+      "ruta": "general",
+      "tipo_escenario": "parcial",
+      "relato": "El sistema abre y una página responde; no hay lentitud ni apagado bajo carga. El usuario no aporta un síntoma reproducible.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03",
+        "p07",
+        "p16",
+        "p21",
+        "p27",
+        "p18",
+        "p30",
+        "p14",
+        "p17",
+        "p09"
+      ],
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "verdadero",
+        "s_sin_imagen": "falso",
+        "s_so_no_inicia": "falso",
+        "s_lentitud_programas": "falso",
+        "s_congelamientos": "falso",
+        "s_sin_red": "falso",
+        "s_calor_percibido": "desconocido",
+        "s_apagado_bajo_carga": "falso",
+        "s_pantalla_azul": "desconocido",
+        "s_artefactos_video": "desconocido"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "falso",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "falso",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "falso",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_sin_red",
+          "estado": "falso",
+          "detalle": "Internet no responde en este equipo"
+        },
+        {
+          "hecho": "s_apagado_bajo_carga",
+          "estado": "falso",
+          "detalle": "Apagado bajo carga"
+        }
+      ],
+      "informacion_faltante": [
+        "s_calor_percibido",
+        "s_pantalla_azul",
+        "s_artefactos_video"
+      ],
+      "comprobaciones_adicionales": [
+        "Pedir descripción y momento exacto del problema."
+      ],
+      "justificacion_tecnica": "Las respuestas conocidas describen funcionamiento sin un patrón de falla codificado.",
+      "referencias": [
+        "dell_inicio",
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D059",
+      "ruta": "general",
+      "tipo_escenario": "simultanea",
+      "relato": "Después del logotipo no inicia el sistema. La unidad aparece en firmware, pero se reportan errores de lectura además del mensaje de arranque.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03",
+        "p07",
+        "p16",
+        "p06",
+        "p26",
+        "p12",
+        "p10",
+        "p17",
+        "p11"
+      ],
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "verdadero",
+        "s_sin_imagen": "falso",
+        "s_so_no_inicia": "verdadero",
+        "s_reinicios_post": "falso",
+        "s_post_completado": "verdadero",
+        "s_sin_dispositivo_arranque": "verdadero",
+        "s_unidad_no_detectada": "falso",
+        "s_pantalla_azul": "falso",
+        "s_errores_entrada_salida": "verdadero"
+      },
+      "hipotesis_defendibles": [
+        "d_arranque_so",
+        "d_salud_almacenamiento"
+      ],
+      "prioridad_revision": {
+        "diagnostico": "d_salud_almacenamiento",
+        "justificacion": "El mensaje con unidad visible orienta al inicio; el error de lectura aporta una segunda revisión."
+      },
+      "evidencia_conocida": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "verdadero",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_reinicios_post",
+          "estado": "falso",
+          "detalle": "Reinicios durante POST"
+        },
+        {
+          "hecho": "s_post_completado",
+          "estado": "verdadero",
+          "detalle": "Arranque del sistema alcanzado"
+        },
+        {
+          "hecho": "s_sin_dispositivo_arranque",
+          "estado": "verdadero",
+          "detalle": "Mensaje de dispositivo de arranque ausente"
+        },
+        {
+          "hecho": "s_unidad_no_detectada",
+          "estado": "falso",
+          "detalle": "Unidad no detectada por firmware"
+        },
+        {
+          "hecho": "s_pantalla_azul",
+          "estado": "falso",
+          "detalle": "Error crítico del sistema"
+        },
+        {
+          "hecho": "s_errores_entrada_salida",
+          "estado": "verdadero",
+          "detalle": "Errores de entrada/salida"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Respaldar datos y examinar unidad antes de reparar arranque."
+      ],
+      "justificacion_tecnica": "El mensaje con unidad visible orienta al inicio; el error de lectura aporta una segunda revisión.",
+      "referencias": [
+        "dell_inicio",
+        "dell_unidad",
+        "ms_inicio",
+        "ms_rendimiento"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "cuestionario_extremo_a_extremo"
+    },
+    {
+      "id": "D060",
+      "ruta": "general",
+      "tipo_escenario": "fuera_cobertura",
+      "relato": "El equipo inicia, pero un periférico USB-C concreto tarda en responder y retrasa su aplicación; no hay presión de recursos observada.",
+      "trayecto_preguntas": [
+        "p02",
+        "p03",
+        "p07",
+        "p16",
+        "p21",
+        "p27",
+        "p22",
+        "p23",
+        "p24",
+        "p28"
+      ],
+      "observaciones": {
+        "s_led_encendido": "verdadero",
+        "s_ventiladores_giran": "verdadero",
+        "s_sin_imagen": "falso",
+        "s_so_no_inicia": "falso",
+        "s_lentitud_programas": "verdadero",
+        "s_congelamientos": "falso",
+        "s_espacio_sistema_bajo": "falso",
+        "s_uso_memoria_alto": "falso",
+        "s_proceso_cpu_alto": "falso",
+        "s_proceso_disco_alto": "falso"
+      },
+      "hipotesis_defendibles": [],
+      "prioridad_revision": null,
+      "evidencia_conocida": [
+        {
+          "hecho": "s_led_encendido",
+          "estado": "verdadero",
+          "detalle": "Indicador de encendido iluminado"
+        },
+        {
+          "hecho": "s_ventiladores_giran",
+          "estado": "verdadero",
+          "detalle": "Ventiladores en movimiento"
+        },
+        {
+          "hecho": "s_sin_imagen",
+          "estado": "falso",
+          "detalle": "Sin imagen en pantalla principal"
+        },
+        {
+          "hecho": "s_so_no_inicia",
+          "estado": "falso",
+          "detalle": "Sistema operativo no inicia"
+        },
+        {
+          "hecho": "s_lentitud_programas",
+          "estado": "verdadero",
+          "detalle": "Programas tardan en abrir"
+        },
+        {
+          "hecho": "s_congelamientos",
+          "estado": "falso",
+          "detalle": "Equipo deja de responder"
+        },
+        {
+          "hecho": "s_espacio_sistema_bajo",
+          "estado": "falso",
+          "detalle": "Poco espacio libre en la unidad principal"
+        },
+        {
+          "hecho": "s_uso_memoria_alto",
+          "estado": "falso",
+          "detalle": "Uso de memoria muy alto"
+        },
+        {
+          "hecho": "s_proceso_cpu_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del procesador"
+        },
+        {
+          "hecho": "s_proceso_disco_alto",
+          "estado": "falso",
+          "detalle": "Programa con uso alto del disco"
+        }
+      ],
+      "informacion_faltante": [
+        "La causa física y el resultado de la comprobación adicional siguen sin verificarse."
+      ],
+      "comprobaciones_adicionales": [
+        "Probar el periférico y puerto con otro equipo."
+      ],
+      "justificacion_tecnica": "El cuestionario no pregunta por periféricos USB y las respuestas disponibles no justifican diagnósticos del catálogo.",
+      "referencias": [
+        "dell_inicio",
+        "ms_rendimiento",
+        "ms_usb"
+      ],
+      "estado_causa": "no_confirmada",
+      "alcance": "limitacion_cuestionario"
+    }
+  ]
+}

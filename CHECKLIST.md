@@ -1,6 +1,8 @@
 # Estado del proyecto
 
-**Estado vigente:** Avance 1 finalizado por autorización expresa del usuario como versión académica reproducible. Las cantidades, resultados y casillas pendientes de secciones anteriores registran estados históricos; el cierre actual se documenta al final. La precisión diagnóstica en equipos reales no ha sido evaluada.
+**Estado vigente:** Avance 1 finalizado; Avance 2 cerrado por autorización expresa del usuario como versión académica `avance-2`. El Modelo C quedó seleccionado y congelado para la futura aplicación gráfica; A sigue predeterminado en consola. Las cantidades y resultados de secciones anteriores registran estados históricos. Solo se evaluaron 55 casos elegibles de desarrollo; los 20 finales siguen reservados. No se ha medido precisión diagnóstica en equipos reales.
+
+**Lectura documental vigente:** `docs/AVANCE_1.md`, `docs/AVANCE_2.md`, `docs/BASE_CONOCIMIENTOS.md`, `docs/PREGUNTAS.md`, `docs/PROTOCOLO_EVALUACION_AVANCE_2.md` y `docs/RESULTADOS_EXPERIMENTALES_AVANCE_2.md` son los seis documentos principales. `docs/REVISION_CASOS_ETAPA_4_1.md` permanece como séptimo registro porque su ruta y huella están congeladas. Las menciones posteriores a informes de auditoría del Avance 1 y al informe separado de distribución describen archivos **históricos de su etapa**, ya integrados en los documentos principales; los originales del Avance 1 se recuperan desde el tag `avance-1`. No usar esas menciones como enlaces del árbol actual.
 
 ## Fase 1 — Auditoría inicial
 
@@ -76,7 +78,7 @@
 ### Auditoría integral de rutas y diagnósticos — Línea base previa a correcciones
 
 - [x] Inspeccionadas las siete categorías, 24 preguntas, 26 reglas y 14 diagnósticos.
-- [x] Creadas pruebas separadas en `auditoria/` y el informe `docs/AUDITORIA_RUTAS_AVANCE_1.md`.
+- [x] Creadas pruebas separadas en `auditoria/` y un informe histórico de rutas, recuperable en `avance-1` y sintetizado ahora en `docs/AVANCE_1.md`.
 - [x] Verificadas 173 condiciones de activación/omisión de reglas y exploradas 701 trayectorias acotadas de preguntas.
 - [x] Confirmado que los 14 diagnósticos tienen al menos una ruta de cuestionario y que 25 de las 26 reglas tienen testigo interactivo normal.
 - [x] Repetidos validador, 31 pruebas de regresión y ambos ejemplos JSON; todos correctos.
@@ -96,7 +98,7 @@
 - [x] El control dinámico de alcanzabilidad se ejecuta en la suite separada de auditoría.
 - [x] Las contradicciones se explican con texto de preguntas, no IDs internos.
 - [x] Se verificaron retroceso, cambio de categoría, contradicciones y respuestas desconocidas.
-- [x] Actualizados `docs/AUDITORIA_RUTAS_AVANCE_1.md`, `docs/AVANCE_1.md`, `docs/BASE_CONOCIMIENTOS.md`, `docs/PREGUNTAS.md`, `README.md` e informe de cierre de correcciones.
+- [x] Actualizados entonces el informe histórico de rutas, `docs/AVANCE_1.md`, `docs/BASE_CONOCIMIENTOS.md`, `docs/PREGUNTAS.md`, `README.md` y el cierre técnico histórico; ambos informes se recuperan desde `avance-1`.
 - [ ] Validación manual y autorización expresa del cierre del Avance 1 y del tag `avance-1`.
 
 **Evidencia posterior a la corrección:** `python validar_conocimiento.py` terminó con código 0 y confirmó 26 hechos, 14 diagnósticos, 26 reglas, 26 preguntas y 7 categorías. `python -m unittest discover -s tests -v`: **31 pruebas, 0 fallos**. `python -m unittest discover -s auditoria -v`: **7 pruebas, 0 fallos**; 26/26 reglas y 14/14 diagnósticos con testigos de cuestionario, 185 comprobaciones directas y 781 trayectorias terminales acotadas sin ciclos. Ambos ejemplos JSON terminaron con código 0 y conservaron sus resultados. Una consulta de consola por cable terminó con código 0 y mostró solo `d_conectividad_local`. No se creó tag ni se publicaron cambios.
@@ -113,7 +115,7 @@
 
 **Evidencia observada antes de la prueba personal:** `python validar_conocimiento.py` terminó con código 0 y confirmó 30 hechos, 18 diagnósticos, 38 reglas, 30 preguntas y siete rutas. `python -m unittest discover -s tests -v` terminó con **31 pruebas, 0 fallos**; `python -m unittest discover -s auditoria -v` con **3 pruebas, 0 fallos** y testigos interactivos para **38/38 reglas y 18/18 diagnósticos**. Ambos ejemplos JSON terminaron con código 0. `git diff --check` terminó con código 0 y `git tag --list avance-1` no devolvió ningún tag. Las pruebas de software no miden precisión en equipos reales.
 
-**Archivos del rediseño:** catálogos JSON de conocimiento y preguntas, grafo JSON de rutas, representación de hechos, validador y gestor de rutas, consola, pruebas habituales y auditoría, `README.md`, `CHECKLIST.md`, `docs/AVANCE_1.md`, `docs/BASE_CONOCIMIENTOS.md`, `docs/PREGUNTAS.md` y `docs/REDISENO_RUTAS_AVANCE_1.md`. Los informes de auditoría y cierre técnico anteriores quedaron marcados como históricos. El archivo `modelo_a.py` no se modificó en este rediseño.
+**Archivos del rediseño:** catálogos JSON de conocimiento y preguntas, grafo JSON de rutas, representación de hechos, validador y gestor de rutas, consola, pruebas habituales y auditoría, `README.md`, `CHECKLIST.md`, `docs/AVANCE_1.md`, `docs/BASE_CONOCIMIENTOS.md`, `docs/PREGUNTAS.md` y un registro histórico del grafo, recuperable en `avance-1` y resumido ahora en `docs/PREGUNTAS.md`. Los informes de auditoría y cierre técnico anteriores quedaron marcados como históricos. El archivo `modelo_a.py` no se modificó en este rediseño.
 
 ### Corrección de coherencia I-01, I-02, I-03 y O-01 — Pendiente de revisión manual
 
@@ -123,7 +125,7 @@
 - [x] O-01: la consola integra evidencia general de energía en el resultado de pantalla principal sin alterar el Modelo A ni omitir las reglas activadas.
 - [x] Agregadas cuatro regresiones habituales y actualizada la auditoría independiente con recorridos anteriores y posteriores.
 - [x] Comprobadas las siete rutas: 2.854 trayectorias exhaustivas en las seis específicas y 361 trayectorias acotadas en general; 42/42 reglas y 18/18 diagnósticos alcanzables.
-- [x] Actualizados `docs/AUDITORIA_COHERENCIA_AVANCE_1.md`, `docs/AVANCE_1.md`, este checklist y los catálogos técnicos pertinentes.
+- [x] Actualizados entonces el informe histórico de coherencia, `docs/AVANCE_1.md`, este checklist y los catálogos técnicos pertinentes; el informe se recupera desde `avance-1` y su síntesis vigente está en `docs/AVANCE_1.md`.
 - [ ] Prueba personal del usuario y autorización expresa para cerrar el Avance 1.
 - [ ] Tag `avance-1`: no creado.
 
@@ -144,5 +146,132 @@
 
 ## Entregas posteriores — Pendientes de autorización
 
-- [ ] Fases 4–6: Modelos B y C, 80 casos, comparación de 60 casos e informe del Avance 2.
+- [x] Etapa 5 del Avance 2: evaluados 55 casos elegibles de desarrollo; resultados e informe creados y revisados por el usuario.
+- [x] Etapa 6 del Avance 2: C seleccionado y congelado mediante manifiesto; cierre autorizado por el usuario.
 - [ ] Fases 7–8: evaluación final reservada, interfaz e informe final.
+
+## Avance 2 — Etapa 1: preparación de arquitectura
+
+- [x] Verificada la línea base antes de editar: `main` limpio, `HEAD` en `avance-1` (`0907b6220eac500aee5fb1eb5542df5862ddb385`), sin diferencias frente al tag ni motores B/C activos.
+- [x] Ejecutados antes de editar el validador, 35 pruebas habituales y 10 de auditoría; todos correctos.
+- [x] Agregados contrato estructural de modelo y resultado y selector de A/B/C; A sigue predeterminado, B/C comunican «no implementado».
+- [x] Adaptada la consola al selector sin cambiar `modelo_a.py`, catálogos JSON, preguntas ni siete rutas.
+- [x] Añadidas seis pruebas de arquitectura y compatibilidad.
+- [x] Registrado en `docs/AVANCE_2.md` el plan de 60 viñetas de desarrollo y 20 finales independientes, las métricas previstas y el control de filtraciones; no se generaron ni evaluaron casos.
+- [x] Verificación posterior: `python validar_conocimiento.py` correcto (36 hechos, 18 diagnósticos, 42 reglas, 36 preguntas y siete rutas); `python -m unittest discover -s tests -v` **41 pruebas, 0 fallos**; `python -m unittest discover -s auditoria -v` **10 pruebas, 0 fallos**.
+- [x] Las salidas estándar de `ram.json` y `sin_conclusion.json` conservaron exactamente los hashes SHA-256 de la línea base; A predeterminado y A explícito produjeron las mismas salidas.
+- [x] Etapa 1 revisada y aprobada expresamente por el usuario al autorizar la etapa 2.
+
+**Archivos creados:** `src/diagnostico_pc/contratos.py`, `src/diagnostico_pc/selector.py`, `tests/test_arquitectura_avance_2.py`, `docs/AVANCE_2.md`. **Modificados:** `src/diagnostico_pc/consola.py`, `README.md`, `CHECKLIST.md`. Limitación: solo A infiere; no hay resultados comparativos ni medición de calidad diagnóstica real. No se modificó `avance-1`, no se creó `avance-2` y no se publicó nada.
+
+## Avance 2 — Etapa 2: Modelo B multinivel
+
+- [x] Autorizada la etapa 2 después de la aprobación de la etapa 1; verificada la línea base local de 41 pruebas habituales, 10 de auditoría y validador correctos.
+- [x] Ampliación independiente `data/conocimiento_avance2/` con **2 hechos derivados y 4 reglas nuevas** de arranque; ningún diagnóstico nuevo.
+- [x] Motor B con rondas hasta punto fijo, reglas activadas una sola vez, estados trivalentes, soportes alternativos y trazas por nivel.
+- [x] Validador de ampliación y rechazo de ciclos; contradicciones de conclusiones opuestas detectadas durante la evaluación.
+- [x] Selector con A predeterminado, B disponible y C explícitamente no implementado; presentación de cadenas de B sin cambiar la salida de A.
+- [x] Ejemplo reproducible `ejemplos/arranque_multinivel_b.json`: **3 rondas**, 2 hechos derivados y diagnóstico existente `d_arranque_so` respaldado por reglas directas y una cadena de tres niveles.
+- [x] Verificación posterior: `python validar_conocimiento.py` correcto; `python -m unittest discover -s tests -v` **50 pruebas, 0 fallos**; `python -m unittest discover -s auditoria -v` **10 pruebas, 0 fallos**.
+- [x] Probadas las siete rutas con B y los ejemplos JSON existentes; A conserva la salida previa en los ejemplos y sigue predeterminado.
+- [x] Actualizados `docs/AVANCE_2.md`, `README.md` y este checklist con límites y resultados observados.
+- [x] Revisión y aprobación de la etapa 2 confirmadas por el usuario al autorizar la etapa 4.
+
+**Archivos creados en etapa 2:** `data/conocimiento_avance2/hechos.json`, `data/conocimiento_avance2/reglas.json`, `src/diagnostico_pc/conocimiento_b.py`, `src/diagnostico_pc/modelo_b.py`, `tests/test_modelo_b.py`, `ejemplos/arranque_multinivel_b.json`. **Modificados:** `src/diagnostico_pc/selector.py`, `src/diagnostico_pc/consola.py`, `validar_conocimiento.py`, `tests/test_arquitectura_avance_2.py`, `README.md`, `CHECKLIST.md`, `docs/AVANCE_2.md`. Limitación: la demostración multinivel está acotada al arranque y no hay evaluación diagnóstica independiente. Se preservaron A, la base original, las preguntas, rutas y `avance-1`; no se creó tag nuevo ni se publicó nada.
+
+## Avance 2 — Etapa 3: Modelo C simbólico
+
+- [x] Etapas 1 y 2 aprobadas por el usuario; implementada exclusivamente la etapa 3.
+- [x] C reutiliza una ejecución completa de B: mismos hechos, reglas activadas, trazas e hipótesis; ordena principal y alternativas por calidad ordinal, observaciones originales distintas, prioridad técnica ordinal e ID estable.
+- [x] Metadatos independientes `criterios_c.json` para 36 observaciones y 18 diagnósticos, con justificación y validación estricta.
+- [x] C explica soportes originales, hechos derivados, cadenas, criterios aplicados y motivo de cada posición; muestra todas las alternativas.
+- [x] Ejemplo térmico reproducible: B prioriza `d_indicios_termicos` por especificidad de regla e ID; C prioriza `d_sobrecalentamiento` por temperatura medida, conserva la alternativa.
+- [x] `python validar_conocimiento.py`: código 0; base original 36 hechos, 18 diagnósticos y 42 reglas; ampliación B 2 hechos y 4 reglas; criterios C completos.
+- [x] `python -m unittest discover -s tests -v`: **60 pruebas, 0 fallos**; A/B sin regresiones en las pruebas existentes, diez pruebas nuevas de C.
+- [x] `python -m unittest discover -s auditoria -v`: **10 pruebas, 0 fallos**.
+- [x] Revisión y aprobación de la etapa 3 confirmadas por el usuario al autorizar la etapa 4.
+
+**Archivos creados en etapa 3:** `data/conocimiento_avance2/criterios_c.json`, `src/diagnostico_pc/conocimiento_c.py`, `src/diagnostico_pc/modelo_c.py`, `tests/test_modelo_c.py`, `ejemplos/hipotesis_termicas_c.json`. **Modificados:** `src/diagnostico_pc/selector.py`, `src/diagnostico_pc/consola.py`, `validar_conocimiento.py`, `tests/test_arquitectura_avance_2.py`, `tests/test_modelo_b.py` (solo nombre de una prueba), `README.md`, `CHECKLIST.md` y `docs/AVANCE_2.md`. Limitaciones: criterios ordinales sin calibración estadística; la calidad diagnóstica aún no se evaluó mediante los 80 casos independientes. No hay casos experimentales, métricas, modelo elegido, interfaz gráfica, commits ni nuevo tag.
+
+## Avance 2 — Etapa 4: casos y protocolo experimental
+
+- [x] Etapas 1, 2 y 3 aprobadas; se trabajó exclusivamente en el diseño y validación de casos de etapa 4.
+- [x] Definidas 60 viñetas académicas de desarrollo y 20 nuevas para reserva final en archivos separados; los 20 casos del intento anterior permanecen expuestos y no se reutilizaron.
+- [x] Las siete rutas están cubiertas; cada viñeta documenta relato, trayecto alcanzable, estados trivalentes, etiquetas defendibles, prioridad justificada cuando corresponde, evidencia, faltantes, comprobaciones, razón técnica y fuentes.
+- [x] Definido antes de evaluar el protocolo para conjuntos exactos, métricas micro multietiqueta, matrices por diagnóstico, principal, priorización y abstención; B y C deben conservar el mismo conjunto.
+- [x] Identificados siete casos con información fuera del cuestionario para análisis cualitativo separado; un caso adicional fuera del catálogo es codificable.
+- [x] Reserva final sellada con SHA-256 `7c609c0c614b1955d3fbbacca260b99f8c30f2b54e81473277bbe767f505d364`; manifiesto de versiones y fuentes registrado.
+- [x] `python validar_casos.py`: código 0; 60/20, siete rutas, estados, trayectos, referencias, firma no duplicada entre grupos y huella comprobados.
+- [x] `python validar_conocimiento.py`: código 0; base, preguntas, rutas, ampliación B y criterios C válidos.
+- [x] `python -m unittest discover -s tests -v`: **65 pruebas, 0 fallos**; cinco nuevas pruebas verifican el validador sin ejecutar modelos sobre las 80 viñetas.
+- [x] `python -m unittest discover -s auditoria -v`: **10 pruebas, 0 fallos**; `git diff --check`: código 0.
+- [x] Actualizados `README.md`, `docs/AVANCE_2.md` y este checklist con resultados observados, distribución y límites.
+- [x] Revisión y autorización expresa del usuario para corregir desarrollo en la etapa 4.1 y después evaluar solo la etapa 5.
+
+**Archivos creados en etapa 4:** `data/evaluacion/casos_desarrollo.json`, `casos_finales_reservados.json`, `fuentes.json`, `RESERVA_FINAL.sha256`, `MANIFIESTO.json`, `validar_casos.py`, `tests/test_validacion_casos.py` y `docs/PROTOCOLO_EVALUACION_AVANCE_2.md`; la distribución antes separada se integró en `docs/AVANCE_2.md`. **Modificados entonces:** `README.md`, `CHECKLIST.md`, `docs/AVANCE_2.md`. Limitaciones: siete casos requieren observaciones que el cuestionario no puede obtener o representan causas fuera del catálogo; la revisión técnica fue interna y no confirma fallas reales. No se calcularon métricas ni se seleccionó modelo en esa etapa; tampoco se creó commit, tag ni publicación.
+
+## Avance 2 — Etapa 4.1: corrección del desarrollo
+
+- [x] Conservada copia exacta de los 60 casos originales en `data/evaluacion/historico/casos_desarrollo_etapa4_v1.json`; hash original y revisado registrados en `MANIFIESTO.json`.
+- [x] Sustituidos D055 y D057, que repetían exactamente observaciones y etiquetas de D001 y D017; el conjunto sigue teniendo 60 casos y siete rutas.
+- [x] Conservados como contrastes D004–D005, D017–D023 y D037–D044 por su cambio verificable de LED o ventilador.
+- [x] Revisada la redacción de D017, D027, D037 y D045 sin usar predicciones ni modificar sus etiquetas.
+- [x] Retiradas prioridades no fundamentadas de D010 y D052; aclaradas prioridades por preservación de datos y la diferencia entre hipótesis, orden y causa confirmada.
+- [x] Validación aislada de desarrollo: 60/60 casos con IDs y estados válidos, trayectos alcanzables y observaciones coherentes; sin duplicados exactos de firma.
+- [x] Registradas distribución, similitudes restantes, fuentes y límites en `docs/REVISION_CASOS_ETAPA_4_1.md`.
+- [x] Revisión y aprobación de la etapa 4.1; autorización expresa para iniciar la Etapa 5.
+
+**Archivos de etapa 4.1:** creado `data/evaluacion/historico/casos_desarrollo_etapa4_v1.json` y `docs/REVISION_CASOS_ETAPA_4_1.md`; modificados `data/evaluacion/casos_desarrollo.json`, `data/evaluacion/MANIFIESTO.json`, `docs/AVANCE_2.md` y `CHECKLIST.md`. La huella final registrada permaneció intacta. No se abrió la reserva ni se ejecutaron motores sobre viñetas. La batería completa no se ejecutó porque su prueba de casos abre el archivo reservado; se aplicó validación aislada de los 60 casos.
+
+## Avance 2 — Etapa 5: evaluación experimental de desarrollo
+
+- [x] Comprobados 60 casos de desarrollo, 55 elegibles y cinco excluidos; 38 referencias positivas, 17 vacías y diez prioridades justificadas. Huellas del desarrollo original y revisado, catálogos y código registradas.
+- [x] Capturadas primero las predicciones brutas de A, B y C con las mismas observaciones reproducidas mediante el gestor de preguntas; etiquetas y justificaciones no llegaron a los motores.
+- [x] Confirmada la igualdad de conjuntos B/C en 55/55 casos. A/B también coincidieron en los conjuntos; B activó hechos derivados en seis casos y C cambió el orden en cuatro.
+- [x] Calculadas métricas, matrices 2×2 para los 18 diagnósticos por modelo, abstenciones, errores por ruta/escenario y prioridad para A/B/C sobre los mismos diez casos.
+- [x] Accuracy exacto A/B/C: **48/55 (87,3 %)**. Prioridad del principal: **A 2/10, B 2/10, C 4/10**. Resultados completos en `docs/RESULTADOS_EXPERIMENTALES_AVANCE_2.md`.
+- [x] `python validar_conocimiento.py`: código 0. Pruebas funcionales seguras: **65, sin fallos**; auditoría: **10, sin fallos**. Reproducción: **12 archivos deterministas idénticos** en una segunda ejecución.
+- [x] Conservadas las huellas de casos, conocimiento y motores tras la evaluación; reserva final sin abrir ni ejecutar.
+- [x] Documentada la omisión de `validar_casos.py` y `python -m unittest discover -s tests -v`: ambos recorridos vigentes abren la reserva final.
+- [x] Revisión de resultados de la etapa 5 y autorización expresa de la etapa 6 por el usuario.
+
+**Archivos creados en etapa 5:** `evaluar_desarrollo.py`, `tests/test_evaluacion_desarrollo.py`, `docs/RESULTADOS_EXPERIMENTALES_AVANCE_2.md` y `data/evaluacion/resultados_etapa5/`. **Modificados:** `docs/AVANCE_2.md` y este checklist. No se modificaron motores, reglas, casos, etiquetas ni conocimiento; no hubo commit, tag ni publicación. La concordancia se limita a viñetas académicas.
+
+## Avance 2 — Etapa 6: selección y cierre técnico
+
+- [x] Reconfirmadas las 26 huellas de código, conocimiento y desarrollo de la etapa 5, además de la huella de predicciones brutas, antes de seleccionar: todas coincidieron.
+- [x] Seleccionado C como motor propuesto para la aplicación gráfica final por prioridad de revisión y explicabilidad: **4/10** y rango recíproco **0,700**, frente a **2/10** y **0,567** para A/B.
+- [x] Documentado que A/B/C obtuvieron idénticos conjuntos, accuracy **48/55**, precisión micro **89,3 %**, recall micro **98,0 %**, F1 micro **93,5 %** y principal **35/38**; C no mejoró el accuracy.
+- [x] Creado manifiesto de selección con versión, procedencia y SHA-256 de **44 archivos**; el verificador usa una lista cerrada sin el archivo final reservado.
+- [x] Los registros de la etapa 6 mencionan un informe académico independiente, ausente del árbol al iniciar la consolidación; arquitectura, metodología, selección y límites se consultan en `docs/AVANCE_2.md`, y tablas, matrices, gráficas y errores en `docs/RESULTADOS_EXPERIMENTALES_AVANCE_2.md`.
+- [x] Conservado A como predeterminado actual; documentado C como predeterminado futuro de la aplicación gráfica y selección explícita de A/B/C para demostración.
+- [x] `python validar_conocimiento.py`: código 0. Pruebas seguras: **68, sin fallos**; auditoría: **10, sin fallos**. Verificador: **44 archivos coincidentes**.
+- [x] Repetida captura y análisis de desarrollo en carpeta temporal: **12 archivos deterministas idénticos**, 55 elegibles, cinco excluidos y B/C con conjuntos iguales.
+- [x] Ejecutados A, B y C por separado con `ejemplos/ram.json`: código 0; el modo predeterminado produjo la misma salida que A explícito.
+- [x] `git diff --check`: código 0. Se omitieron `validar_casos.py` y la batería global porque leen la reserva final.
+- [x] Revisión del usuario y autorización expresa para cerrar el Avance 2 en Git y publicar `main` y el tag `avance-2`.
+
+**Archivos creados:** `data/evaluacion/MANIFIESTO_SELECCION.json`, `verificar_seleccion.py` y `tests/test_seleccion_modelo.py`; el informe académico independiente mencionado en el registro original ya no estaba en el árbol al iniciar esta consolidación. Su función documental queda cubierta por `docs/AVANCE_2.md` y el informe de resultados. **Modificados entonces:** `docs/AVANCE_2.md` y este checklist. **Límites:** diez prioridades justificadas son una muestra pequeña; las viñetas no verifican fallas físicas ni rendimiento en equipos reales. No se modificaron motores, reglas, prioridades, etiquetas, selector ni consola; tampoco se abrió ni ejecutó la reserva final.
+
+## Consolidación documental previa al cierre del Avance 2
+
+- [x] Integradas en `docs/AVANCE_1.md`, `docs/BASE_CONOCIMIENTOS.md` y `docs/PREGUNTAS.md` las conclusiones vigentes de las auditorías, el rediseño de las siete rutas y las capas simbólicas B/C.
+- [x] Integrada en `docs/AVANCE_2.md` la distribución inicial de 60 casos de desarrollo y 20 reservados, sus criterios de etiquetado y los límites; la revisión 4.1 continúa en su ruta protegida.
+- [x] Actualizados `README.md` y las referencias vigentes de este checklist; README ya no recomienda ejecutar comandos que abren la reserva final.
+- [x] Añadida a `.gitignore` una exclusión específica para `data/evaluacion/casos_finales_reservados.json`; el archivo sigue disponible localmente y fuera del seguimiento Git.
+- [x] Retirados cinco documentos no protegidos después de trasladar su contenido relevante: auditorías de rutas y coherencia, cierre técnico de correcciones, rediseño de rutas e informe separado de distribución.
+- [x] Revisado `AGENTS.md`: no contenía referencias a los cinco documentos retirados; se actualizó el estado de selección y congelación de C, el índice de siete documentos y la protección de los casos finales ya existentes. Se conservan las reglas de desarrollo y se condiciona la batería global a la autorización para leer la reserva.
+- [x] Comprobación posterior: `python validar_conocimiento.py` terminó con código 0; `python verificar_seleccion.py` confirmó **44 archivos**; **68 pruebas funcionales seleccionadas** y **10 pruebas de auditoría** pasaron sin fallos.
+- [x] Revisión de la consolidación y autorización separada del cierre en Git; la rama de respaldo permanece fuera de la publicación.
+
+**Archivos modificados en esta consolidación:** `.gitignore`, `AGENTS.md`, `README.md`, `CHECKLIST.md`, `docs/AVANCE_1.md`, `docs/AVANCE_2.md`, `docs/BASE_CONOCIMIENTOS.md` y `docs/PREGUNTAS.md`. **Archivos retirados:** `docs/AUDITORIA_RUTAS_AVANCE_1.md`, `docs/CIERRE_CORRECCIONES_AVANCE_1.md`, `docs/REDISENO_RUTAS_AVANCE_1.md`, `docs/AUDITORIA_COHERENCIA_AVANCE_1.md` y `docs/DISTRIBUCION_CASOS_ETAPA_4.md`. **Limitaciones:** la carpeta `docs/` conserva siete archivos por la huella de revisión 4.1; `validar_casos.py` y la batería global siguen leyendo la reserva final y no se ejecutaron. Los resultados congelados y los 20 casos finales permanecen fuera de esta consolidación.
+
+## Cierre definitivo del Avance 2
+
+- [x] Cierre y publicación de `main` y `avance-2` autorizados expresamente por el usuario; versión académica identificada en `docs/AVANCE_2.md`.
+- [x] `python verificar_seleccion.py`: **44 huellas SHA-256 coincidentes**. `python validar_conocimiento.py`: código 0. Pruebas funcionales seguras: **68, sin fallos**; auditorías: **10, sin fallos**.
+- [x] `.gitignore` contiene `data/evaluacion/casos_finales_reservados.json`; `git check-ignore` confirmó su exclusión y `git ls-files` confirmó que no está rastreado. No se abrió ni ejecutó la reserva.
+- [x] Los motores, catálogos, resultados experimentales y manifiestos congelados conservaron sus huellas. La documentación se consolidó sin modificar archivos protegidos.
+- [ ] Evaluación de los 20 casos finales en la fase autorizada de la entrega final. `validar_casos.py` y la batería global siguen pendientes porque cargan esa reserva.
+
+**Archivos del cierre documental:** `docs/AVANCE_2.md`, `AGENTS.md`, `README.md` y `CHECKLIST.md`. **Limitaciones:** las métricas proceden de 55 viñetas elegibles de desarrollo, la priorización se comparó en diez casos y no hay validación en equipos reales. La reserva final y la rama experimental no forman parte de esta entrega.
