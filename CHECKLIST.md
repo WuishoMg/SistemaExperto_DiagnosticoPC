@@ -275,3 +275,134 @@
 - [ ] Evaluación de los 20 casos finales en la fase autorizada de la entrega final. `validar_casos.py` y la batería global siguen pendientes porque cargan esa reserva.
 
 **Archivos del cierre documental:** `docs/AVANCE_2.md`, `AGENTS.md`, `README.md` y `CHECKLIST.md`. **Limitaciones:** las métricas proceden de 55 viñetas elegibles de desarrollo, la priorización se comparó en diez casos y no hay validación en equipos reales. La reserva final y la rama experimental no forman parte de esta entrega.
+
+## Entrega final — Interfaz gráfica
+
+- [x] Añadida una aplicación PySide6/Qt Quick independiente de la consola; C es su motor principal y A/B/C están disponibles para comparación académica.
+- [x] Reutilizados el gestor, las siete rutas, el catálogo de preguntas y los motores sin modificarlos; respuestas desconocidas, edición, contradicciones, terminales y resultados se exponen mediante el adaptador.
+- [x] Añadidas vistas de bienvenida, categorías, cuestionario, análisis, resultados y razonamiento; exportación PDF local e integración opcional de mascota por estado.
+- [x] Instalado PySide6 6.12.0 en `.venv` y probada la carga QML en Qt `offscreen` con Python 3.14.2 en Windows 11. El PDF de prueba se abrió con Qt.
+- [x] Pruebas funcionales seguras: 77 sin fallos, incluidas siete nuevas de sesión y dos de Qt/PDF; auditorías: diez sin fallos. `python validar_conocimiento.py` correcto; `python verificar_seleccion.py`: 44 huellas coincidentes.
+- [ ] Prueba manual en ventana visible, recursos definitivos de la mascota y empaquetado Windows.
+- [ ] Batería global y `validar_casos.py`, pendientes porque leen la reserva final prohibida.
+
+**Archivos nuevos:** `interfaz_grafica.py`, `requirements-gui.txt`, `src/diagnostico_pc/gui/`, `tests/test_interfaz_grafica.py`, `tests/test_gui_qt.py` y `docs/ENTREGA_FINAL_INTERFAZ.md`. **Modificado:** `CHECKLIST.md`. Los motores, los catálogos, los manifiestos y los resultados experimentales permanecieron intactos.
+
+## Entrega final — Pulido visual de la interfaz
+
+- [x] Bienvenida sin avance automático, con entrada animada, barra visual finita y fondo exclusivo de iconos SVG en mosaico continuo.
+- [x] Tarjetas, encabezados, estados, navegación y resultados reorganizados; trazas desplegables y SVG locales de Font Awesome Free 6.7.2 con licencia y atribución.
+- [x] Mascota opcional: PNG transparente `mascota-saludando.png` antes de JPG; otras poses y animaciones admitidas por estado, sin sustituto.
+- [x] Revisión Qt `offscreen` en 760×600, 1080×760 y 1440×900 para cuatro pantallas; capturas de resultado positivo y abstención.
+- [x] Punto de entrada gráfico en ejecución tras dos segundos `offscreen`, sin mensajes en stderr.
+- [x] 81 pruebas funcionales seguras y diez auditorías correctas; `python verificar_seleccion.py` confirmó 44 huellas. PDF, edición de respuestas, despliegue de trazas y cierre visual del mosaico cubiertos por las pruebas seguras.
+- [ ] Revisar el ciclo completo del fondo y la interacción en una ventana visible. La mascota definitiva y el empaquetado siguen pendientes.
+
+**Archivos del pulido:** componentes y `Main.qml` en `src/diagnostico_pc/gui/qml/`, `gui/bridge.py`, SVG y licencia en `gui/assets/icons/`, instrucciones en `gui/assets/mascota/README.md`, `tests/test_gui_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. No se ejecutaron `validar_casos.py` ni la batería global, que abrirían los 20 casos reservados.
+
+## Entrega final — Corrección del bloqueo de Qt Quick
+
+- [x] Sustituidos `width` y `height` por `Layout.preferredWidth` y `Layout.preferredHeight` en los dos `FaIcon` hijos directos de `RowLayout` que provocaban `possible QQuickItem::polish() loop`.
+- [x] Prueba de regresión Windows en proceso separado con límite de tiempo: 6,8 segundos, al menos 12 pulsos de temporizador, siete tarjetas QML y clics reales de bienvenida, categoría y respuesta. Pasó con backend predeterminado y `QSG_RHI_BACKEND=software`, sin bucles `polish()`.
+- [x] 82 pruebas funcionales seguras y diez auditorías sin fallos; `python verificar_seleccion.py` confirmó 44 huellas; `git diff --check` correcto.
+- [ ] Revisión manual de la ventana visible en el equipo del usuario. Persisten advertencias de `implicitWidth` del diálogo y estilo nativo que no impidieron la interacción en la prueba.
+
+**Archivos de la corrección:** `src/diagnostico_pc/gui/qml/Main.qml`, `tests/test_gui_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. La primera ejecución de pruebas seguras dio dos errores por permisos del directorio temporal del entorno aislado; la repetición con `TEMP` y `TMP` en `.venv/tmp_gui` pasó completa. No se ejecutaron la batería global ni `validar_casos.py` porque leen la reserva final.
+
+## Entrega final — Botones y microanimaciones
+
+- [x] `ActionButton.qml` unifica centrado de icono y texto, separación de 10 px, fondo personalizado, foco violeta por teclado y contraste de controles deshabilitados; eliminado el borde azul que aparecía al hover con el `Button` nativo.
+- [x] Hover a 103 % y pulsación a 97 % en 180 ms con transformación visual, sin cambiar `width` ni `height` del layout; acciones de mouse y teclado sin duplicados.
+- [x] Prueba Windows de alineación, hover, clic, Tab, Enter y `polish() loop`; capturas de cuestionario y resultados a 760×600 revisadas.
+- [x] 83 pruebas funcionales seguras y diez auditorías correctas; `python verificar_seleccion.py` confirmó 44 huellas; `git diff --check` correcto.
+- [ ] Revisión visual final en la ventana del usuario.
+
+**Archivos de este ajuste:** `src/diagnostico_pc/gui/qml/ActionButton.qml`, `tests/test_gui_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. Las tarjetas de categoría, el fondo, el puente y el dominio permanecieron intactos. La batería global y `validar_casos.py` siguen pendientes por la reserva final.
+
+## Entrega final — Mascotas y transición visual
+
+- [x] Integradas las cinco poses PNG proporcionadas en bienvenida, categorías, preguntas, análisis e idea/resultados; recurso ausente oculto sin detener la interfaz.
+- [x] Mascotas de categorías y preguntas superpuestas a la hero card sin tapar texto; entrada suave de la card y la mascota, con flotación ligera donde corresponde. Bienvenida con botón visible a 760×600 y sin avance automático.
+- [x] Secuencia QML de 2500 ms de análisis y 800 ms de idea antes de llamar al mismo resultado C; navegar a categorías cancela los temporizadores.
+- [x] Capturas Windows de las cinco vistas y transición revisadas; prueba de carga y respuesta prolongada sin `polish() loop`.
+- [x] Centrada la columna previa al resultado: poses y etiquetas en el mismo eje; análisis 190×190 px e idea 214×214 px en un contenedor fijo. Capturas Windows a 760×600 y prueba Qt correctas.
+- [x] 85 pruebas funcionales seguras y diez auditorías correctas; `python verificar_seleccion.py` confirmó 44 huellas; `git diff --check` correcto.
+- [ ] Ajuste fino visual final en la ventana del usuario.
+
+**Archivos de esta integración:** `src/diagnostico_pc/gui/bridge.py`, `gui/qml/Mascota.qml`, `gui/qml/HeroCard.qml`, `gui/qml/Main.qml`, `gui/assets/mascota/README.md`, `tests/test_gui_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. No se crearon imágenes nuevas ni se modificaron motores, conocimiento o inferencia. La batería global y `validar_casos.py` continúan pendientes por la reserva final.
+
+## Entrega final — Hero cards animadas
+
+- [x] Bienvenida, categorías, cuestionario y resultados usan tarjetas horizontales blancas y lavanda con entrada de 390 ms; el fondo decorativo común combina manchas, curvas e iconos SVG locales de Font Awesome Free en movimiento lento.
+- [x] Las mascotas originales sobresalen de las tarjetas con sombra violeta. La composición mantiene texto y acciones a la izquierda y reserva espacio para la mascota a la derecha. Se respetan las poses existentes; no se generaron imágenes sustitutas.
+- [x] Las animaciones de fondos se detienen cuando su pantalla está oculta y atienden la preferencia de movimiento reducido cuando Qt la expone. La bienvenida sigue esperando el botón «Empezar diagnóstico».
+- [x] Capturas Windows revisadas en 760×600, 1080×760 y 1440×900. Una prueba nueva comprobó las cuatro tarjetas en esos tamaños, el solapamiento superior de la mascota, el movimiento del fondo y la ausencia de `polish() loop`.
+- [x] Un ciclo completo de la mancha principal se midió durante 17 segundos en ventana Windows: 85 muestras, retorno al origen y desplazamiento máximo de 0,985 px entre muestras de 200 ms, sin salto brusco.
+- [x] 86 pruebas funcionales seguras y diez auditorías correctas; `python verificar_seleccion.py` confirmó 44 huellas; `git diff --check` correcto.
+- [ ] Revisión visual final en la ventana del usuario. La batería global y `validar_casos.py` permanecen pendientes por la reserva final.
+
+**Archivos de este ajuste:** `src/diagnostico_pc/gui/qml/Main.qml`, `HeroCard.qml`, `HeroBackdrop.qml`, `Mascota.qml`, `FaIcon.qml`, siete SVG lavanda en `gui/assets/icons/lavender/`, `tests/test_gui_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. Los motores, el conocimiento, la inferencia y los manifiestos no se modificaron.
+
+## Entrega final — Secuencia análisis → idea
+
+- [x] «Analizando» permanece 2500 ms y después aparece «idea» durante 800 ms antes de solicitar el resultado.
+- [x] La pose de idea se mantiene durante el estado `analisis` transitorio del puente; solo se retira al llegar a resultados o al cancelar la consulta. La prueba Qt observó ese estado intermedio sin que reapareciera la pose anterior.
+- [x] Pasaron 86 pruebas funcionales seguras, incluida la prueba de secuencia y cancelación. La batería global y `validar_casos.py` siguen pendientes por la reserva final.
+
+**Archivos de la corrección:** `src/diagnostico_pc/gui/qml/Main.qml`, `tests/test_gui_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. No se modificó el puente Python ni la inferencia.
+
+## Entrega final — Espaciado y encabezado
+
+- [x] La bienvenida oculta encabezado, icono y línea divisoria. Su hero card queda situada con un margen proporcional a la altura de la ventana; conserva fondo, mascota y botón sin avance automático.
+- [x] Categorías, cuestionario y resultados mantienen encabezado, icono, línea y botón «Categorías» donde corresponde. La distancia medida de línea a hero card pasó de 70 px a 32 px mediante márgenes y `spacing` de `ColumnLayout`.
+- [x] Capturas Windows revisadas en 760×600, 1080×760 y 1440×900. La prueba Qt comprobó visibilidad del encabezado, separación de 24–36 px, límites horizontales, ausencia de superposición con el botón, fondo animado y cero avisos `polish() loop`.
+- [x] 86 pruebas funcionales seguras correctas; `python verificar_seleccion.py` confirmó 44 huellas; `git diff --check` correcto.
+- [ ] Revisión visual final en la ventana del usuario. La batería global y `validar_casos.py` siguen pendientes por la reserva final.
+
+**Archivos de este ajuste:** layout de `src/diagnostico_pc/gui/qml/Main.qml`, prueba en `tests/test_gui_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. No se modificaron mascotas, motores ni datos.
+
+## Entrega final — Efectos de sonido
+
+- [x] `AppAudio.qml` centraliza Qt Multimedia: bienvenida 15 %, análisis 15 %, idea 18 % y pop 15 %, todos con una sola reproducción. La bienvenida se solicita al aparecer la mascota y no vuelve a sonar.
+- [x] Los sonidos de análisis e idea siguen los cambios de pose existentes; análisis se detiene al aparecer idea. El audio de idea termina naturalmente sobre resultados, donde permanece la misma pose, y se detiene si se abandona esa pantalla. Los botones y tarjetas de categoría emiten pop solo al hacer clic.
+- [x] Generado `button-pop.wav` de 110 ms con `wave` de Python, sin bibliotecas nuevas. Los tres MP3 proporcionados permanecieron intactos; una prueba cargó el componente sin archivos de audio y continuó normalmente.
+- [x] En ventana Windows, Qt informó `PlayingState` sin error para los tres MP3 e `isPlaying=True` para el pop. La prueba de interacción comprobó volúmenes, reproducción única, hover silencioso y secuencia de eventos.
+- [x] 87 pruebas funcionales seguras y diez auditorías correctas; `python verificar_seleccion.py` confirmó 44 huellas; `git diff --check` correcto.
+- [ ] Escucha manual para valorar el volumen y la calidad percibida. La batería global y `validar_casos.py` siguen pendientes por la reserva final.
+
+**Archivos de esta integración:** `src/diagnostico_pc/gui/qml/AppAudio.qml`, `ActionButton.qml`, `Main.qml`, `gui/assets/sounds/button-pop.wav`, `tests/test_gui_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. No se añadieron dependencias ni se modificó la inferencia.
+
+## Entrega final — Interfaz simplificada
+
+- [x] Retiradas de las pantallas las etiquetas de modelos y la comparación académica; resultados conserva título, hipótesis, recomendaciones y razonamiento. La consulta gráfica sigue usando C internamente.
+- [x] Reporte PDF con texto para usuario final, sin nombres de modelos y con criterios ordinales, recomendaciones, reglas y trazas. QtPdf abrió el archivo generado.
+- [x] Prueba QML de bienvenida, categorías, cuestionario y resultados sin referencias visibles a modelos; botones restantes de resultados conservan la prueba de alineación e interacción.
+- [x] 87 pruebas funcionales seguras, diez auditorías y 44 huellas SHA-256 correctas; `git diff --check` sin errores.
+- [ ] La batería global y `validar_casos.py` siguen pendientes porque leen los 20 casos finales reservados.
+
+**Archivos de este ajuste:** `src/diagnostico_pc/gui/qml/Main.qml`, `src/diagnostico_pc/gui/pdf_export.py`, `tests/test_gui_qt.py`, `README.md`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. El contrato del puente, los motores, los datos y los manifiestos permanecieron intactos.
+
+## Entrega final — Reporte técnico PDF
+
+- [x] Rediseñado el PDF A4 con blanco, lavanda `#F5F3FF`, violeta `#6355FF`, mascota de análisis transparente, tarjetas y pie numerado con «Del síntoma a la solución.».
+- [x] Observaciones registradas y hechos derivados conservan `verdadero`, `falso` y `desconocido`, con texto y colores verde, naranja y gris. Las preguntas omitidas no se presentan como observaciones respondidas.
+- [x] Conservadas hipótesis, alternativas, recomendaciones, reglas, criterios y trazas; guía imprimible basada exclusivamente en recomendaciones existentes, con casillas y notas.
+- [x] Probados PDF sin hipótesis, con hechos derivados, con alternativa y una fixture de paginación de 13 páginas. QtPdf abrió y renderizó todas las páginas, con footer, numeración y franja libre; se revisaron capturas visuales.
+- [x] Slot de exportación gráfica comprobado; 87 pruebas funcionales seguras, diez auditorías, 44 huellas SHA-256 y `git diff --check` correctos.
+- [ ] Batería global y `validar_casos.py` pendientes por los 20 casos finales reservados.
+
+**Archivos de este rediseño:** `src/diagnostico_pc/gui/pdf_export.py`, nuevo `src/diagnostico_pc/gui/pdf_layout.py`, `src/diagnostico_pc/gui/bridge.py`, `tests/test_gui_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. No se cambiaron motores, conocimiento, QML, manifiestos ni resultados experimentales.
+
+## Entrega final — Ajuste de volumen
+
+- [x] Bajados los niveles de bienvenida y análisis a 15 %, y el de idea a 18 % en `AppAudio.qml`; el pop permanece en 15 %. Los archivos de audio no se modificaron.
+- [x] Pasó la prueba focalizada de botones y salidas de audio; `python verificar_seleccion.py` confirmó las 44 huellas y `git diff --check` no mostró errores.
+- [ ] Pendiente escucha manual para valorar el volumen percibido. No se ejecutó la batería global por la reserva final.
+
+## Respaldo previo a posibles funcionalidades adicionales
+
+- [x] `main` y `origin/main` coincidían después de `git fetch origin`; `pre-finalizacion` no existía localmente ni en `origin` antes del respaldo. Los tags `avance-1` y `avance-2` se conservaron.
+- [x] `python validar_conocimiento.py` correcto; `python verificar_seleccion.py` confirmó las 44 huellas protegidas. Pasaron 87 pruebas funcionales seguras y diez auditorías; la batería global y `validar_casos.py` siguen pendientes por la reserva final.
+- [x] Creado y comprobado `data/interfaz/MANIFIESTO_GUI.json` con 109 huellas SHA-256 de código de ejecución, QML, imágenes, iconos y su licencia, sonidos, recurso PDF, configuración y dependencia de la GUI. La reserva final permanece ignorada.
+
+**Archivos de este respaldo:** `data/interfaz/MANIFIESTO_GUI.json`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist, junto con los archivos de la GUI, pruebas y documentación que estaban pendientes de registrar. El manifiesto de selección, los motores y los resultados experimentales no se modificaron.

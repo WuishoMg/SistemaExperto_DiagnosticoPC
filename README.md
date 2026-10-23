@@ -2,9 +2,21 @@
 
 Proyecto universitario de IA simbólica. **Avance 1 finalizado; Avance 2 cerrado como versión académica `avance-2`.** El Modelo A obtiene hipótesis mediante reglas SI–ENTONCES. El Modelo B añade encadenamiento hacia adelante con hechos derivados y trazas. El Modelo C reutiliza B y ordena hipótesis mediante criterios simbólicos ordinales. Los tres modelos se compararon sobre 55 viñetas elegibles de desarrollo; C fue seleccionado y congelado por la utilidad y explicación de su orden de revisión. Los 20 casos finales siguen reservados. La comparación académica no mide precisión en equipos reales.
 
+## Aplicación gráfica de la entrega final
+
+La aplicación PySide6/Qt Quick usa internamente el Modelo C y presenta hipótesis, recomendaciones y razonamiento sin mostrar nombres de modelos ni una comparación académica. En Windows:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-gui.txt
+.\.venv\Scripts\python.exe interfaz_grafica.py
+```
+
+La consola conserva A como modelo predeterminado. La arquitectura, las pruebas y las limitaciones de la aplicación gráfica se describen en [la documentación de la entrega final](docs/ENTREGA_FINAL_INTERFAZ.md).
+
 ## Probar el cuestionario
 
-Se requiere Python 3.11 o posterior; no hay paquetes externos. Desde la raíz del proyecto:
+La consola requiere Python 3.11 o posterior y no tiene paquetes externos. Desde la raíz del proyecto:
 
 ```powershell
 python diagnosticar.py

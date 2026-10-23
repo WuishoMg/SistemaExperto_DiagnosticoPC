@@ -1,0 +1,95 @@
+# Entrega final: aplicación gráfica
+
+## Arquitectura implementada
+
+`interfaz_grafica.py` inicia una aplicación Qt Quick separada de `diagnosticar.py`. `gui/session.py` reutiliza el selector, el Modelo C, las preguntas, las siete rutas y `GestorPreguntas`; `gui/serialization.py` conserva el orden y las trazas del resultado. `gui/bridge.py` expone el estado mediante `QObject`, propiedades, señales y slots. QML muestra el cuestionario y el razonamiento sin decidir rutas ni inferir diagnósticos.
+
+La consulta gráfica usa C internamente y presenta sus hipótesis y razonamiento sin identificar modelos ni ofrecer comparación en la interfaz. La consola conserva A como predeterminado. Las respuestas `si`, `no` y `no_estoy_seguro` pasan por `Pregunta.estado_para`; las observaciones enviadas al motor son `verdadero`, `falso` o `desconocido`. Editar una respuesta descarta las posteriores y borra el resultado previo. El bloqueo de energía y las contradicciones impiden mostrar un resultado para esa consulta.
+
+## Uso en Windows
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-gui.txt
+.\.venv\Scripts\python.exe interfaz_grafica.py
+```
+
+La fuente Segoe UI se carga desde Windows cuando está disponible. La interfaz usa blanco, lavanda y violeta `#6355FF`. La bienvenida espera el botón «Empezar diagnóstico» incluso después de completar su barra visual. El fondo de SVG tecnológicos se mueve solo en esa pantalla. Las tarjetas, el historial y los resultados usan componentes QML; las trazas se despliegan sin alterar su orden ni su contenido.
+
+La mascota de bienvenida busca primero `src/diagnostico_pc/gui/assets/mascota/mascota-saludando.png`, después `mascota-saludando.jpg`; si faltan, se oculta sin error. Otras poses estáticas o animadas pueden añadirse con los nombres indicados en el README de esa carpeta. No se incluyó mascota ni imagen sustituta. Los iconos locales proceden de Font Awesome Free 6.7.2, con atribución en cada SVG y licencia en `assets/icons/LICENSE.txt` (iconos CC BY 4.0); la variante blanca solo cambia el color del trazado. El informe PDF usa `QPdfWriter` y conserva estados desconocidos, hipótesis, recomendaciones y trazas. No se ha preparado aún un ejecutable: su empaquetado deberá incluir los JSON, QML, fuentes y recursos autorizados.
+
+## Verificación observada
+
+En Windows 11 con Python 3.14.2 se instaló PySide6 6.12.0 en `.venv`; la carga real de QML produjo una ventana, siete tarjetas y pantallas de cuestionario y resultado. La revisión visual se hizo con el renderizador Qt `offscreen`; no sustituye una prueba manual en una ventana visible. Un PDF de dos páginas con hechos derivados y trazas se abrió y renderizó con `QPdfDocument`. Pasaron 77 pruebas funcionales seguras, incluidas siete de sesión y serialización y dos de Qt/PDF, además de diez auditorías, sin fallos. `python validar_conocimiento.py` terminó correctamente y `python verificar_seleccion.py` confirmó las 44 huellas.
+
+La mascota definitiva aún no se ha proporcionado. No se abrió ni ejecutó la reserva de 20 casos finales. La batería global y `validar_casos.py` permanecen pendientes por esa restricción. No se modificaron motores, conocimiento, preguntas, rutas, resultados experimentales ni manifiestos.
+
+## Pulido visual
+
+Se añadieron `FaIcon`, `HeroCard`, `SurfaceCard`, `StatusTag`, `HypothesisCard`, `TraceCard` y `WelcomeBackground`. Los SVG Free 6.7.2 y sus variantes blancas están guardados localmente. La interfaz conserva la navegación y el resultado en Python; la bienvenida no tiene temporizador de navegación. El recurso PNG opcional de la mascota tiene prioridad sobre JPG.
+
+La carga QML, el PDF y 81 pruebas funcionales seguras pasaron; también pasaron diez auditorías. `python verificar_seleccion.py` confirmó 44 huellas. El punto de entrada gráfico permaneció en ejecución tras dos segundos en modo `offscreen`, sin mensajes en stderr. Se revisaron capturas Qt `offscreen` en 760×600, 1080×760 y 1440×900 de bienvenida, categorías, cuestionario y resultados, incluido un resultado con hipótesis y alternativas. El progreso terminó sin cambiar de pantalla. La ausencia de mascota y la preferencia PNG/JPG se comprobaron. Dos fotogramas del fondo al inicio y al final de un desplazamiento completo fueron idénticos en la prueba Qt; falta observar el ciclo en una ventana visible. Tampoco se hizo prueba manual en una ventana visible. La reserva final, su validador y la batería global siguieron sin ejecutarse.
+
+## Corrección del bloqueo al iniciar
+
+Dos instancias de `FaIcon` colocadas directamente en `RowLayout` dentro de `Main.qml` fijaban `width` y `height`: la flecha de las categorías y el icono «PREGUNTA ACTUAL». Qt Quick repetía `possible QQuickItem::polish() loop`, impidiendo que el hilo de interfaz procesara eventos. Ambas instancias declaran ahora `Layout.preferredWidth` y `Layout.preferredHeight` con sus tamaños anteriores de 17×17 y 18×18. `FaIcon.qml`, los SVG, el fondo animado y los motores permanecieron intactos. Los futuros iconos hijos directos de `RowLayout` o `ColumnLayout` deben declarar sus dimensiones mediante propiedades `Layout.preferredWidth` y `Layout.preferredHeight`.
+
+La prueba de regresión inicia QML en un proceso Windows con límite de tiempo, mantiene la ventana abierta 6,8 segundos y exige al menos 12 pulsos de 500 ms. Comprobó las siete tarjetas QML y pulsó los controles reales de bienvenida, categoría y respuesta. Pasó con el backend predeterminado y con `QSG_RHI_BACKEND=software`, sin advertencias `polish() loop`. Las capturas del backend Windows muestran texto legible, tarjetas e iconos en categorías y cuestionario. También pasaron 82 pruebas funcionales seguras, diez auditorías y la verificación de 44 huellas; `git diff --check` no encontró errores. La primera ejecución de la batería segura tuvo dos errores de permisos en el directorio temporal predeterminado del entorno aislado; con `TEMP` y `TMP` dentro de `.venv/tmp_gui` pasó íntegra. Persisten advertencias separadas sobre `implicitWidth` del diálogo y personalización del estilo nativo, sin pérdida de respuesta en esta prueba. No se hizo aún una revisión manual de la ventana ni se abrió la reserva final.
+
+## Botones y microanimaciones
+
+`ActionButton.qml` usa ahora `AbstractButton` con fondo y contenido propios. En la prueba Windows, el borde azul aparecía al hacer hover sobre `Button` aunque no tenía foco; el componente actual dibuja un aro violeta solo con `visualFocus`, conservando Tab, Space y Enter. El icono y el texto se centran como grupo con 10 px de separación. Hover escala visualmente a 103 % y pulsación a 97 % durante 180 ms con `Easing.OutCubic`; el layout mantiene su geometría. El fondo cambia de color y la sombra aumenta ligeramente en hover. Los controles deshabilitados usan texto e iconos oscuros sobre fondo claro.
+
+La prueba Qt comprobó centrado de una etiqueta larga y de los botones de resultados, foco por Tab, activación única por Enter y mouse, escalas, geometría fija y ausencia de `polish() loop`. Se revisaron capturas Windows a 760×600 de cuestionario y resultados; el contenido de los botones se muestra sin superposición. Pasaron 83 pruebas funcionales seguras, diez auditorías y la verificación de las 44 huellas. Las tarjetas de categoría y el fondo de bienvenida no se modificaron.
+
+## Mascotas y transición visual
+
+Las cinco imágenes proporcionadas se integraron por pantalla: `mascota-saludando.png` en bienvenida, `mascota-default1.png` en categorías, `mascota-escribiendo1.png` en preguntas, `mascota-analizando1.png` durante el análisis y `mascota-idea1.png` antes y durante resultados. La propiedad visual existente del puente busca los archivos reales y conserva los nombres genéricos como alternativa; no se cambió ningún método ni estado del diagnóstico. `Mascota.qml` oculta una imagen que no llega a `Image.Ready`, admite aún recursos animados y aplica una flotación de 5 px y una entrada de escala suave cuando corresponde. Las mascotas de categorías y preguntas sobresalen 20 px de la hero card, con espacio reservado para que no cubran el texto. Las hero cards aparecen con una escala visual discreta, sin alterar dimensiones del layout.
+
+Al pulsar «Ver resultado disponible», QML muestra la pose de análisis durante 2500 ms, luego la idea durante 800 ms y después invoca el mismo `diagnostico.verResultado()`. El botón «Categorías» cancela los temporizadores si se navega durante la secuencia. En capturas Windows a 760×600 se observaron bienvenida con su botón visible, categorías, preguntas, ambas poses de transición y resultados; no hubo avisos `polish() loop`. La comprobación QML confirmó que la bienvenida no avanza sola, las cinco poses cargan, la secuencia termina en un resultado de C y la navegación la cancela. Un recurso de prueba inexistente dejó oculto el componente. Pasaron 85 pruebas funcionales seguras, diez auditorías y la verificación de 44 huellas. No se añadieron sonidos ni imágenes sustitutas.
+
+Se corrigió después la alineación de la vista previa: la columna ocupa el ancho de la sección, la mascota y el texto comparten el mismo eje horizontal, y ambas poses usan un contenedor fijo para evitar saltos. La imagen de análisis mide 190×190 px y la de idea 214×214 px. Una captura Windows a 760×600 y la prueba Qt confirmaron centrado y ausencia de `polish() loop`.
+
+## Hero cards animadas
+
+La bienvenida y las hero cards de categorías, preguntas y resultados usan tarjetas horizontales de blanco a lavanda, bordes claros y sombra suave. Los títulos resaltan términos clave en violeta; el texto y las acciones quedan a la izquierda. `HeroBackdrop.qml` dibuja manchas orgánicas difuminadas, curvas finas e iconos tecnológicos Font Awesome Free de baja opacidad. Los elementos se desplazan y respiran lentamente con trayectos de ida y vuelta que comparten sus extremos. El fondo queda recortado dentro de la tarjeta; las animaciones se pausan al ocultar la pantalla y se desactivan cuando Qt informa una preferencia de movimiento reducido.
+
+Las cinco poses originales conservan sus proporciones. En las cuatro hero cards visibles, la mascota de la pantalla sobresale por arriba sin cubrir el texto y recibe una sombra violeta mediante `MultiEffect`. `FaIcon.qml` puede cargar siete variantes lavanda de los SVG Free locales; conservan la atribución original y la licencia existente. La entrada de cada tarjeta usa opacidad y escala de 0,97 a 1 durante 390 ms; no cambia el tamaño administrado por los layouts. La bienvenida mantiene su barra visual y solo avanza por su botón.
+
+Se revisaron capturas Windows a 760×600, 1080×760 y 1440×900. La prueba de regresión comprobó las cuatro tarjetas en esos tamaños, la mascota por encima del borde, un fondo activo que se desplaza y ningún aviso `polish() loop`. En una ventana Windows se midió un ciclo completo de la mancha principal: 85 muestras durante 17 segundos, retorno al origen y desplazamiento máximo de 0,985 px por intervalo de 200 ms, sin salto brusco. Pasaron 86 pruebas funcionales seguras, diez auditorías y la verificación de 44 huellas. Queda la revisión visual final en la ventana del usuario; no se ejecutaron la batería global ni `validar_casos.py` por la reserva final.
+
+## Corrección de la secuencia previa al resultado
+
+El puente pasa brevemente a `analisis` cuando se solicita la evaluación de C. Antes, QML borraba `faseVisual` justo antes de llamar a `verResultado()`, por lo que ese estado transitorio volvía a mostrar `mascota-analizando1.png`. Ahora QML conserva `faseVisual: "idea"` hasta que el puente comunica resultados y cancela la secuencia entonces. La prueba Windows comprobó la pose de idea durante ese estado intermedio, el resultado de C, la cancelación por navegación y la ausencia de `polish() loop`. La fase de análisis dura 2500 ms y la de idea 800 ms; la inferencia y el puente no cambiaron. Pasaron 86 pruebas funcionales seguras.
+
+## Espaciado y encabezado
+
+La bienvenida oculta el encabezado «PC / DIAGNÓSTICO», su icono y la línea divisoria. La hero card usa un margen superior proporcional y acotado según la altura disponible; mantiene el fondo animado, la mascota saludando y el inicio por botón. Las demás pantallas conservan el encabezado y su línea. `ColumnLayout` reserva el espacio entre encabezado y línea con un margen inferior propio, mientras la hero card usa 18 px de margen superior dentro del área desplazable. La separación total entre línea y tarjeta es de 32 px, frente a los 70 px anteriores. Los componentes siguientes mantienen sus distancias relativas y el botón superior «Categorías» permanece accesible.
+
+Se revisaron capturas Windows de bienvenida, categorías, cuestionario y resultados a 760×600, 1080×760 y 1440×900. La prueba Qt comprobó visibilidad del encabezado, separación de 24–36 px, límites de la hero card, ausencia de scroll horizontal y superposición con «Categorías», animación activa y ausencia de `polish() loop`. Pasaron 86 pruebas funcionales seguras y la verificación de 44 huellas. Queda la revisión visual final en la ventana del usuario; no se abrió la reserva final.
+
+## Efectos de sonido
+
+`AppAudio.qml` centraliza `MediaPlayer`, `AudioOutput` y `SoundEffect` de Qt Multimedia. Los MP3 proporcionados se usan sin modificar: `bienvenida.mp3` al aparecer la mascota inicial, una sola vez; `analizando.mp3` al comenzar la pose de análisis; e `idea-sound.mp3` cuando aparece la pose de idea. El análisis se detiene al llegar a idea. El sonido de idea puede terminar de forma natural en resultados, que conserva esa pose, y se detiene si se sale de esa pantalla. Un WAV de pop de 110 ms se generó con `wave` de Python para los botones y las tarjetas de categoría; hover no lo reproduce. Los volúmenes de salida son 15 %, 15 %, 18 % y 15 %, respectivamente. No hay bucles ni controles de volumen.
+
+La reproducción sigue las señales de pantalla y fase existentes, sin nuevos temporizadores. Una prueba con las rutas de sonido ausentes confirmó que el componente QML continúa funcionando. En una ventana Windows, Qt informó `PlayingState` sin error para los tres MP3 e `isPlaying=True` para el pop. Las pruebas de interacción comprobaron eventos únicos, hover silencioso, volúmenes, cancelación de la secuencia y ausencia de `polish() loop`. Pasaron 87 pruebas funcionales seguras, diez auditorías y la verificación de 44 huellas. Falta escuchar los sonidos manualmente para valorar volumen y calidad percibida; no se abrió la reserva final.
+
+## Interfaz de consulta sin nombres de modelos
+
+La tarjeta de resultados usa la etiqueta «REVISIÓN TÉCNICA» y conserva «Resultado de la consulta». Se retiraron de QML el botón de comparación y su sección; el razonamiento, las observaciones, los hechos derivados, las reglas, las hipótesis y la exportación siguen visibles. El flujo gráfico llama solo a C para producir el resultado. El contrato interno de la sesión y el puente permanece intacto, incluida la función de comparación académica que ya no tiene acceso desde la interfaz.
+
+El PDF omite el nombre del modelo y describe las hipótesis como prioridades ordinales sujetas a revisión técnica. Se comprobaron el contenido HTML de un reporte sin conclusión y otro con hipótesis, recomendaciones, reglas y trazas, además de la apertura del PDF con QtPdf. La prueba QML recorrió bienvenida, categorías, cuestionario y resultados sin etiquetas de modelos ni comparación. Pasaron 87 pruebas funcionales seguras y diez auditorías; `verificar_seleccion.py` confirmó las 44 huellas. La batería global y `validar_casos.py` permanecen pendientes por la reserva final.
+
+## Reporte técnico PDF
+
+`pdf_export.py` conserva la validación del resultado y delega la composición en `pdf_layout.py`. El reporte A4 usa `QPdfWriter` y `QPainter`, con encabezado blanco y la imagen transparente `mascota-analizando1.png`, secciones lavanda `#F5F3FF`, acento `#6355FF`, tarjetas de observación y un pie fijo en cada página. El pie incluye identificación, numeración y «Del síntoma a la solución.». Se reservan márgenes y una franja inferior antes de dibujar cualquier bloque; al continuar una sección en una nueva página se repite su encabezado. Los textos largos se dividen por línea y las tarjetas de verificación se mantienen completas.
+
+El puente entrega al exportador la instantánea del resultado, los estados originales, los nombres de hechos ya cargados y únicamente los hechos respondidos en el historial. Así, una pregunta omitida no aparece como observación `desconocido`. Las etiquetas `verdadero`, `falso` y `desconocido` permanecen visibles junto con verde, naranja y gris suaves, respectivamente. La guía reproduce literalmente las recomendaciones existentes, muestra las reglas de soporte de la hipótesis sin atribuir una regla concreta a cada paso, y ofrece casillas imprimibles y una línea para notas del técnico. La presentación pública de la prioridad conserva su fundamento y omite solo la frase académica que compara modelos. Los datos inferidos y el orden de las hipótesis no cambian.
+
+Se abrieron y renderizaron PDFs de ejemplo sin hipótesis, con hipótesis y hechos derivados, y con alternativa térmica. Se revisaron visualmente el encabezado, la mascota, los colores, las tarjetas, la guía y el pie. Una fixture sintética que repite trazas reales y añade observaciones solo para probar paginación produjo 13 páginas; todas se renderizaron, conservaron numeración y eslogan y dejaron libre la franja de separación del pie. La exportación desde el slot gráfico también produjo un archivo. Pasaron 87 pruebas funcionales seguras, diez auditorías y la verificación de las 44 huellas. No se ejecutaron pruebas que leen la reserva final.
+
+## Inventario del respaldo de la interfaz
+
+`data/interfaz/MANIFIESTO_GUI.json` registra 109 rutas relativas ordenadas con SHA-256: el punto de entrada y los módulos Python necesarios, doce archivos QML, cinco PNG de la mascota, 55 SVG y la licencia de iconos, tres MP3 y un WAV, la imagen empleada por el PDF, ocho catálogos JSON y `requirements-gui.txt`. Se comprobó que todas las huellas coinciden con los archivos presentes. Para 41 archivos de texto, `huellas_git` registra además el SHA-256 de los bytes normalizados que guarda Git; así se pueden comprobar tanto el directorio actual como el contenido recuperado del tag. La fuente Segoe UI es opcional y la proporciona Windows; no se copia al repositorio. El manifiesto de selección del Avance 2 sigue separado e intacto.
+
+Antes del respaldo, `main` y `origin/main` coincidían tras `git fetch origin`. En esta revisión pasaron 87 pruebas seguras y diez auditorías, `python validar_conocimiento.py` y `python verificar_seleccion.py` (44 huellas). La batería global y `validar_casos.py` permanecen pendientes porque cargarían los 20 casos finales reservados.
