@@ -29,6 +29,7 @@ class PuenteDiagnostico(QObject):
     contradicciones = Property("QVariantList", lambda self: self._estado("contradicciones"), notify=estadoCambiado)
     analizando = Property(bool, lambda self: self._estado("analizando"), notify=estadoCambiado)
     resultado = Property("QVariantMap", lambda self: self._estado("resultado"), notify=estadoCambiado)
+    grafo = Property("QVariantMap", lambda self: self._estado("grafo"), notify=estadoCambiado)
     error = Property(str, lambda self: self._estado("error"), notify=estadoCambiado)
     comparacion = Property("QVariantList", lambda self: self._comparacion, notify=estadoCambiado)
 
@@ -75,6 +76,14 @@ class PuenteDiagnostico(QObject):
     @Slot()
     def volver(self):
         self._accion(self.sesion.volver)
+
+    @Slot()
+    def verRazonamiento(self):
+        self._accion(self.sesion.ver_razonamiento)
+
+    @Slot()
+    def volverAResultados(self):
+        self._accion(self.sesion.volver_a_resultados)
 
     @Slot(int)
     def editar(self, indice):

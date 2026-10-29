@@ -192,6 +192,7 @@ ApplicationWindow {
         ScrollView {
             id: areaDesplazamiento
             objectName: "areaDesplazamiento"
+            visible: diagnostico.pantalla !== "razonamiento"
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
@@ -585,6 +586,7 @@ ApplicationWindow {
                         Flow {
                             Layout.fillWidth: true; spacing: 10
                             ActionButton { text: "Revisar respuesta"; icono: "rotate-left"; secundario: true; onClicked: diagnostico.volver() }
+                            ActionButton { text: "Visualizar razonamiento"; icono: "sitemap"; secundario: true; onClicked: diagnostico.verRazonamiento() }
                             ActionButton { text: "Exportar PDF"; icono: "file-pdf"; onClicked: guardarPdf.open() }
                         }
                         SurfaceCard {
@@ -635,6 +637,13 @@ ApplicationWindow {
                     }
                 }
             }
+        }
+        ReasoningGraph {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            visible: diagnostico.pantalla === "razonamiento"
+            grafo: diagnostico.grafo
+            onRegresar: diagnostico.volverAResultados()
         }
     }
 }

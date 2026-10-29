@@ -9,6 +9,7 @@ from diagnostico_pc.rutas import cargar_rutas
 from diagnostico_pc.selector import seleccionar_modelo
 
 from .serialization import serializar_resultado
+from .reasoning_graph import construir_grafo
 
 
 RAIZ_PROYECTO = Path(__file__).resolve().parents[3]
@@ -35,10 +36,12 @@ class SesionGrafica:
         self.gestor: GestorPreguntas | None = None
         self.pantalla = "bienvenida"
         self.resultado: dict = {}
+        self.grafo: dict = {}
         self.error = ""
 
     def _invalidar(self) -> None:
         self.resultado = {}
+        self.grafo = {}
         self.error = ""
 
     def ir_a_seleccion(self) -> None:
@@ -88,6 +91,23 @@ class SesionGrafica:
         self.pantalla = "resultados"
         return self.resultado
 
+    def ver_razonamiento(self) -> dict:
+        if self.pantalla != "resultados" or not self.resultado:
+            raise ValueError("Primero consulta un resultado para visualizar el razonamiento.")
+        gestor = self._exigir_gestor()
+        if not self.grafo:
+            self.grafo = construir_grafo(
+                self.resultado, gestor.historial, gestor.preguntas,
+                self.modelo_c.hechos, self.modelo_c.reglas, gestor.categoria_actual,
+            )
+        self.pantalla = "razonamiento"
+        return self.grafo
+
+    def volver_a_resultados(self) -> None:
+        if self.pantalla != "razonamiento":
+            raise ValueError("La visualización de razonamiento no está abierta.")
+        self.pantalla = "resultados"
+
     def comparar_modelos(self) -> list[dict]:
         gestor = self._exigir_gestor()
         if gestor.contradicciones or gestor.estado_final == "@bloqueo_energia":
@@ -136,5 +156,6 @@ class SesionGrafica:
             ],
             "analizando": self.pantalla == "analisis",
             "resultado": self.resultado,
+            "grafo": self.grafo,
             "error": self.error,
         }

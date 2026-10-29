@@ -406,3 +406,34 @@
 - [x] Creado y comprobado `data/interfaz/MANIFIESTO_GUI.json` con 109 huellas SHA-256 de código de ejecución, QML, imágenes, iconos y su licencia, sonidos, recurso PDF, configuración y dependencia de la GUI. La reserva final permanece ignorada.
 
 **Archivos de este respaldo:** `data/interfaz/MANIFIESTO_GUI.json`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist, junto con los archivos de la GUI, pruebas y documentación que estaban pendientes de registrar. El manifiesto de selección, los motores y los resultados experimentales no se modificaron.
+
+## Visualizador de razonamiento — implementación local
+
+- [x] Adaptador puro de grafos a partir de trazas y resultado de C; observaciones respondidas trivalentes, reglas activadas, derivados e hipótesis conservan sus relaciones y orden. Reglas inactivas y preguntas no formuladas permanecen separadas de las conexiones causales.
+- [x] Pantalla adicional con nodos, conexiones en `Canvas`, detalles, resaltado de soportes, zoom, desplazamiento y regreso al resultado sin repetir inferencia ni cambiar respuestas.
+- [x] Posiciones y dimensiones calculadas en Python. Prueba Qt a 760×600, 1080×760 y 1440×900 con capturas no vacías y cero `polish() loop`; las 12 pruebas Qt anteriores pasaron con `TEMP` y `TMP` dirigidos a `.venv/tmp_gui`.
+- [x] 94 pruebas funcionales seguras y 10 auditorías correctas. `python validar_conocimiento.py` correcto; `python verificar_seleccion.py`: 44 huellas coincidentes. La primera ejecución Qt usó un directorio temporal sin permisos y se repitió con el temporal del proyecto.
+- [x] Manifiesto SHA-256 nuevo con 113 archivos de la GUI ampliada, independiente del respaldo de 109 huellas. El manifiesto anterior y el tag `pre-finalizacion` permanecen intactos.
+- [ ] Revisión visual manual en la ventana del usuario. `validar_casos.py` y la batería global siguen pendientes porque leerían los 20 casos finales reservados.
+
+**Archivos creados:** `src/diagnostico_pc/gui/reasoning_graph.py`, `src/diagnostico_pc/gui/qml/ReasoningNode.qml`, `src/diagnostico_pc/gui/qml/ReasoningDetails.qml`, `src/diagnostico_pc/gui/qml/ReasoningGraph.qml`, `tests/test_grafo_razonamiento.py`, `tests/test_grafo_qt.py`, `verificar_gui_razonamiento.py` y `data/interfaz/MANIFIESTO_GUI_RAZONAMIENTO.json`. **Modificados:** `src/diagnostico_pc/gui/session.py`, `src/diagnostico_pc/gui/bridge.py`, `src/diagnostico_pc/gui/qml/Main.qml`, `docs/ENTREGA_FINAL_INTERFAZ.md` y este checklist. Sin commits ni tags nuevos.
+
+## Revisión de diseño del visualizador
+
+- [x] Sustituida la presentación inicial por secciones verticales: observaciones verde suave, reglas lavanda, hechos derivados azul, principal destacada y alternativas secundarias. El panel de detalle muestra datos completos según el tipo de nodo.
+- [x] Flechas dibujadas únicamente para condiciones y conclusiones presentes en trazas de C; pruebas con encadenamiento, condición falsa, soportes compartidos, alternativas y ausencia de hipótesis. Las preguntas desconocidas siguen aisladas si ninguna regla las utilizó.
+- [x] Tarjetas y secciones posicionadas en Python; prueba Qt en `offscreen` y Windows a 760×600, 1080×760 y 1440×900 sin `polish() loop`, sin títulos truncados ni texto fuera de tarjetas. Capturas Windows revisadas; panel plegable en 760×600.
+- [x] 94 pruebas funcionales seguras, 10 auditorías, `python validar_conocimiento.py` y `python verificar_seleccion.py` correctos; 44 huellas de selección intactas.
+- [ ] Revisión visual final del usuario. La batería global y `validar_casos.py` continúan pendientes porque abrirían los 20 casos finales reservados.
+
+**Archivos modificados en esta revisión:** `src/diagnostico_pc/gui/reasoning_graph.py`, `src/diagnostico_pc/gui/qml/ReasoningGraph.qml`, `src/diagnostico_pc/gui/qml/ReasoningNode.qml`, `src/diagnostico_pc/gui/qml/ReasoningDetails.qml`, `tests/test_grafo_razonamiento.py`, `tests/test_grafo_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md`, este checklist y el nuevo manifiesto de la GUI para reflejar los bytes finales. Sin cambios en motores, catálogos, resultados experimentales, manifiestos anteriores, sonidos, mascotas ni PDF; sin commits ni tags.
+
+## Visualizador — panel de detalle simplificado
+
+- [x] Quitados de la interfaz la leyenda repetida, «Reglas no activadas», «Mostrar lista» y «Preguntas no formuladas». Los datos internos y las conexiones se conservaron.
+- [x] El panel presenta exclusivamente los campos del nodo seleccionado. La prueba Qt recorrió observación, regla, hecho derivado e hipótesis y comprobó encabezados propios y ausencia de secciones ajenas.
+- [x] Selección, resaltado, zoom y regreso a resultados comprobados en `offscreen` y Windows a 760×600, 1080×760 y 1440×900; cero avisos `polish() loop`.
+- [x] 94 pruebas funcionales seguras, 10 auditorías, `python validar_conocimiento.py` y `python verificar_seleccion.py` correctos; 44 huellas protegidas coincidentes.
+- [ ] Revisión visual final del usuario. La batería global y `validar_casos.py` siguen pendientes porque leerían los 20 casos finales reservados.
+
+**Archivos de este ajuste:** `src/diagnostico_pc/gui/qml/ReasoningDetails.qml`, `src/diagnostico_pc/gui/qml/ReasoningGraph.qml`, `tests/test_grafo_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md`, este checklist y `data/interfaz/MANIFIESTO_GUI_RAZONAMIENTO.json` actualizado tras las pruebas. Sin commits ni tags.
