@@ -437,3 +437,11 @@
 - [ ] Revisión visual final del usuario. La batería global y `validar_casos.py` siguen pendientes porque leerían los 20 casos finales reservados.
 
 **Archivos de este ajuste:** `src/diagnostico_pc/gui/qml/ReasoningDetails.qml`, `src/diagnostico_pc/gui/qml/ReasoningGraph.qml`, `tests/test_grafo_qt.py`, `docs/ENTREGA_FINAL_INTERFAZ.md`, este checklist y `data/interfaz/MANIFIESTO_GUI_RAZONAMIENTO.json` actualizado tras las pruebas. Sin commits ni tags.
+
+## README actualizado para la GUI con visualizador
+
+- [x] El README describe la pantalla de razonamiento, sus controles, el reporte PDF, los manifiestos histórico y actual, y un recorrido reproducible que genera dos hechos derivados.
+- [x] `python validar_conocimiento.py`, `python verificar_seleccion.py` (44 huellas), `python verificar_gui_razonamiento.py` (113 huellas) y `git diff --check` correctos tras el ajuste documental.
+- [ ] La batería global y `validar_casos.py` continúan pendientes porque leen los 20 casos finales reservados. No se repitieron las 94 pruebas funcionales para este cambio solo documental; su último resultado correcto permanece registrado arriba.
+
+**Archivos modificados:** `README.md` y este checklist. Sin cambios de código, conocimiento, manifiestos ni resultados experimentales.
